@@ -29,7 +29,7 @@ public class LoginScreen{
         DatabaseConnection.password = passwordFieldPassword.getText();
 
         if(!DatabaseConnection.establish()){
-            txtFieldError.setText("Incorrect Username or Password, Try Again.");
+            txtFieldError.setText(DatabaseConnection.lastError);
         }else {
             FXMLLoaderController controller = new FXMLLoaderController();
             Stage stage = (Stage) btnLogin.getScene().getWindow();

@@ -10,12 +10,14 @@ public class DatabaseConnection {
     public static String userName; // = txtFieldUsername.getText();
     public static String password; // = passwordFieldPassword.getText();
     public static Connection con;
+    public static String lastError = "";
 
     public static boolean establish(){
         try {
             con = DriverManager.getConnection(url, userName, password);
             return true;
         } catch (SQLException e) {
+            lastError = e.getMessage();
             System.err.println(e);
             return false;
         }

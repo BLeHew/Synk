@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TeamToDo.iml" filepath="$PROJECT_DIR$/TeamToDo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeamSynk.iml" filepath="$PROJECT_DIR$/TeamSynk.iml" />
     </modules>
   </component>
 </project>
