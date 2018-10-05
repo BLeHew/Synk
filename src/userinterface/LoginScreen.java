@@ -1,12 +1,15 @@
 package userinterface;
 
 import connection.DatabaseConnection;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import userinterface.FXMLLoaderController;
 
 public class LoginScreen{
 
@@ -28,12 +31,12 @@ public class LoginScreen{
         DatabaseConnection.userName = txtFieldUsername.getText();
         DatabaseConnection.password = passwordFieldPassword.getText();
 
-        if(!DatabaseConnection.establish()){
+        if(DatabaseConnection.establish()){
             txtFieldError.setText(DatabaseConnection.lastError);
         }else {
-            FXMLLoaderController controller = new FXMLLoaderController();
             Stage stage = (Stage) btnLogin.getScene().getWindow();
-            stage.setScene(new Scene(controller.getParent("mainAppUI.fxml")));
+            stage.setTitle("Synk");
+            stage.setScene(new Scene(new FXMLLoaderController().getParent("mainAppUI.fxml")));
             stage.centerOnScreen();
             stage.show();
         }
