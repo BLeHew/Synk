@@ -21,17 +21,11 @@ public class LoginScreen{
     @FXML
     private void login(){
         System.out.println("Logging in");
-        try {
-            Class.forName(DatabaseConnection.driver);
-        }catch(Exception e){
-            System.out.println("Error in loading driver" + e);
-        }
-
 
         DatabaseConnection.userName = txtFieldUsername.getText();
         DatabaseConnection.password = passwordFieldPassword.getText();
 
-        if(DatabaseConnection.establish()){
+        if(!DatabaseConnection.establish()){
             txtFieldError.setText(DatabaseConnection.lastError);
         }else {
             Stage stage = (Stage) btnLogin.getScene().getWindow();

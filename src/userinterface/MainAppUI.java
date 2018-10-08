@@ -1,19 +1,15 @@
 package userinterface;
 
-import javafx.application.Application;
+import connection.DatabaseConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
-import projects.Project;
 
-import java.applet.Applet;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Observable;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class MainAppUI {
     private ObservableList<ObservableList> data;
@@ -23,7 +19,21 @@ public class MainAppUI {
     @FXML private ListView<String> listViewProjects;
     @FXML private ListView<String> listViewTasks;
 
+    /*
+    CREATE TABLE IF NOT EXISTS users(
+            USER_ID INT,
+            USERNAME varchar(255) NOT NULL,
+    USER_EMAIL varchar(255) NOT NULL,
+    PRIV_LVL INT,
+    PRIMARY KEY(USER_ID)
+    */
     public void initialize(){
+        try {
+            PreparedStatement stmt = DatabaseConnection.con.prepareStatement("INSERT INTO users VALUES('1','Brice','bobjob@gmail.com','3')");
+            stmt.executeUpdate();
+        } catch (SQLException e){
+
+        }
         items.add("Project 1");
         items.add("Project 2");
         items.add("Project 3");

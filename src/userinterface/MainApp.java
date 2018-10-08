@@ -40,35 +40,9 @@ public class MainApp extends Application {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public User getUser() {
-        return user;
-    }
-
-    public boolean userLogging(String userId, String password){
-        DatabaseConnection.userName = userId;
-        DatabaseConnection.password = password;
-        if (DatabaseConnection.establish()) {
-            gotoProfile();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void userLogout(){
-        user = null;
-        gotoLogin();
-    }
-
-    private void gotoProfile() {
-        try {
-            replaceSceneContent("mainAppUI.fxml");
-        } catch (Exception ex) { }
-    }
-
     private void gotoLogin() {
         try {
+            stage.setTitle("Synk Login");
             replaceSceneContent("loginScreen.fxml");
         } catch (Exception ex) { }
     }
