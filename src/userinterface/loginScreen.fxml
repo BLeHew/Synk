@@ -28,7 +28,10 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="txtFieldError" disable="true" editable="false" layoutY="257.0" prefHeight="31.0" prefWidth="402.0" style="-fx-text-fill: black;" />
-      <Button layoutX="128.0" layoutY="209.0" mnemonicParsing="false" text="Register" />
+      <TextField fx:id="txtFieldError" layoutY="261.0" prefHeight="31.0" prefWidth="402.0" style="-fx-text-fill: black; -fx-background-color: white;" />
+      <Button id="btnRegister" fx:id="btnRegister" layoutX="128.0" layoutY="209.0" mnemonicParsing="false" onAction="#register" text="Register" />
+      <PasswordField fx:id="passwordFieldRetype" disable="true" layoutX="127.0" layoutY="209.0" promptText="Re-Type Password" visible="false" />
+      <TextField id="txtFieldEmail" fx:id="txtFieldEmail" disable="true" layoutX="127.0" layoutY="245.0" promptText="Enter Email" visible="false" />
+      <Button fx:id="btnCancelRegistration" disable="true" layoutX="138.0" layoutY="38.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="51.0" prefWidth="128.0" text="Cancel Registration" visible="false" />
    </children>
 </AnchorPane>

@@ -28,12 +28,14 @@ public class MainAppUI {
     PRIMARY KEY(USER_ID)
     */
     public void initialize(){
+        /*
         try {
             PreparedStatement stmt = DatabaseConnection.con.prepareStatement("INSERT INTO users VALUES('1','Brice','bobjob@gmail.com','3')");
             stmt.executeUpdate();
         } catch (SQLException e){
 
         }
+        */
         items.add("Project 1");
         items.add("Project 2");
         items.add("Project 3");
