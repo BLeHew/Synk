@@ -19,7 +19,7 @@ public class MainApp extends Application {
     private User user;
 
     public static void main(String args[]){
-        //System.out.println("bobjob@gmail.com".hashCode());
+        //System.out.println("1234".hashCode());
         launch(args);
     }
 
@@ -47,7 +47,7 @@ public class MainApp extends Application {
     private void gotoLogin() {
         try {
             stage.setTitle("Synk Login");
-            replaceSceneContent("loginScreen.fxml");
+            replaceSceneContent("/login/loginScreen.fxml");
         } catch (Exception ex) { }
     }
 

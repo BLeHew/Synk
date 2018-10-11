@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 
 public class SynkConnection {
-    public static String url = "jdbc:mysql://localhost:3306/synkdb?allowPublicKeyRetrieval=true&useSSL=false";
+    public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     public static String driver = "com.mysql.jdbc.Driver";
-    private static String userName = "newuser";
-    private static String password = "1234";
+    private static String userName = "root";
+    private static String password = "root";
     public static Connection con;
     public static String lastError = "";
-
+    public static boolean hasConnection = false;
     public static void establish(){
         try {
             Class.forName(driver);
@@ -22,9 +22,9 @@ public class SynkConnection {
         try {
             con = DriverManager.getConnection(url, userName, password);
             System.out.println("Successful Connection");
+            hasConnection = true;
         } catch (SQLException e){
             System.err.println("Error in DB connection");
-            System.err.println(e);
         }
 
     }
