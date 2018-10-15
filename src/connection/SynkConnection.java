@@ -1,5 +1,7 @@
 package connection;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,6 +15,7 @@ public class SynkConnection {
     public static Connection con;
     public static String lastError = "";
     public static boolean hasConnection = false;
+
     public static void establish(){
         try {
             Class.forName(driver);
@@ -26,14 +29,22 @@ public class SynkConnection {
         } catch (SQLException e){
             System.err.println("Error in DB connection");
         }
-
+    }
+    public static boolean hasConnection(){
+        try {
+            return con.isValid(500);
+        }catch (SQLException s){
+            System.err.println("Error in checking if connection is valid");
+            System.err.println(s);
+            return false;
+        }
     }
     public static boolean validateCredentials(String userName,String password){
-        String query = "SELECT USERNAME,PASS_HASH FROM users WHERE USERNAME='" + userName + "'";
         ResultSet rs;
         try {
-            Statement st = con.createStatement();
-            rs = st.executeQuery(query);
+            PreparedStatement stmt = con.prepareStatement("SELECT USERNAME,PASS_HASH FROM users WHERE USERNAME = ?");
+            stmt.setString(1,userName);
+            rs = stmt.executeQuery();
             if(!rs.first()){
                 lastError = "Username does not exist";
                 return false;
@@ -50,6 +61,22 @@ public class SynkConnection {
         return true;
     }
     public static boolean registerCredentials(String userName, String password,String email){
-        return true;
+        String query = "SELECT USERNAME FROM users WHERE USERNAME = '" + userName + "'";
+        try {
+            ResultSet rs = con.createStatement().executeQuery(query);
+            if(!rs.first()){
+                query = "INSERT INTO users VALUES (null," + userName + "," + email + "," + password.hashCode() + ",1)";
+                con.createStatement().executeUpdate(query);
+                return true;
+            }else {
+                return false;
+            }
+        }catch (SQLException e){
+            System.err.println("Exception in registering credentials.");
+            System.err.println(e);
+            System.out.println(query);
+
+            return false;
+        }
     }
 }

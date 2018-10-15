@@ -1,34 +1,27 @@
 package userinterface;
 
-import User.User;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import connection.SynkConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
 
-public class MainApp extends Application {
+public class SynkApp extends Application {
     private Stage stage;
-    private User user;
 
     public static void main(String args[]){
-        //System.out.println("1234".hashCode());
         launch(args);
     }
 
-    private static MainApp instance;
+    private static SynkApp instance;
 
-    public MainApp(){
+    public SynkApp(){
         instance = this;
     }
-    public static MainApp getInstance(){
+    public static SynkApp getInstance(){
         return instance;
     }
     public Stage getStage(){
@@ -41,7 +34,7 @@ public class MainApp extends Application {
             SynkConnection.establish();
             gotoLogin();
         } catch (Exception ex) {
-            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }
     private void gotoLogin() {

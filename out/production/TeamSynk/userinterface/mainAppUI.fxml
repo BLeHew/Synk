@@ -27,9 +27,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView id="listViewProjects" fx:id="listViewProjects" layoutX="14.0" layoutY="47.0" onMouseClicked="#showProjectTasks" prefHeight="306.0" prefWidth="181.0" />
-      <ListView fx:id="listViewTasks" layoutX="206.0" layoutY="47.0" prefHeight="306.0" prefWidth="188.0" />
-      <ListView layoutX="413.0" layoutY="47.0" prefHeight="306.0" prefWidth="173.0" />
+      <ListView id="listViewProjects" fx:id="listViewProjects" layoutX="12.0" layoutY="49.0" onMouseClicked="#showProjectTasksAndUsers" prefHeight="306.0" prefWidth="180.0" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="49.0" />
+      <ListView fx:id="listViewTasks" layoutX="206.0" layoutY="47.0" onMouseClicked="#narrowUsers" prefHeight="306.0" prefWidth="188.0" />
+      <ListView fx:id="listViewUsers" layoutX="413.0" layoutY="47.0" prefHeight="306.0" prefWidth="173.0" />
       <Label layoutX="83.0" layoutY="27.0" prefHeight="17.0" prefWidth="52.0" text="Projects" />
       <Label layoutX="282.0" layoutY="27.0" prefHeight="17.0" prefWidth="36.0" text="Tasks" />
       <Label layoutX="485.0" layoutY="27.0" text="Users" />
@@ -37,7 +37,7 @@
       <Button layoutX="96.0" layoutY="361.0" mnemonicParsing="false" text="Remove Project" />
       <Button layoutX="206.0" layoutY="361.0" mnemonicParsing="false" text="Add Task" />
       <Button layoutX="308.0" layoutY="361.0" mnemonicParsing="false" text="Remove Task" />
-      <Button layoutX="413.0" layoutY="361.0" mnemonicParsing="false" text="Add User" />
-      <Button layoutX="500.0" layoutY="361.0" mnemonicParsing="false" text="Remove User" />
+      <Button layoutX="413.0" layoutY="361.0" mnemonicParsing="false" text="Add TableObjects" />
+      <Button layoutX="500.0" layoutY="361.0" mnemonicParsing="false" text="Remove TableObjects" />
    </children>
 </AnchorPane>

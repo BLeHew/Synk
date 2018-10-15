@@ -16,7 +16,7 @@ public final class Toast {
     private static final int TOASTDELAY = 500;
     private static final int FADEINDELAY = 250;
     private static final int FADEOUTDELAY = 250;
-    private static final Stage MAINSTAGE = MainApp.getInstance().getStage();
+    private static final Stage MAINSTAGE = SynkApp.getInstance().getStage();
     public static boolean show = true;
 
     public static void makeText(String toastMsg) {
