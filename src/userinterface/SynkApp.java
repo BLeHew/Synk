@@ -1,5 +1,6 @@
 package userinterface;
 
+import Testing.DBTesting;
 import connection.SynkConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 
 public class SynkApp extends Application {
@@ -32,6 +35,7 @@ public class SynkApp extends Application {
         try {
             stage = primaryStage;
             SynkConnection.establish();
+            DBTesting.fillDBwithTestData();
             gotoLogin();
         } catch (Exception ex) {
 

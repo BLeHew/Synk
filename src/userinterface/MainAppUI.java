@@ -52,13 +52,12 @@ public class MainAppUI {
         try {
             ResultSet rs;
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT u.USER_ID,u.USERNAME,a.TASK_ID\n" +
-                            " FROM users u,assignedto a\n" +
-                            " WHERE u.USER_ID = a.USER_ID AND a.PROJ_ID = " + listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId() +
-                            " AND a.TASK_ID = " + taskID);
+                    "SELECT u.USER_ID,u.USERNAME\n" +
+                            " FROM users u,user_task_assigned uta\n" +
+                            " WHERE u.user_id = uta.user_id AND uta.task_id = " + taskID);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userItems.add(new User(rs.getInt("USER_ID"), rs.getString("USERNAME")));
+                userItems.add(new User(rs.getInt("user_id"), rs.getString("username")));
             }
         } catch (SQLException e){
             System.err.println(e);
@@ -92,14 +91,11 @@ public class MainAppUI {
         }
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT * FROM users u " +
-                            "inner join assignedto a " +
-                            "ON a.USER_ID = u.USER_ID " +
-                            "inner join projects p on p.PROJ_ID =" +  projId
-                            + " GROUP BY u.USER_ID;");
+                    "SELECT * FROM users u,user_proj_assigned upa " +
+                            "WHERE u.user_id = upa.user_id AND upa.proj_id = " +  projId);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userItems.add(new User(rs.getInt("USER_ID"), rs.getString("USERNAME")));
+                userItems.add(new User(rs.getInt("user_id"), rs.getString("username")));
             }
         } catch (SQLException e){
             System.err.println(e);
