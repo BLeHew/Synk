@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class SynkConnection {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
-    public static String driver = "com.mysql.jdbc.Driver";
+
     private static String userName = "root";
     private static String password = "root";
     public static Connection con;
@@ -15,11 +15,7 @@ public class SynkConnection {
     public static boolean hasConnection = false;
 
     public static void establish(){
-        try {
-            Class.forName(driver);
-        }catch(Exception e){
-            System.err.println("Error in loading driver " + e);
-        }
+
         try {
             con = DriverManager.getConnection(url, userName, password);
             System.out.println("Successful Connection");

@@ -7,13 +7,19 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
 
+import java.io.IOException;
+
 
 public class SynkApp extends Application {
     private Stage stage;
+    public static String driver = "com.mysql.jdbc.Driver";
 
     public static void main(String args[]){
-
-        System.out.println("This is on the test branch");
+        try {
+            Class.forName(driver);
+        }catch(Exception e){
+            System.err.println("Error in loading driver " + e);
+        }
         launch(args);
     }
 
@@ -55,7 +61,15 @@ public class SynkApp extends Application {
             ex.printStackTrace();
         }
     }
-
+    public void showForm(String formFXML){
+        try {
+            Stage formwindow = new Stage();
+            formwindow.setScene(new Scene(FXMLLoader.load(getClass().getResource(formFXML))));
+            formwindow.show();
+        } catch ( IOException x ) {
+            x.printStackTrace();
+        }
+    }
     public void replaceSceneContent(String fxml) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);

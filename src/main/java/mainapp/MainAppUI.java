@@ -1,4 +1,4 @@
-package userinterface;
+package mainapp;
 
 import java.io.*;
 import java.sql.*;
@@ -10,6 +10,7 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.stage.*;
+import userinterface.SynkApp;
 
 public class MainAppUI {
     ObservableList<Project> projItems = FXCollections.observableArrayList();
@@ -26,14 +27,7 @@ public class MainAppUI {
 
     @FXML
     public void displayForm() {
-        try {
-            Scene form = new Scene(FXMLLoader.load(getClass().getResource("/fxml/makeprojectform.fxml")));
-            Stage formwindow = new Stage();
-            formwindow.setScene(form);
-            formwindow.show();
-        } catch ( IOException x ) {
-            x.printStackTrace();
-        }
+        SynkApp.getInstance().showForm("/fxml/makeprojectform.fxml");
     }
     public void initialize(){
         ResultSet rs;
