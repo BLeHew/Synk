@@ -32,9 +32,9 @@ public class MainAppUI {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
             rs = stmt.executeQuery();
             while(rs.next()){
-                projItems.add(new Project(rs.getInt("PROJ_ID"),
-                        rs.getString("PROJ_NAME"),
-                        rs.getString("PROJ_DESC")));
+                projItems.add(new Project(rs.getInt("proj_id"),
+                        rs.getString("proj_name"),
+                        rs.getString("proj_desc")));
             }
         } catch (SQLException e){
             System.err.println(e);
@@ -77,14 +77,14 @@ public class MainAppUI {
         ResultSet rs;
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks WHERE Proj_ID =" + projId);
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks WHERE proj_id =" + projId);
             rs = stmt.executeQuery();
             while(rs.next()){
                 taskItems.add(new Task(
-                        rs.getInt("TASK_ID"),
-                        rs.getString("TASK_DESC"),
-                        rs.getString("TASK_NAME"),
-                        rs.getInt("PROJ_ID")));
+                        rs.getInt("task_id"),
+                        rs.getString("task_desc"),
+                        rs.getString("task_name"),
+                        rs.getInt("proj_id")));
             }
         } catch (SQLException e){
             System.err.println(e);

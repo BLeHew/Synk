@@ -40,14 +40,14 @@ public class SynkConnection {
     public static boolean validateCredentials(String userName,String password){
         ResultSet rs;
         try {
-            PreparedStatement stmt = con.prepareStatement("SELECT USERNAME,PASS_HASH FROM users WHERE USERNAME = ?");
+            PreparedStatement stmt = con.prepareStatement("SELECT username,pass_hash FROM users WHERE username = ?");
             stmt.setString(1,userName);
             rs = stmt.executeQuery();
             if(!rs.first()){
                 lastError = "Username does not exist";
                 return false;
             }
-            if(password.hashCode() != rs.getInt("PASS_HASH")){
+            if(password.hashCode() != rs.getInt("pass_hash")){
                 lastError = "Password Incorrect";
                 return false;
             }
@@ -59,7 +59,7 @@ public class SynkConnection {
         return true;
     }
     public static boolean registerCredentials(String userName, String password,String email){
-        String query = "SELECT USERNAME FROM users WHERE USERNAME = '" + userName + "'";
+        String query = "SELECT username FROM users WHERE username = '" + userName + "'";
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
             if(!rs.first()){
