@@ -1,21 +1,18 @@
 package userinterface;
 
-import Testing.DBTesting;
-import connection.SynkConnection;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import Testing.*;
+import connection.*;
+import javafx.application.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.stage.*;
 
 
 public class SynkApp extends Application {
     private Stage stage;
 
     public static void main(String args[]){
+
         System.out.println("This is on the test branch");
         launch(args);
     }

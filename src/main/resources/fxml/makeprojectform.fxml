@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="btnSubmit" layoutX="121.0" layoutY="257.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="87.0" prefWidth="342.0" text="Submit">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtFieldName" layoutX="226.0" layoutY="14.0" promptText="Name" />
+      <TextArea fx:id="textAreaDesc" layoutX="192.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" promptText="Desc" />
+   </children>
+</AnchorPane>

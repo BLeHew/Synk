@@ -1,18 +1,15 @@
 package userinterface;
 
-import TableObjects.Task;
-import TableObjects.User;
-import connection.SynkConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import TableObjects.Project;
+import java.io.*;
+import java.sql.*;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import TableObjects.*;
+import connection.*;
+import javafx.collections.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.stage.*;
 
 public class MainAppUI {
     ObservableList<Project> projItems = FXCollections.observableArrayList();
@@ -26,6 +23,18 @@ public class MainAppUI {
     //TODO move some functionality to a separate class, maybe a UI controller of some sorts
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
 
+
+    @FXML
+    public void displayForm() {
+        try {
+            Scene form = new Scene(FXMLLoader.load(getClass().getResource("/fxml/makeprojectform.fxml")));
+            Stage formwindow = new Stage();
+            formwindow.setScene(form);
+            formwindow.show();
+        } catch ( IOException x ) {
+            x.printStackTrace();
+        }
+    }
     public void initialize(){
         ResultSet rs;
         try {
@@ -71,8 +80,6 @@ public class MainAppUI {
         }
         taskItems.clear();
         userItems.clear();
-        //listViewUsers.refresh();
-        //listViewTasks.refresh();
 
         ResultSet rs;
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
