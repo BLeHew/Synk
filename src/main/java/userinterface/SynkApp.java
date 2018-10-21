@@ -8,45 +8,54 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 
 public class SynkApp extends Application {
-    private static SynkApp instance;
     private Stage stage;
 
-    public SynkApp() {
-        instance = this;
-    }
-
-    public static void main(String args[]) {
-
+    public static void main(String args[]){
+        System.out.println("This is a test");
         launch(args);
     }
 
-    public static SynkApp getInstance() {
+    private static SynkApp instance;
+
+    public SynkApp(){
+        instance = this;
+    }
+    public static SynkApp getInstance(){
         return instance;
     }
-
-    public Stage getStage() {
+    public Stage getStage(){
         return stage;
     }
-
     @Override
     public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
             SynkConnection.establish();
+            DBTesting.fillDBwithTestData();
             gotoLogin();
         } catch (Exception ex) {
 
         }
     }
-
+    public void gotoMainUI(){
+        try {
+            stage.setTitle("Synk");
+            replaceSceneContent("/fxml/mainAppUI.fxml");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
     private void gotoLogin() {
         try {
             stage.setTitle("Synk Login");
             replaceSceneContent("/fxml/loginScreen.fxml");
         } catch (Exception ex) {
-            System.err.println(ex);
+            ex.printStackTrace();
         }
     }
 
