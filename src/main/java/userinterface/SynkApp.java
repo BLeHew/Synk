@@ -16,7 +16,7 @@ public class SynkApp extends Application {
     private Stage stage;
 
     public static void main(String args[]){
-        System.out.println("This is a test");
+        System.out.println("This is on the test branch");
         launch(args);
     }
 
