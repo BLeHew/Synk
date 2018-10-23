@@ -5,7 +5,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MakeProjectForm">
+
+<AnchorPane id="Create a Task" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MakeTaskForm">
    <children>
       <TextField fx:id="txtFieldName" prefHeight="44.0" prefWidth="252.0" promptText="Task Name" />
       <TextArea fx:id="textAreaDesc" layoutX="5.0" layoutY="49.0" prefHeight="246.0" prefWidth="245.0" promptText="Task Description" wrapText="true">

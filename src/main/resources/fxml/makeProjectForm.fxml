@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="Create a Project" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MakeProjectForm">
+   <children>
+      <TextField fx:id="txtFieldName" prefHeight="44.0" prefWidth="252.0" promptText="Project Name" />
+      <TextArea fx:id="textAreaDesc" layoutX="5.0" layoutY="49.0" prefHeight="246.0" prefWidth="245.0" promptText="Project Description" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <Button fx:id="btnSubmit" layoutY="302.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="52.0" prefWidth="252.0" text="Submit">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

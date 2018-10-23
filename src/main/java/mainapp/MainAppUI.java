@@ -1,17 +1,12 @@
 package mainapp;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashSet;
-
-import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.cell.TextFieldListCell;
+import javafx.util.StringConverter;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
-import connection.SynkConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import userinterface.SynkApp;
@@ -25,37 +20,25 @@ public class MainAppUI {
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
 
     @FXML
-    public void displayForm() {
-        SynkApp.getInstance().showForm("/fxml/makeprojectform.fxml");
+    public void displayForm(ActionEvent event) {
+        //Use elements embedded in the fxml file for the button in order to display the correct form.
+        //also uses the name on the button in order to set the title of the form
+        SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),((Button) event.getSource()).getId());
     }
     public void initialize(){
         listViewProjects.setItems(AppData.getInstance().getProjItems());
     }
     @FXML
-    public void narrowUsers(){
+    public void changeProjectName(){
 
+    }
+    @FXML
+    public void narrowUsers(){
         if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
         }
         int taskID = listViewTasks.getItems().get(listViewTasks.getSelectionModel().getSelectedIndex()).getTaskID();
-
-        HashSet<Integer> userIdsToDisplay = new HashSet<>();
-        try {
-            ResultSet rs;
-            PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT u.USER_ID,u.USERNAME\n" +
-                            " FROM users u,user_task_assigned uta\n" +
-                            " WHERE u.user_id = uta.user_id AND uta.task_id = " + taskID);
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                userIdsToDisplay.add(rs.getInt("user_id"));
-            }
-        } catch (SQLException e){
-            System.err.println(e);
-        }
-        FilteredList<User> filteredUsers = new FilteredList<>(AppData.getInstance().getUserItems(),s -> true);
-        filteredUsers.setPredicate(s -> userIdsToDisplay.contains(s.getUserID()));
-        listViewUsers.setItems(filteredUsers);
+        listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
 
     }
     @FXML

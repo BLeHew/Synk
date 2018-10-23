@@ -6,15 +6,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class User {
-    private final IntegerProperty userID;
+    private final IntegerProperty userId;
     private final StringProperty username;
 
     public User(int userID, String username) {
-        this.userID = new SimpleIntegerProperty(userID);
+        this.userId = new SimpleIntegerProperty(userID);
         this.username =  new SimpleStringProperty(username);
     }
-    public int getUserID(){
-        return userID.get();
+    public int getUserId(){
+        return userId.get();
     }
     @Override
     public String toString(){

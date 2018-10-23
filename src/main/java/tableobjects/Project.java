@@ -20,6 +20,7 @@ public class Project {
     public String toString(){
         return projName.get();
     }
+
     public int getProjId() {
         return projId.get();
     }

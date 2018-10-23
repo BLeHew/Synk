@@ -3,6 +3,7 @@ package mainapp;
 import connection.SynkConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.collections.transformation.FilteredList;
 import tableobjects.Project;
 import tableobjects.Task;
@@ -22,8 +23,10 @@ public class AppData {
     private ObservableList<Task> taskItems;
     private ObservableList<User> userItems;
 
+   // private ObservableMap<String,Project> projItems;
     private AppData(){
         projItems = FXCollections.observableArrayList();
+
         taskItems = FXCollections.observableArrayList();
         userItems = FXCollections.observableArrayList();
     }
@@ -46,7 +49,6 @@ public class AppData {
             stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
             rs = stmt.executeQuery();
 
-            //    public Task(int taskID, String taskDesc, String taskName, int projID) {
             while(rs.next()){
                 taskItems.add(new Task(rs.getInt("task_id"),
                         rs.getString("task_desc"),
@@ -58,7 +60,6 @@ public class AppData {
         }
 
     }
-
 
     public static AppData getInstance(){
         if(instance == null){

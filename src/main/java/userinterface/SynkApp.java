@@ -40,9 +40,6 @@ public class SynkApp extends Application {
         try {
             stage = primaryStage;
             SynkConnection.establish();
-            if(SynkConnection.hasConnection()){
-                AppData.getInstance().populate();
-            }
             gotoLogin();
         } catch (Exception ex) {
 
@@ -64,11 +61,18 @@ public class SynkApp extends Application {
             ex.printStackTrace();
         }
     }
-    public void showForm(String formFXML){
+
+    /**
+     * Displays a new window on top of the main app screen
+     * @param formTitle the name of the new window screen
+     * @param formFXML the fxml file that needs to be loaded from resources
+     */
+    public void showForm(String formTitle,String formFXML){
         try {
-            Stage formwindow = new Stage();
-            formwindow.setScene(new Scene(FXMLLoader.load(getClass().getResource(formFXML))));
-            formwindow.show();
+            Stage formWindow = new Stage();
+            formWindow.setScene(new Scene(FXMLLoader.load(getClass().getResource(formFXML))));
+            formWindow.setTitle(formTitle);
+            formWindow.show();
         } catch ( IOException x ) {
             x.printStackTrace();
         }
