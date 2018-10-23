@@ -3,6 +3,7 @@ package mainapp;
 import connection.SynkConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
@@ -10,6 +11,7 @@ import tableobjects.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.function.Predicate;
 
 public class AppData {
 

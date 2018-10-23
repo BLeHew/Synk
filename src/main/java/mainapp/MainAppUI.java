@@ -64,27 +64,9 @@ public class MainAppUI {
             return;
         }
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
-        FilteredList<Task> filteredTasks = new FilteredList<>(AppData.getInstance().getTaskItems(), s -> true);
 
-        filteredTasks.setPredicate(s -> s.getProjID() == projId);
-        listViewTasks.setItems(filteredTasks);
-
-        ResultSet rs;
-        HashSet<Integer> userIdsToDisplay = new HashSet<>();
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT * FROM users u,user_proj_assigned upa " +
-                            "WHERE u.user_id = upa.user_id AND upa.proj_id = " + projId);
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                userIdsToDisplay.add(rs.getInt("user_id"));
-            }
-        } catch (SQLException e){
-            System.err.println(e);
-        }
-        FilteredList<User> filteredUsers = new FilteredList<>(AppData.getInstance().getUserItems(),s -> true);
-        filteredUsers.setPredicate(s -> userIdsToDisplay.contains(s.getUserID()));
-        listViewUsers.setItems(filteredUsers);
+        listViewTasks.setItems(MainAppUIController.getFilteredTasksToDisplay(projId));
+        listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
 
     }
 
