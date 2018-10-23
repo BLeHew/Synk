@@ -4,11 +4,14 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Project {
     private final IntegerProperty projId;
     private final StringProperty projName;
     private final StringProperty projDesc;
+    //private ObservableList<Task> projTasks = FXCollections.observableArrayList();
 
     public Project(int projId, String projName, String projDesc){
         this.projId = new SimpleIntegerProperty(projId);

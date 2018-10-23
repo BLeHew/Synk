@@ -1,13 +1,13 @@
 package userinterface;
 
+import java.io.IOException;
+
 import Testing.*;
 import connection.*;
 import javafx.application.*;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
-
-import java.io.IOException;
 
 
 public class SynkApp extends Application {

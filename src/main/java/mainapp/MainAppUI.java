@@ -1,15 +1,17 @@
 package mainapp;
 
-import java.io.*;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import TableObjects.*;
-import connection.*;
-import javafx.collections.*;
-import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.stage.*;
+import TableObjects.Project;
+import TableObjects.Task;
+import TableObjects.User;
+import connection.SynkConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import userinterface.SynkApp;
 
 public class MainAppUI {
