@@ -4,9 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import TableObjects.Project;
-import TableObjects.Task;
-import TableObjects.User;
+import tableobjects.Project;
+import tableobjects.Task;
+import tableobjects.User;
 import connection.SynkConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,19 +32,7 @@ public class MainAppUI {
         SynkApp.getInstance().showForm("/fxml/makeprojectform.fxml");
     }
     public void initialize(){
-        ResultSet rs;
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                projItems.add(new Project(rs.getInt("proj_id"),
-                        rs.getString("proj_name"),
-                        rs.getString("proj_desc")));
-            }
-        } catch (SQLException e){
-            System.err.println(e);
-        }
-        listViewProjects.setItems(projItems);
+        listViewProjects.setItems(AppData.getInstance().getProjItems());
     }
     @FXML
     public void narrowUsers(){

@@ -1,4 +1,4 @@
-package TableObjects;
+package tableobjects;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;

@@ -2,7 +2,8 @@ package userinterface;
 
 import java.io.IOException;
 
-import Testing.*;
+import mainapp.AppData;
+import testing.*;
 import connection.*;
 import javafx.application.*;
 import javafx.fxml.*;
@@ -39,7 +40,10 @@ public class SynkApp extends Application {
         try {
             stage = primaryStage;
             SynkConnection.establish();
-            DBTesting.fillDBwithTestData();
+            if(SynkConnection.hasConnection()){
+                AppData.getInstance().populate();
+            }
+            //DBTesting.fillDBwithTestData();
             gotoLogin();
         } catch (Exception ex) {
 
