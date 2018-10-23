@@ -52,7 +52,7 @@ public class AppData {
                         rs.getInt("proj_id")));
             }
         } catch (SQLException e){
-            System.err.println(e);
+            e.printStackTrace();
         }
 
     }

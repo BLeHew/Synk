@@ -3,7 +3,9 @@ package mainapp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
 
+import javafx.collections.transformation.FilteredList;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
@@ -15,17 +17,12 @@ import javafx.scene.control.ListView;
 import userinterface.SynkApp;
 
 public class MainAppUI {
-    ObservableList<Project> projItems = FXCollections.observableArrayList();
-    ObservableList<Task> taskItems = FXCollections.observableArrayList();
-    ObservableList<User> userItems = FXCollections.observableArrayList();
-
     @FXML private ListView<Project> listViewProjects;
     @FXML private ListView<Task> listViewTasks;
     @FXML private ListView<User> listViewUsers;
 
     //TODO move some functionality to a separate class, maybe a UI controller of some sorts
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
-
 
     @FXML
     public void displayForm() {
@@ -36,12 +33,13 @@ public class MainAppUI {
     }
     @FXML
     public void narrowUsers(){
+
         if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
         }
         int taskID = listViewTasks.getItems().get(listViewTasks.getSelectionModel().getSelectedIndex()).getTaskID();
 
-        userItems.clear();
+        HashSet<Integer> userIdsToDisplay = new HashSet<>();
         try {
             ResultSet rs;
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
@@ -50,49 +48,44 @@ public class MainAppUI {
                             " WHERE u.user_id = uta.user_id AND uta.task_id = " + taskID);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userItems.add(new User(rs.getInt("user_id"), rs.getString("username")));
+                userIdsToDisplay.add(rs.getInt("user_id"));
             }
         } catch (SQLException e){
             System.err.println(e);
         }
-        listViewUsers.setItems(userItems);
+        FilteredList<User> filteredUsers = new FilteredList<>(AppData.getInstance().getUserItems(),s -> true);
+        filteredUsers.setPredicate(s -> userIdsToDisplay.contains(s.getUserID()));
+        listViewUsers.setItems(filteredUsers);
+
     }
     @FXML
     public void showProjectTasksAndUsers(){
         if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
-        taskItems.clear();
-        userItems.clear();
+        int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
+        FilteredList<Task> filteredTasks = new FilteredList<>(AppData.getInstance().getTaskItems(), s -> true);
+
+        filteredTasks.setPredicate(s -> s.getProjID() == projId);
+        listViewTasks.setItems(filteredTasks);
 
         ResultSet rs;
-        int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks WHERE proj_id =" + projId);
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                taskItems.add(new Task(
-                        rs.getInt("task_id"),
-                        rs.getString("task_desc"),
-                        rs.getString("task_name"),
-                        rs.getInt("proj_id")));
-            }
-        } catch (SQLException e){
-            System.err.println(e);
-        }
+        HashSet<Integer> userIdsToDisplay = new HashSet<>();
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
                     "SELECT * FROM users u,user_proj_assigned upa " +
-                            "WHERE u.user_id = upa.user_id AND upa.proj_id = " +  projId);
+                            "WHERE u.user_id = upa.user_id AND upa.proj_id = " + projId);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userItems.add(new User(rs.getInt("user_id"), rs.getString("username")));
+                userIdsToDisplay.add(rs.getInt("user_id"));
             }
         } catch (SQLException e){
             System.err.println(e);
         }
-        listViewTasks.setItems(taskItems);
-        listViewUsers.setItems(userItems);
+        FilteredList<User> filteredUsers = new FilteredList<>(AppData.getInstance().getUserItems(),s -> true);
+        filteredUsers.setPredicate(s -> userIdsToDisplay.contains(s.getUserID()));
+        listViewUsers.setItems(filteredUsers);
+
     }
 
 }

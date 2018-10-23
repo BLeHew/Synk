@@ -43,7 +43,6 @@ public class SynkApp extends Application {
             if(SynkConnection.hasConnection()){
                 AppData.getInstance().populate();
             }
-            //DBTesting.fillDBwithTestData();
             gotoLogin();
         } catch (Exception ex) {
 

@@ -13,7 +13,9 @@ public class User {
         this.userID = new SimpleIntegerProperty(userID);
         this.username =  new SimpleStringProperty(username);
     }
-
+    public int getUserID(){
+        return userID.get();
+    }
     @Override
     public String toString(){
         return username.get();
