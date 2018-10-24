@@ -4,6 +4,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.cell.TextFieldListCell;
+import javafx.util.StringConverter;
 
 public class Task {
     private final IntegerProperty taskID;
@@ -28,6 +30,10 @@ public class Task {
 
     public String getTaskDesc() {
         return taskDesc.get();
+    }
+
+    public void setTaskName(String taskName){
+        this.taskName.set(taskName);
     }
 
     public StringProperty taskDescProperty() {
@@ -55,6 +61,22 @@ public class Task {
         return taskName.get();
     }
 
+    public static TextFieldListCell<Task> getCell(){
+        TextFieldListCell<Task> cell = new TextFieldListCell<>();
+        cell.setConverter(new StringConverter<Task>() {
+            @Override
+            public String toString(Task task) {
+                return task.getTaskName();
+            }
+            @Override
+            public Task fromString(String string) {
+                Task task = cell.getItem();
+                task.setTaskName(string);
+                return task;
+            }
+        });
+        return cell;
+    }
 
 
 

@@ -1,7 +1,12 @@
 package userinterface;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import mainapp.AppData;
 import testing.*;
 import connection.*;
@@ -21,6 +26,8 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
+
+
         launch(args);
     }
 

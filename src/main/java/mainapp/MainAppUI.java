@@ -1,13 +1,21 @@
 package mainapp;
 
+import connection.SynkConnection;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.cell.TextFieldListCell;
+import javafx.util.StringConverter;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import userinterface.SynkApp;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class MainAppUI {
     @FXML private ListView<Project> listViewProjects;
@@ -25,29 +33,22 @@ public class MainAppUI {
     }
     public void initialize(){
         listViewProjects.setItems(AppData.getProjItems());
-
-        /*
-        listViewProjects.setCellFactory(lv -> {
-            TextFieldListCell<Project> cell = new TextFieldListCell<>();
-            cell.setConverter(new StringConverter<Project>() {
-                @Override
-                public String toString(Project project) {
-                    return project.getProjName();
-                }
-                @Override
-                public Project fromString(String string) {
-                    Project proj = cell.getItem();
-                    proj.setProjDesc(string);
-                    AppData.getInstance().getProjItems().get(cell.getIndex()).setProjName(string);
-                    return proj ;
-                }
-            });
-            return cell;
-        });
-        */
+        listViewProjects.setCellFactory(lv -> Project.getCell());
+        listViewTasks.setCellFactory(lv -> Task.getCell());
     }
     @FXML
-    public void changeProjectName(){
+    public void changeProjectName(Event event){
+        int projId = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjId();
+        String projName = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjName();
+        try {
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE projects SET proj_name = '" + projName + "' WHERE proj_id = " + projId);
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }
+    }
+    @FXML
+    public void changeTaskName(){
 
     }
     @FXML
@@ -65,9 +66,10 @@ public class MainAppUI {
             return;
         }
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
-
         listViewTasks.setItems(MainAppUIController.getFilteredTasksToDisplay(projId));
-        listViewUsers.getItems().filtered(s -> MainAppUIController.getUsersToDisplay(projId).contains(projId));
+        listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
+        //listViewTasks.getItems().filtered(s -> s.getProjID() == projId);
+        //listViewUsers.getItems().filtered(s -> MainAppUIController.getUsersToDisplay(projId).contains(s.getUserId()));
 
     }
 

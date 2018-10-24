@@ -4,6 +4,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.cell.TextFieldListCell;
+import javafx.util.StringConverter;
 
 public class Project {
     private final IntegerProperty projId;
@@ -19,6 +21,23 @@ public class Project {
     @Override
     public String toString(){
         return projName.get();
+    }
+
+    public static TextFieldListCell<Project> getCell(){
+        TextFieldListCell<Project> cell = new TextFieldListCell<>();
+        cell.setConverter(new StringConverter<Project>() {
+            @Override
+            public String toString(Project project) {
+                return project.getProjName();
+            }
+            @Override
+            public Project fromString(String string) {
+                Project proj = cell.getItem();
+                proj.setProjName(string);
+                return proj ;
+            }
+        });
+        return cell;
     }
 
     public int getProjId() {
