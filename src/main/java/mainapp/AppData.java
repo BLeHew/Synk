@@ -16,66 +16,59 @@ import java.util.function.Predicate;
 
 public class AppData {
 
+    private static ObservableList<Project> projItems;
+    private static ObservableList<Task> taskItems;
+    private static ObservableList<User> userItems;
 
-    private static AppData instance;
-
-    private ObservableList<Project> projItems;
-    private ObservableList<Task> taskItems;
-    private ObservableList<User> userItems;
-
-   // private ObservableMap<String,Project> projItems;
-    private AppData(){
+    public static ObservableList<Project> getProjItems() {
         projItems = FXCollections.observableArrayList();
-
-        taskItems = FXCollections.observableArrayList();
-        userItems = FXCollections.observableArrayList();
-    }
-    public void populate(){
         ResultSet rs;
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
             rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 projItems.add(new Project(rs.getInt("proj_id"),
                         rs.getString("proj_name"),
                         rs.getString("proj_desc")));
             }
-            stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                userItems.add(new User(rs.getInt("user_id"),
-                        rs.getString("username")));
-            }
-            stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
-            rs = stmt.executeQuery();
+        }catch(SQLException s){
+            s.printStackTrace();
+        }
+        return projItems;
+    }
 
+    public static ObservableList<Task> getTaskItems() {
+        taskItems = FXCollections.observableArrayList();
+        ResultSet rs;
+        try {
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
+            rs = stmt.executeQuery();
             while(rs.next()){
                 taskItems.add(new Task(rs.getInt("task_id"),
                         rs.getString("task_desc"),
                         rs.getString("task_name"),
                         rs.getInt("proj_id")));
             }
-        } catch (SQLException e){
-            e.printStackTrace();
+        }catch (SQLException s){
+            s.printStackTrace();
         }
-
-    }
-
-    public static AppData getInstance(){
-        if(instance == null){
-            instance = new AppData();
-        }
-        return instance;
-    }
-    public ObservableList<Project> getProjItems() {
-        return projItems;
-    }
-
-    public ObservableList<Task> getTaskItems() {
         return taskItems;
     }
 
-    public ObservableList<User> getUserItems() {
+    public static ObservableList<User> getUserItems() {
+        userItems = FXCollections.observableArrayList();
+        ResultSet rs;
+        try {
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                userItems.add(new User(rs.getInt("user_id"),
+                        rs.getString("username")));
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
         return userItems;
     }
 }
