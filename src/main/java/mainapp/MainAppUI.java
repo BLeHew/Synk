@@ -2,8 +2,6 @@ package mainapp;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.util.StringConverter;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
@@ -26,7 +24,27 @@ public class MainAppUI {
         SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),((Button) event.getSource()).getId());
     }
     public void initialize(){
-        listViewProjects.setItems(AppData.getInstance().getProjItems());
+        listViewProjects.setItems(AppData.getProjItems());
+
+        /*
+        listViewProjects.setCellFactory(lv -> {
+            TextFieldListCell<Project> cell = new TextFieldListCell<>();
+            cell.setConverter(new StringConverter<Project>() {
+                @Override
+                public String toString(Project project) {
+                    return project.getProjName();
+                }
+                @Override
+                public Project fromString(String string) {
+                    Project proj = cell.getItem();
+                    proj.setProjDesc(string);
+                    AppData.getInstance().getProjItems().get(cell.getIndex()).setProjName(string);
+                    return proj ;
+                }
+            });
+            return cell;
+        });
+        */
     }
     @FXML
     public void changeProjectName(){
@@ -49,7 +67,7 @@ public class MainAppUI {
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
 
         listViewTasks.setItems(MainAppUIController.getFilteredTasksToDisplay(projId));
-        listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
+        listViewUsers.getItems().filtered(s -> MainAppUIController.getUsersToDisplay(projId).contains(projId));
 
     }
 

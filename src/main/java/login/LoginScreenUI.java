@@ -34,7 +34,6 @@ public class LoginScreenUI {
             txtFieldError.setText(controller.errorMessage);
         }else {
             controller.switchToMainAppScreen();
-            AppData.getInstance().populate();
         }
     }
     @FXML

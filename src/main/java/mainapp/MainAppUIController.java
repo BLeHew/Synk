@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.HashSet;
 
 public class MainAppUIController {
-    public static FilteredList<User> getUsersToDisplay(int projId){
+    public static HashSet<Integer> getUsersToDisplay(int projId){
         ResultSet rs;
         HashSet<Integer> userIdsToDisplay = new HashSet<>();
         try {
@@ -25,10 +25,11 @@ public class MainAppUIController {
         } catch (SQLException e){
             System.err.println(e);
         }
-        return AppData.getInstance().getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
+        return userIdsToDisplay;
+        //return AppData.getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
     }
     public static FilteredList<Task> getFilteredTasksToDisplay(int projId){
-        return AppData.getInstance().getTaskItems().filtered(s->s.getProjID() == projId);
+        return AppData.getTaskItems().filtered(s->s.getProjID() == projId);
     }
     public static FilteredList<User> getFilteredUsersToDisplay(int taskId){
         HashSet<Integer> userIdsToDisplay = new HashSet<>();
@@ -45,6 +46,6 @@ public class MainAppUIController {
         } catch (SQLException e){
             System.err.println(e);
         }
-        return AppData.getInstance().getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
+        return AppData.getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
     }
 }
