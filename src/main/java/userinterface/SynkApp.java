@@ -26,6 +26,7 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
+        //System.out.println("1234".hashCode());
         launch(args);
     }
 

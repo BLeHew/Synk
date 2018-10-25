@@ -16,11 +16,11 @@ public class MainAppUIController {
         HashSet<Integer> userIdsToDisplay = new HashSet<>();
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT u.user_id FROM users u,user_proj_assigned upa " +
-                            "WHERE u.user_id = upa.user_id AND upa.proj_id = " + projId);
+                    "SELECT u.id FROM users u,user_proj_assigned upa " +
+                            "WHERE u.id = upa.user_id AND upa.proj_id = " + projId);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userIdsToDisplay.add(rs.getInt("user_id"));
+                userIdsToDisplay.add(rs.getInt("id"));
             }
         } catch (SQLException e){
             System.err.println(e);
@@ -32,17 +32,16 @@ public class MainAppUIController {
         try {
             ResultSet rs;
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
-                    "SELECT u.USER_ID,u.USERNAME\n" +
+                    "SELECT u.id,u.username\n" +
                             " FROM users u,user_task_assigned uta\n" +
-                            " WHERE u.user_id = uta.user_id AND uta.task_id = " + taskId);
+                            " WHERE u.id = uta.user_id AND uta.task_id = " + taskId);
             rs = stmt.executeQuery();
             while(rs.next()){
-                userIdsToDisplay.add(rs.getInt("user_id"));
+                userIdsToDisplay.add(rs.getInt("id"));
             }
         } catch (SQLException e){
             System.err.println(e);
         }
         return AppData.getInstance().getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
-
     }
 }

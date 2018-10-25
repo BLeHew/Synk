@@ -1,13 +1,15 @@
 package mainapp;
 
-import connection.SynkConnection;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.util.StringConverter;
+import javafx.scene.control.TextField;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
@@ -38,14 +40,19 @@ public class MainAppUI {
         listViewTasks.setCellFactory(lv -> Task.getCell());
     }
     @FXML
-    public void changeProjectName(Event event){
+    public void updateProjectName(Event event){
         int projId = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjId();
         String projName = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjName();
-        AppData.getInstance().updateProjectNameInDatabase(projId,projName);
+        updateDatabase("projects",projId,projName);
     }
     @FXML
-    public void changeTaskName(){
-
+    public void updateTaskName(Event event){
+        int taskId = listViewTasks.getItems().get(listViewTasks.getEditingIndex()).getTaskID();
+        String taskName = listViewTasks.getItems().get(listViewTasks.getEditingIndex()).getTaskName();
+        updateDatabase("tasks",taskId,taskName);
+    }
+    public void updateDatabase(String type, int id, String newValue){
+        AppData.getInstance().updateDatabase(type,id,newValue);
     }
     @FXML
     public void narrowUsers(){

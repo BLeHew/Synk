@@ -39,33 +39,33 @@ public class AppData {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
             rs = stmt.executeQuery();
             while (rs.next()) {
-                projItems.add(new Project(rs.getInt("proj_id"),
-                        rs.getString("proj_name"),
-                        rs.getString("proj_desc")));
+                projItems.add(new Project(rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("description")));
             }
             stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
             rs = stmt.executeQuery();
             while(rs.next()){
-                taskItems.add(new Task(rs.getInt("task_id"),
-                        rs.getString("task_desc"),
-                        rs.getString("task_name"),
+                taskItems.add(new Task(rs.getInt("id"),
+                        rs.getString("description"),
+                        rs.getString("name"),
                         rs.getInt("proj_id")));
             }
             stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
             rs = stmt.executeQuery();
             while (rs.next()) {
-                userItems.add(new User(rs.getInt("user_id"),
+                userItems.add(new User(rs.getInt("id"),
                         rs.getString("username")));
             }
         }catch(SQLException s){
             s.printStackTrace();
         }
     }
-    public void updateProjectNameInDatabase(int projId,String projName){
+    public void updateDatabase(String type,int id,String newValue){
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE projects SET proj_name = ? WHERE proj_id = ?");
-            stmt.setString(1,projName);
-            stmt.setString(2,String.valueOf(projId));
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE "+ type + " SET name = ? WHERE id = ?");
+            stmt.setString(1,newValue);
+            stmt.setInt(2,id);
             stmt.executeUpdate();
         }catch (SQLException s){
             s.printStackTrace();
