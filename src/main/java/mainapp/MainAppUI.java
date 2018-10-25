@@ -1,6 +1,7 @@
 package mainapp;
 
 import connection.SynkConnection;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.scene.control.Button;
@@ -32,7 +33,7 @@ public class MainAppUI {
         SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),((Button) event.getSource()).getId());
     }
     public void initialize(){
-        listViewProjects.setItems(AppData.getProjItems());
+        listViewProjects.setItems(AppData.getInstance().getProjItems());
         listViewProjects.setCellFactory(lv -> Project.getCell());
         listViewTasks.setCellFactory(lv -> Task.getCell());
     }
@@ -40,12 +41,7 @@ public class MainAppUI {
     public void changeProjectName(Event event){
         int projId = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjId();
         String projName = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjName();
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE projects SET proj_name = '" + projName + "' WHERE proj_id = " + projId);
-            stmt.executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        }
+        AppData.getInstance().updateProjectNameInDatabase(projId,projName);
     }
     @FXML
     public void changeTaskName(){
@@ -66,10 +62,9 @@ public class MainAppUI {
             return;
         }
         int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
-        listViewTasks.setItems(MainAppUIController.getFilteredTasksToDisplay(projId));
+        listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
         listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
-        //listViewTasks.getItems().filtered(s -> s.getProjID() == projId);
-        //listViewUsers.getItems().filtered(s -> MainAppUIController.getUsersToDisplay(projId).contains(s.getUserId()));
+
 
     }
 

@@ -20,8 +20,20 @@ public class AppData {
     private static ObservableList<Task> taskItems;
     private static ObservableList<User> userItems;
 
-    public static ObservableList<Project> getProjItems() {
+    private AppData(){
         projItems = FXCollections.observableArrayList();
+        taskItems = FXCollections.observableArrayList();
+        userItems = FXCollections.observableArrayList();
+    }
+
+    private static AppData instance;
+    public static AppData getInstance(){
+        if (instance == null){
+            instance = new AppData();
+        }
+        return instance;
+    }
+    public void populateData(){
         ResultSet rs;
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
@@ -31,17 +43,7 @@ public class AppData {
                         rs.getString("proj_name"),
                         rs.getString("proj_desc")));
             }
-        }catch(SQLException s){
-            s.printStackTrace();
-        }
-        return projItems;
-    }
-
-    public static ObservableList<Task> getTaskItems() {
-        taskItems = FXCollections.observableArrayList();
-        ResultSet rs;
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
+            stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
             rs = stmt.executeQuery();
             while(rs.next()){
                 taskItems.add(new Task(rs.getInt("task_id"),
@@ -49,26 +51,35 @@ public class AppData {
                         rs.getString("task_name"),
                         rs.getInt("proj_id")));
             }
-        }catch (SQLException s){
-            s.printStackTrace();
-        }
-        return taskItems;
-    }
-
-    public static ObservableList<User> getUserItems() {
-        userItems = FXCollections.observableArrayList();
-        ResultSet rs;
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
+            stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 userItems.add(new User(rs.getInt("user_id"),
                         rs.getString("username")));
             }
-
-        } catch (SQLException e){
-            e.printStackTrace();
+        }catch(SQLException s){
+            s.printStackTrace();
         }
+    }
+    public void updateProjectNameInDatabase(int projId,String projName){
+        try {
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE projects SET proj_name = ? WHERE proj_id = ?");
+            stmt.setString(1,projName);
+            stmt.setString(2,String.valueOf(projId));
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }
+    }
+    public ObservableList<Project> getProjItems() {
+        return projItems;
+    }
+
+    public ObservableList<Task> getTaskItems() {
+        return taskItems;
+    }
+
+    public  ObservableList<User> getUserItems() {
         return userItems;
     }
 }

@@ -25,10 +25,7 @@ public class MainAppUIController {
         } catch (SQLException e){
             System.err.println(e);
         }
-        return AppData.getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
-    }
-    public static FilteredList<Task> getFilteredTasksToDisplay(int projId){
-        return AppData.getTaskItems().filtered(s->s.getProjID() == projId);
+        return AppData.getInstance().getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
     }
     public static FilteredList<User> getFilteredUsersToDisplay(int taskId){
         HashSet<Integer> userIdsToDisplay = new HashSet<>();
@@ -45,7 +42,7 @@ public class MainAppUIController {
         } catch (SQLException e){
             System.err.println(e);
         }
-        return AppData.getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
+        return AppData.getInstance().getUserItems().filtered(s -> userIdsToDisplay.contains(s.getUserId()));
 
     }
 }

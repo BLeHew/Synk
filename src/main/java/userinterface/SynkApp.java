@@ -26,8 +26,6 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
-
-
         launch(args);
     }
 
