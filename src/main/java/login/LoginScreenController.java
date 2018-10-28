@@ -1,7 +1,6 @@
 package login;
 
 import connection.*;
-import userinterface.*;
 
 public class LoginScreenController {
 
@@ -15,10 +14,6 @@ public class LoginScreenController {
 
     public static String errorMessage;
 
-    public static void switchToMainAppScreen(){
-        SynkApp.getInstance().getStage().setTitle("Synk");
-        SynkApp.getInstance().gotoMainUI();
-    }
     public static boolean success(String username, String password, String retypePassword, String email){
         return getErrorType(username,password,retypePassword,email) == SUCCESS;
     }

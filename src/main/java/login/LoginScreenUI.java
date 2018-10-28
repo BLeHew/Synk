@@ -31,7 +31,7 @@ public class LoginScreenUI {
         if(!LoginScreenController.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
             txtFieldError.setText(LoginScreenController.errorMessage);
         }else {
-            LoginScreenController.switchToMainAppScreen();
+            SynkApp.getInstance().gotoMainUI();
             AppData.getInstance().populateData();
         }
     }
