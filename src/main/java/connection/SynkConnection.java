@@ -1,8 +1,6 @@
 package connection;
 
 import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 
 public class SynkConnection {
@@ -59,7 +57,7 @@ public class SynkConnection {
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
             if(!rs.first()){
-                query = "INSERT INTO users VALUES (null," + userName + ",'" + email + "'," + password.hashCode() + ",1)";
+                query = "INSERT INTO users VALUES (null,'" + userName + "','" + email + "'," + password.hashCode() + ",1)";
                 con.createStatement().executeUpdate(query);
                 return true;
             }else {
