@@ -1,24 +1,16 @@
 package mainapp;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import userinterface.SynkApp;
-
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class MainAppUI {
     @FXML private ListView<Project> listViewProjects;
@@ -41,14 +33,14 @@ public class MainAppUI {
     }
     @FXML
     public void updateProjectName(Event event){
-        int projId = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjId();
-        String projName = listViewProjects.getItems().get(listViewProjects.getEditingIndex()).getProjName();
+        int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
+        String projName = listViewProjects.getSelectionModel().getSelectedItem().getProjName();
         updateDatabase("projects",projId,projName);
     }
     @FXML
     public void updateTaskName(Event event){
-        int taskId = listViewTasks.getItems().get(listViewTasks.getEditingIndex()).getTaskID();
-        String taskName = listViewTasks.getItems().get(listViewTasks.getEditingIndex()).getTaskName();
+        int taskId = listViewTasks.getSelectionModel().getSelectedItem().getTaskID();
+        String taskName = listViewTasks.getSelectionModel().getSelectedItem().getTaskName();
         updateDatabase("tasks",taskId,taskName);
     }
     public void updateDatabase(String type, int id, String newValue){
@@ -59,7 +51,7 @@ public class MainAppUI {
         if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
         }
-        int taskID = listViewTasks.getItems().get(listViewTasks.getSelectionModel().getSelectedIndex()).getTaskID();
+        int taskID = listViewTasks.getSelectionModel().getSelectedItem().getTaskID();
         listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
 
     }
@@ -68,7 +60,7 @@ public class MainAppUI {
         if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
-        int projId = listViewProjects.getItems().get(listViewProjects.getSelectionModel().getSelectedIndex()).getProjId();
+        int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
         listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
         listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
 

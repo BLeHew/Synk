@@ -33,7 +33,9 @@ public class Project {
             @Override
             public Project fromString(String string) {
                 Project proj = cell.getItem();
-                proj.setProjName(string);
+                if(string.length() > 0) {
+                    proj.setProjName(string);
+                }
                 return proj ;
             }
         });

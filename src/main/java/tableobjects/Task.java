@@ -71,7 +71,9 @@ public class Task {
             @Override
             public Task fromString(String string) {
                 Task task = cell.getItem();
-                task.setTaskName(string);
+                if (string.length() > 0) {
+                    task.setTaskName(string);
+                }
                 return task;
             }
         });
