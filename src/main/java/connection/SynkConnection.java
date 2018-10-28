@@ -25,9 +25,8 @@ public class SynkConnection {
         }
     }
     public static boolean hasConnection(){
-        try {
-            return con.isValid(500);
-        }catch (SQLException s){
+        try { return con.isValid(500); }
+        catch (SQLException s){
             System.err.println("Error in checking if connection is valid");
             System.err.println(s);
             return false;
