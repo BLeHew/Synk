@@ -1,22 +1,18 @@
 package mainapp;
 
-import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-
-import javafx.scene.control.Button;
-import tableobjects.Project;
-import tableobjects.Task;
-import tableobjects.User;
-import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import userinterface.SynkApp;
+import javafx.collections.transformation.*;
+import javafx.event.*;
+import javafx.fxml.*;
+import javafx.scene.control.*;
+import tableobjects.*;
+import userinterface.*;
 
 public class MainAppUI {
     @FXML private ListView<Project> listViewProjects;
     @FXML private ListView<Task> listViewTasks;
     @FXML private ListView<User> listViewUsers;
-
+    @FXML private Button btnAddTask;
+    @FXML private Button btnRemoveTask;
     //TODO move some functionality to a separate class, maybe a UI controller of some sorts
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
 
@@ -24,7 +20,10 @@ public class MainAppUI {
     public void displayForm(ActionEvent event) {
         //Use elements embedded in the fxml file for the button in order to display the correct form.
         //also uses the name on the button in order to set the title of the form
-        SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),((Button) event.getSource()).getId());
+        Button b = (Button) event.getSource();
+        String fxml = (String)b.getUserData();
+        SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),fxml);
+
     }
     public void initialize(){
         listViewProjects.setItems(AppData.getInstance().getProjItems());
@@ -60,6 +59,8 @@ public class MainAppUI {
         if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
+        btnAddTask.setDisable(false);
+        btnRemoveTask.setDisable(false);
         int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
         listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
         listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));

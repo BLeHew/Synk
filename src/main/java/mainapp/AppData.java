@@ -1,18 +1,10 @@
 package mainapp;
 
-import connection.SynkConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
-import javafx.collections.transformation.FilteredList;
-import tableobjects.Project;
-import tableobjects.Task;
-import tableobjects.User;
+import java.sql.*;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.function.Predicate;
+import connection.*;
+import javafx.collections.*;
+import tableobjects.*;
 
 public class AppData {
 
@@ -63,9 +55,10 @@ public class AppData {
     }
     public void updateDatabase(String type,int id,String newValue){
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE "+ type + " SET name = ? WHERE id = ?");
-            stmt.setString(1,newValue);
-            stmt.setInt(2,id);
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE ? SET name = ? WHERE id = ?");
+            stmt.setString(1,type);
+            stmt.setString(2,newValue);
+            stmt.setInt(3,id);
             stmt.executeUpdate();
         }catch (SQLException s){
             s.printStackTrace();
