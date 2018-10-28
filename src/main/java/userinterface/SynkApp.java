@@ -1,14 +1,7 @@
 package userinterface;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import mainapp.AppData;
-import testing.*;
 import connection.*;
 import javafx.application.*;
 import javafx.fxml.*;

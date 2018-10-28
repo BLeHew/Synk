@@ -18,7 +18,6 @@ public class LoginScreenUI {
     @FXML private Button btnLogin;
     @FXML private AnchorPane paneRegister;
 
-    //private LoginScreenController controller = new LoginScreenController();
 
     private boolean clicked = false;
     private static final double SHIFTDOWN = 50;
