@@ -1,12 +1,10 @@
 package login;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import mainapp.AppData;
-import userinterface.SynkApp;
+import javafx.fxml.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import mainapp.*;
+import userinterface.*;
 
 public class LoginScreenUI {
 
@@ -20,7 +18,6 @@ public class LoginScreenUI {
     @FXML private Button btnLogin;
     @FXML private AnchorPane paneRegister;
 
-    private LoginScreenController controller = new LoginScreenController();
 
     private boolean clicked = false;
     private static final double SHIFTDOWN = 50;
@@ -30,10 +27,11 @@ public class LoginScreenUI {
     private void login(){
         System.out.println("Logging in");
 
-        if(!controller.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
-            txtFieldError.setText(controller.errorMessage);
+        if(!LoginScreenController.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+            txtFieldError.setText(LoginScreenController.errorMessage);
         }else {
-            controller.switchToMainAppScreen();
+            SynkApp.getInstance().gotoMainUI();
+            AppData.getInstance().populateData();
         }
     }
     @FXML
@@ -49,13 +47,13 @@ public class LoginScreenUI {
         }else {
             if(fieldsAreEmpty()){
                 txtFieldError.setText("Please fill in all fields.");
-            }else if(controller.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
+            }else if(LoginScreenController.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
                 SynkApp.getInstance().getStage().setTitle("Synk Login");
                 changeUseability();
                 shiftScreenItems(SHIFTUP);
                 clicked = false;
             }else {
-                txtFieldError.setText(controller.errorMessage);
+                txtFieldError.setText(LoginScreenController.errorMessage);
             }
         }
 

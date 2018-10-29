@@ -1,18 +1,10 @@
 package mainapp;
 
-import connection.SynkConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
-import javafx.collections.transformation.FilteredList;
-import tableobjects.Project;
-import tableobjects.Task;
-import tableobjects.User;
+import java.sql.*;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.function.Predicate;
+import connection.*;
+import javafx.collections.*;
+import tableobjects.*;
 
 public class AppData {
 
@@ -20,55 +12,67 @@ public class AppData {
     private static ObservableList<Task> taskItems;
     private static ObservableList<User> userItems;
 
-    public static ObservableList<Project> getProjItems() {
+    private AppData(){
         projItems = FXCollections.observableArrayList();
+        taskItems = FXCollections.observableArrayList();
+        userItems = FXCollections.observableArrayList();
+    }
+
+    private static AppData instance;
+    public static AppData getInstance(){
+        if (instance == null){
+            instance = new AppData();
+        }
+        return instance;
+    }
+    public void populateData(){
         ResultSet rs;
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
             rs = stmt.executeQuery();
             while (rs.next()) {
-                projItems.add(new Project(rs.getInt("proj_id"),
-                        rs.getString("proj_name"),
-                        rs.getString("proj_desc")));
+                projItems.add(new Project(rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("description")));
+            }
+            stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                taskItems.add(new Task(rs.getInt("id"),
+                        rs.getString("description"),
+                        rs.getString("name"),
+                        rs.getInt("proj_id")));
+            }
+            stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                userItems.add(new User(rs.getInt("id"),
+                        rs.getString("username")));
             }
         }catch(SQLException s){
             s.printStackTrace();
         }
-        return projItems;
     }
-
-    public static ObservableList<Task> getTaskItems() {
-        taskItems = FXCollections.observableArrayList();
-        ResultSet rs;
+    public void updateDatabase(String type,int id,String newValue){
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM tasks");
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                taskItems.add(new Task(rs.getInt("task_id"),
-                        rs.getString("task_desc"),
-                        rs.getString("task_name"),
-                        rs.getInt("proj_id")));
-            }
+            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE ? SET name = ? WHERE id = ?");
+            stmt.setString(1,type);
+            stmt.setString(2,newValue);
+            stmt.setInt(3,id);
+            stmt.executeUpdate();
         }catch (SQLException s){
             s.printStackTrace();
         }
+    }
+    public ObservableList<Project> getProjItems() {
+        return projItems;
+    }
+
+    public ObservableList<Task> getTaskItems() {
         return taskItems;
     }
 
-    public static ObservableList<User> getUserItems() {
-        userItems = FXCollections.observableArrayList();
-        ResultSet rs;
-        try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM users");
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                userItems.add(new User(rs.getInt("user_id"),
-                        rs.getString("username")));
-            }
-
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
+    public  ObservableList<User> getUserItems() {
         return userItems;
     }
 }

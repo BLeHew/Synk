@@ -8,6 +8,6 @@ public class MakeProjectForm {
 
     @FXML
     public void submitForm(){
-
+        AppData.getInstance().getProjItems().add(new Project(21,"TESTING","test"));
     }
 }

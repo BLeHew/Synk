@@ -1,0 +1,94 @@
+#SET FOREIGN_KEY_CHECKS = 0;
+#set foreign_key_checks = 1;
+
+-- drop table users;
+-- drop table projects;
+-- drop table tasks;
+-- drop table user_proj_assigned;
+-- drop table user_task_assigned;
+/*
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT,
+    username VARCHAR(255) UNIQUE,
+    email VARCHAR(255) NOT NULL,
+    pass_hash BIGINT,
+    priv_lvl INT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS projects (
+    id INT AUTO_INCREMENT,
+    name varchar(255),
+    description TEXT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT,
+    proj_id INT,
+    name VARCHAR(255),
+    description TEXT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (proj_id)
+        REFERENCES projects (id)
+);
+CREATE TABLE IF NOT EXISTS user_proj_assigned (
+    user_id INT,
+    proj_id INT,
+    PRIMARY KEY (user_id , proj_id),
+    FOREIGN KEY (user_id)
+        REFERENCES users (id),
+    FOREIGN KEY (proj_id)
+        REFERENCES projects (id)
+);
+
+CREATE TABLE IF NOT EXISTS user_task_assigned (
+    user_id INT,
+    task_id INT,
+    PRIMARY KEY (user_id , task_id),
+    FOREIGN KEY (user_id)
+        REFERENCES users (id),
+    FOREIGN KEY (task_id)
+        REFERENCES tasks (id)
+);
+/*
+insert into users values (null,'u1','u1@g.com',1509442,1);
+insert into users values (null,'u2','u2@g.com',1509442,1);
+insert into users values (null,'u3','u3@g.com',1509442,1);
+insert into users values (null,'u4','u4@g.com',1509442,1);
+insert into users values (null,'u5','u5@g.com',1509442,1);
+
+insert into projects values(null,'Project 1','This is Project 1');
+insert into projects values(null,'Project 2','This is Project 2');
+insert into projects values(null,'Project 3','This is Project 3');
+
+insert into tasks values(null,1,'Task1','Proj1Task1');
+insert into tasks values(null,1,'Task2','Proj1Task2');
+insert into tasks values(null,1,'Task3','Proj1Task3');
+
+insert into tasks values(null,2,'Task4','Proj2Task1');
+insert into tasks values(null,2,'Task5','Proj2Task2');
+insert into tasks values(null,2,'Task6','Proj2Task3');
+
+insert into tasks values(null,3,'Task7','Proj3Task1');
+insert into tasks values(null,3,'Task8','Proj3Task2');
+insert into tasks values(null,3,'Task9','Proj3Task3');
+
+insert into user_proj_assigned values (1,1);
+insert into user_proj_assigned values (2,1);
+insert into user_task_assigned values (2,1);
+*/
+#select * from user_task_assigned;
+
+delimiter //
+create procedure GetUsersAttachedToTask (IN TaskID int)
+begin
+select u.id,u.username from users u, user_task_assigned uta
+where u.id = uta.user_id and uta.task_id = TaskID;
+end //
+#delimiter;
+
+#CALL GetUsersAttachedToTask(1);
+
+
+
+
+

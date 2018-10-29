@@ -1,7 +1,6 @@
 package login;
 
-import connection.SynkConnection;
-import userinterface.SynkApp;
+import connection.*;
 
 public class LoginScreenController {
 
@@ -13,16 +12,12 @@ public class LoginScreenController {
     private static final int SUCCESS = 5;
     private static final int USERALREADYEXISTS = 6;
 
-    public String errorMessage;
+    public static String errorMessage;
 
-    public void switchToMainAppScreen(){
-        SynkApp.getInstance().getStage().setTitle("Synk");
-        SynkApp.getInstance().gotoMainUI();
-    }
-    public boolean success(String username, String password, String retypePassword, String email){
+    public static boolean success(String username, String password, String retypePassword, String email){
         return getErrorType(username,password,retypePassword,email) == SUCCESS;
     }
-    public int getErrorType(String username, String password, String retypePassword, String email){
+    public static int getErrorType(String username, String password, String retypePassword, String email){
         if (!SynkConnection.hasConnection()){
             errorMessage = "No connection to database.";
             return NOCONNECTION;
@@ -45,7 +40,7 @@ public class LoginScreenController {
             return SUCCESS;
         }
     }
-    public boolean hasErrors(String username,String password) {
+    public static boolean hasErrors(String username,String password) {
         if (!SynkConnection.hasConnection) {
             errorMessage = "No Connection to Database";
             return true;

@@ -1,9 +1,7 @@
 package userinterface;
 
-import java.io.IOException;
+import java.io.*;
 
-import mainapp.AppData;
-import testing.*;
 import connection.*;
 import javafx.application.*;
 import javafx.fxml.*;
@@ -21,6 +19,7 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
+        //System.out.println("1234".hashCode());
         launch(args);
     }
 

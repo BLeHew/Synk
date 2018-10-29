@@ -1,8 +1,6 @@
 package connection;
 
 import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 
 public class SynkConnection {
@@ -25,9 +23,8 @@ public class SynkConnection {
         }
     }
     public static boolean hasConnection(){
-        try {
-            return con.isValid(500);
-        }catch (SQLException s){
+        try { return con.isValid(500); }
+        catch (SQLException s){
             System.err.println("Error in checking if connection is valid");
             System.err.println(s);
             return false;
@@ -59,7 +56,7 @@ public class SynkConnection {
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
             if(!rs.first()){
-                query = "INSERT INTO users VALUES (null," + userName + "," + email + "," + password.hashCode() + ",1)";
+                query = "INSERT INTO users VALUES (null,'" + userName + "','" + email + "'," + password.hashCode() + ",1)";
                 con.createStatement().executeUpdate(query);
                 return true;
             }else {
@@ -67,7 +64,7 @@ public class SynkConnection {
             }
         }catch (SQLException e){
             System.err.println("Exception in registering credentials.");
-            System.err.println(e);
+            e.printStackTrace();
             System.out.println(query);
 
             return false;
