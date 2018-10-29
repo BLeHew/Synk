@@ -31,10 +31,13 @@ public class MainAppUIController {
         HashSet<Integer> userIdsToDisplay = new HashSet<>();
         try {
             ResultSet rs;
+            //PreparedStatement stmt = SynkConnection.con.prepareStatement("CALL GetUsersAttachedToTask(?)");
+
             PreparedStatement stmt = SynkConnection.con.prepareStatement(
                     "SELECT u.id,u.username\n" +
                             " FROM users u,user_task_assigned uta\n" +
-                            " WHERE u.id = uta.user_id AND uta.task_id = " + taskId);
+                            " WHERE u.id = uta.user_id AND uta.task_id = ?");
+            stmt.setInt(1,taskId);
             rs = stmt.executeQuery();
             while(rs.next()){
                 userIdsToDisplay.add(rs.getInt("id"));
