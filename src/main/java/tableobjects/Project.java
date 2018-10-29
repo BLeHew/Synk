@@ -10,24 +10,61 @@ import javafx.util.StringConverter;
 import java.sql.ResultSet;
 
 public class Project {
-    private final IntegerProperty projId;
-    private final StringProperty projName;
-    private final StringProperty projDesc;
-    //private ObservableList<Task> projTasks = FXCollections.observableArrayList();
+    private final IntegerProperty id;
+    private final StringProperty name;
+    private final StringProperty desc;
 
-    public Project(int projId, String projName, String projDesc){
-        this.projId = new SimpleIntegerProperty(projId);
-        this.projName = new SimpleStringProperty(projName);
-        this.projDesc = new SimpleStringProperty(projDesc);
+    public Project(int id, String name, String desc){
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.desc = new SimpleStringProperty(desc);
     }
+
+    public int getId() {
+        return id.get();
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getDesc() {
+        return desc.get();
+    }
+
+    public StringProperty descProperty() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc.set(desc);
+    }
+
     public Project(){
-        projId = null;
-        projName = null;
-        projDesc = null;
+        id = null;
+
+        name = null;
+        desc = null;
     }
     @Override
     public String toString(){
-        return projName.get();
+        return name.get();
     }
 
     public static TextFieldListCell<Project> getCell(){
@@ -35,13 +72,13 @@ public class Project {
         cell.setConverter(new StringConverter<Project>() {
             @Override
             public String toString(Project project) {
-                return project.getProjName();
+                return project.getName();
             }
             @Override
             public Project fromString(String string) {
                 Project proj = cell.getItem();
                 if(string.length() > 0) {
-                    proj.setProjName(string);
+                    proj.setName(string);
                 }
                 return proj ;
             }
@@ -49,39 +86,4 @@ public class Project {
         return cell;
     }
 
-    public int getProjId() {
-        return projId.get();
-    }
-
-    public IntegerProperty projIdProperty() {
-        return projId;
-    }
-
-    public void setProjId(int projId) {
-        this.projId.set(projId);
-    }
-
-    public String getProjName() {
-        return projName.get();
-    }
-
-    public StringProperty projNameProperty() {
-        return projName;
-    }
-
-    public void setProjName(String projName) {
-        this.projName.set(projName);
-    }
-
-    public String getProjDesc() {
-        return projDesc.get();
-    }
-
-    public StringProperty projDescProperty() {
-        return projDesc;
-    }
-
-    public void setProjDesc(String projDesc) {
-        this.projDesc.set(projDesc);
-    }
 }

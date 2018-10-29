@@ -23,7 +23,7 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(listViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            MainAppUIController.selectedProjectId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
+            MainAppUIController.selectedProjectId = listViewProjects.getSelectionModel().getSelectedItem().getId();
         }
         AppData.getInstance().addBlankTask();
     }
@@ -34,14 +34,14 @@ public class MainAppUI {
     }
     @FXML
     public void updateProjectName(Event event){
-        int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
-        String projName = listViewProjects.getSelectionModel().getSelectedItem().getProjName();
+        int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
+        String projName = listViewProjects.getSelectionModel().getSelectedItem().getName();
         updateDatabase("projects",projId,projName);
     }
     @FXML
     public void updateTaskName(Event event){
-        int taskId = listViewTasks.getSelectionModel().getSelectedItem().getTaskID();
-        String taskName = listViewTasks.getSelectionModel().getSelectedItem().getTaskName();
+        int taskId = listViewTasks.getSelectionModel().getSelectedItem().getId();
+        String taskName = listViewTasks.getSelectionModel().getSelectedItem().getName();
         updateDatabase("tasks",taskId,taskName);
     }
     @FXML
@@ -57,8 +57,8 @@ public class MainAppUI {
             return;
         }
         btnRemoveTask.setDisable(false);
-        txtAreaTaskDesc.setText(listViewTasks.getSelectionModel().getSelectedItem().getTaskDesc());
-        int taskID = listViewTasks.getSelectionModel().getSelectedItem().getTaskID();
+        txtAreaTaskDesc.setText(listViewTasks.getSelectionModel().getSelectedItem().getDesc());
+        int taskID = listViewTasks.getSelectionModel().getSelectedItem().getId();
         listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
 
     }
@@ -69,8 +69,8 @@ public class MainAppUI {
             return;
         }
         anchorPaneTasks.setDisable(false);
-        txtAreaProjectDesc.setText(listViewProjects.getSelectionModel().getSelectedItem().getProjDesc());
-        int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
+        txtAreaProjectDesc.setText(listViewProjects.getSelectionModel().getSelectedItem().getDesc());
+        int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
         listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
         listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
 

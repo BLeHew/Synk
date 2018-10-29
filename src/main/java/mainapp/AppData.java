@@ -36,14 +36,14 @@ public class AppData {
         try {
             PreparedStatement stmt = SynkConnection.con.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
             stmt.setInt(1,task.getProjID());
-            stmt.setString(2,task.getTaskName());
-            stmt.setString(3,task.getTaskDesc());
+            stmt.setString(2,task.getName());
+            stmt.setString(3,task.getDesc());
             stmt.executeUpdate();
 
             Statement s = SynkConnection.con.createStatement();
             ResultSet rs = s.executeQuery("SELECT LAST_INSERT_ID()");
             if(rs.next()){
-                task.setTaskID(rs.getInt("LAST_INSERT_ID()"));
+                task.setId(rs.getInt("LAST_INSERT_ID()"));
             }
             taskItems.add(task);
 
@@ -81,7 +81,7 @@ public class AppData {
     public void remove(Task task){
         taskItems.remove(task);
         try {
-            SynkConnection.con.createStatement().executeUpdate("DELETE FROM tasks WHERE id = " + task.getTaskID());
+            SynkConnection.con.createStatement().executeUpdate("DELETE FROM tasks WHERE id = " + task.getId());
         }catch (SQLException s){
             s.printStackTrace();
         }

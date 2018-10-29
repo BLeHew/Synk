@@ -10,53 +10,22 @@ import javafx.util.StringConverter;
 import java.util.Objects;
 
 public class Task {
-    private final IntegerProperty taskID;
-    private final StringProperty taskDesc;
-    private final StringProperty taskName;
+    private final IntegerProperty id;
+    private final StringProperty desc;
+    private final StringProperty name;
     private final IntegerProperty projID;
 
-    public Task(int taskID, String taskDesc, String taskName, int projID) {
-        this.taskID = new SimpleIntegerProperty(taskID);
-        this.taskDesc = new SimpleStringProperty(taskDesc);
-        this.taskName = new SimpleStringProperty(taskName);
+    public Task(int id, String desc, String name, int projID) {
+        this.id = new SimpleIntegerProperty(id);
+        this.desc = new SimpleStringProperty(desc);
+        this.name = new SimpleStringProperty(name);
         this.projID = new SimpleIntegerProperty(projID);
     }
     public Task(){
-        taskID = null;
-        taskDesc = null;
-        taskName = null;
+        id = null;
+        desc = null;
+        name = null;
         projID = null;
-    }
-    public void setTaskID(int taskID){
-        this.taskID.set(taskID);
-    }
-
-    public int getTaskID() {
-        return taskID.get();
-    }
-
-    public IntegerProperty taskIDProperty() {
-        return taskID;
-    }
-
-    public String getTaskDesc() {
-        return taskDesc.get();
-    }
-
-    public void setTaskName(String taskName){
-        this.taskName.set(taskName);
-    }
-
-    public StringProperty taskDescProperty() {
-        return taskDesc;
-    }
-
-    public String getTaskName() {
-        return taskName.get();
-    }
-
-    public StringProperty taskNameProperty() {
-        return taskName;
     }
 
     @Override
@@ -64,20 +33,57 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return Objects.equals(taskID, task.taskID);
+        return Objects.equals(id, task.id);
+    }
+
+    public int getId() {
+        return id.get();
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public String getDesc() {
+        return desc.get();
+    }
+
+    public StringProperty descProperty() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc.set(desc);
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public void setProjID(int projID) {
+        this.projID.set(projID);
     }
 
     public int getProjID() {
         return projID.get();
     }
 
-    public IntegerProperty projIDProperty() {
-        return projID;
-    }
 
     @Override
     public String toString(){
-        return taskName.get();
+        return name.get();
     }
 
     public static TextFieldListCell<Task> getCell(){
@@ -85,13 +91,13 @@ public class Task {
         cell.setConverter(new StringConverter<Task>() {
             @Override
             public String toString(Task task) {
-                return task.getTaskName();
+                return task.getName();
             }
             @Override
             public Task fromString(String string) {
                 Task task = cell.getItem();
                 if (string.length() > 0) {
-                    task.setTaskName(string);
+                    task.setName(string);
                 }
                 return task;
             }
