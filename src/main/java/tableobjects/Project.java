@@ -7,6 +7,8 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
+import java.sql.ResultSet;
+
 public class Project {
     private final IntegerProperty projId;
     private final StringProperty projName;
@@ -17,6 +19,11 @@ public class Project {
         this.projId = new SimpleIntegerProperty(projId);
         this.projName = new SimpleStringProperty(projName);
         this.projDesc = new SimpleStringProperty(projDesc);
+    }
+    public Project(){
+        projId = null;
+        projName = null;
+        projDesc = null;
     }
     @Override
     public String toString(){

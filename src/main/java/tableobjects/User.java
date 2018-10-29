@@ -13,6 +13,10 @@ public class User {
         this.userId = new SimpleIntegerProperty(userID);
         this.username =  new SimpleStringProperty(username);
     }
+    public User(){
+        userId = null;
+        username = null;
+    }
     public int getUserId(){
         return userId.get();
     }

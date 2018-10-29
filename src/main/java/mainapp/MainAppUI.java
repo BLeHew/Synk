@@ -4,26 +4,28 @@ import javafx.collections.transformation.*;
 import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import tableobjects.*;
 import userinterface.*;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class MainAppUI {
     @FXML private ListView<Project> listViewProjects;
     @FXML private ListView<Task> listViewTasks;
     @FXML private ListView<User> listViewUsers;
-    @FXML private Button btnAddTask;
+    @FXML private TextArea txtAreaProjectDesc;
+    @FXML private TextArea txtAreaTaskDesc;
+    @FXML private AnchorPane anchorPaneTasks;
     @FXML private Button btnRemoveTask;
-    //TODO move some functionality to a separate class, maybe a UI controller of some sorts
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
 
     @FXML
-    public void displayForm(ActionEvent event) {
-        //Use elements embedded in the fxml file for the button in order to display the correct form.
-        //also uses the name on the button in order to set the title of the form
-        Button b = (Button) event.getSource();
-        String fxml = (String)b.getUserData();
-        SynkApp.getInstance().showForm(((Button) event.getSource()).getText(),fxml);
-
+    public void addTask(){
+        if(listViewProjects.getSelectionModel().getSelectedIndex() > -1){
+            MainAppUIController.selectedProjectId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
+        }
+        AppData.getInstance().addBlankTask();
     }
     public void initialize(){
         listViewProjects.setItems(AppData.getInstance().getProjItems());
@@ -42,6 +44,10 @@ public class MainAppUI {
         String taskName = listViewTasks.getSelectionModel().getSelectedItem().getTaskName();
         updateDatabase("tasks",taskId,taskName);
     }
+    @FXML
+    public void removeTask(){
+        AppData.getInstance().remove(listViewTasks.getSelectionModel().getSelectedItem());
+    }
     public void updateDatabase(String type, int id, String newValue){
         AppData.getInstance().updateDatabase(type,id,newValue);
     }
@@ -50,17 +56,20 @@ public class MainAppUI {
         if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
         }
+        btnRemoveTask.setDisable(false);
+        txtAreaTaskDesc.setText(listViewTasks.getSelectionModel().getSelectedItem().getTaskDesc());
         int taskID = listViewTasks.getSelectionModel().getSelectedItem().getTaskID();
         listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
 
     }
     @FXML
     public void showProjectTasksAndUsers(){
+        btnRemoveTask.setDisable(true);
         if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
-        btnAddTask.setDisable(false);
-        btnRemoveTask.setDisable(false);
+        anchorPaneTasks.setDisable(false);
+        txtAreaProjectDesc.setText(listViewProjects.getSelectionModel().getSelectedItem().getProjDesc());
         int projId = listViewProjects.getSelectionModel().getSelectedItem().getProjId();
         listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
         listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));

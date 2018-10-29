@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.HashSet;
 
 public class MainAppUIController {
+    public static int selectedProjectId;
+    public static int selectedTaskId;
     public static FilteredList<User> getUsersToDisplay(int projId){
         ResultSet rs;
         HashSet<Integer> userIdsToDisplay = new HashSet<>();

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.cell.TextFieldTableCell?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<AnchorPane prefHeight="430.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<AnchorPane prefHeight="393.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
       <MenuBar layoutY="2.0">
         <menus>
@@ -29,17 +29,31 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView id="listViewProjects" fx:id="listViewProjects" editable="true" layoutX="12.0" layoutY="49.0" onEditCommit="#updateProjectName" onMouseClicked="#showProjectTasksAndUsers" prefHeight="249.0" prefWidth="218.0" userData="projects" AnchorPane.bottomAnchor="132.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="454.0" AnchorPane.topAnchor="49.0" />
-      <ListView fx:id="listViewTasks" editable="true" layoutX="249.0" layoutY="47.0" onEditCommit="#updateTaskName" onMouseClicked="#narrowUsers" prefHeight="249.0" prefWidth="188.0" userData="tasks" />
-      <ListView fx:id="listViewUsers" editable="true" layoutX="476.0" layoutY="47.0" prefHeight="306.0" prefWidth="173.0" />
-      <Label layoutX="83.0" layoutY="27.0" prefHeight="17.0" prefWidth="52.0" text="Projects" />
-      <Label layoutX="282.0" layoutY="27.0" prefHeight="17.0" prefWidth="36.0" text="Tasks" />
-      <Label layoutX="485.0" layoutY="27.0" text="Users" />
-      <Button id = "btnAddProject" userData="/fxml/makeProjectForm.fxml" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#displayForm" text="Create Project" />
-      <Button layoutX="135.0" layoutY="361.0" mnemonicParsing="false" text="Remove Project" />
-      <Button fx:id ="btnAddTask" disable="true" userData="/fxml/makeTaskForm.fxml" layoutX="250.0" layoutY="361.0" mnemonicParsing="false" onAction="#displayForm" text="Create Task" />
-      <Button fx:id ="btnRemoveTask"  disable="true" layoutX="351.0" layoutY="361.0" mnemonicParsing="false" text="Remove Task" />
-      <Button layoutX="475.0" layoutY="361.0" mnemonicParsing="false" text="Assign User" />
-      <Button layoutX="563.0" layoutY="361.0" mnemonicParsing="false" text="Remove User Assign" />
+      <AnchorPane fx:id="anchorPaneProjects" layoutX="12.0" layoutY="49.0">
+         <children>
+            <TextArea fx:id="txtAreaProjectDesc" editable="false" layoutX="3.0" layoutY="216.0" prefHeight="88.0" prefWidth="218.0" promptText="Project Description" />
+            <ListView id="listViewProjects" fx:id="listViewProjects" editable="true" onEditCommit="#updateProjectName" onMouseClicked="#showProjectTasksAndUsers" prefHeight="210.0" prefWidth="220.0" userData="projects" />
+            <Button layoutX="123.0" layoutY="312.0" mnemonicParsing="false" text="Remove Project" />
+            <Button id="btnAddProject" layoutX="2.0" layoutY="312.0" mnemonicParsing="false" text="Create Project" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneTasks" layoutX="250.0" layoutY="265.0">
+         <children>
+            <TextArea fx:id="txtAreaTaskDesc" editable="false" prefHeight="88.0" prefWidth="218.0" promptText="Task Description" />
+            <Button fx:id="btnRemoveTask" disable="true" layoutX="101.0" layoutY="96.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="25.0" prefWidth="116.0" text="Remove Task" />
+            <Button fx:id="btnAddTask" layoutY="96.0" mnemonicParsing="false" onAction="#addTask" text="Create Task" />
+         </children>
+      </AnchorPane>
+      <ListView fx:id="listViewTasks" editable="true" layoutX="249.0" layoutY="49.0" onEditCommit="#updateTaskName" onMouseClicked="#narrowUsers" prefHeight="210.0" prefWidth="220.0" userData="tasks" />
+      <AnchorPane fx:id="anchorPaneUsers" layoutX="475.0" layoutY="47.0">
+         <children>
+            <Button layoutX="88.0" layoutY="314.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Remove User Assign" />
+            <ListView fx:id="listViewUsers" editable="true" layoutX="1.0" prefHeight="306.0" prefWidth="220.0" />
+            <Button layoutY="314.0" mnemonicParsing="false" text="Assign User" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="98.0" layoutY="27.0" prefHeight="17.0" prefWidth="52.0" text="Projects" />
+      <Label layoutX="341.0" layoutY="27.0" prefHeight="17.0" prefWidth="36.0" text="Tasks" />
+      <Label layoutX="572.0" layoutY="27.0" text="Users" />
    </children>
 </AnchorPane>

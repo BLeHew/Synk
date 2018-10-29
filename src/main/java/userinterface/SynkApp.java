@@ -61,21 +61,6 @@ public class SynkApp extends Application {
         }
     }
 
-    /**
-     * Displays a new window on top of the main app screen
-     * @param formTitle the name of the new window screen
-     * @param formFXML the fxml file that needs to be loaded from resources
-     */
-    public void showForm(String formTitle,String formFXML){
-        try {
-            Stage formWindow = new Stage();
-            formWindow.setScene(new Scene(FXMLLoader.load(getClass().getResource(formFXML))));
-            formWindow.setTitle(formTitle);
-            formWindow.show();
-        } catch ( IOException x ) {
-            x.printStackTrace();
-        }
-    }
     public void replaceSceneContent(String fxml) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);

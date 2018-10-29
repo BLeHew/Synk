@@ -1,5 +1,7 @@
 package connection;
 
+import tableobjects.*;
+
 import java.sql.*;
 
 
@@ -12,6 +14,15 @@ public class SynkConnection {
     public static String lastError = "";
     public static boolean hasConnection = false;
 
+    public static ResultSet getTableItems(Project p) throws SQLException{
+        return con.prepareStatement("SELECT * FROM projects").executeQuery();
+    }
+    public static ResultSet getTableItems(Task t) throws SQLException{
+        return con.prepareStatement("SELECT * FROM tasks").executeQuery();
+    }
+    public static ResultSet getTableItems(User u) throws SQLException{
+        return con.prepareStatement("SELECT * FROM users").executeQuery();
+    }
     public static void establish(){
 
         try {

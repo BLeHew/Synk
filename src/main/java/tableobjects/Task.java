@@ -7,6 +7,8 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
+import java.util.Objects;
+
 public class Task {
     private final IntegerProperty taskID;
     private final StringProperty taskDesc;
@@ -18,6 +20,15 @@ public class Task {
         this.taskDesc = new SimpleStringProperty(taskDesc);
         this.taskName = new SimpleStringProperty(taskName);
         this.projID = new SimpleIntegerProperty(projID);
+    }
+    public Task(){
+        taskID = null;
+        taskDesc = null;
+        taskName = null;
+        projID = null;
+    }
+    public void setTaskID(int taskID){
+        this.taskID.set(taskID);
     }
 
     public int getTaskID() {
@@ -46,6 +57,14 @@ public class Task {
 
     public StringProperty taskNameProperty() {
         return taskName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equals(taskID, task.taskID);
     }
 
     public int getProjID() {
