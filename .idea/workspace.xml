@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90508ec3-44fe-446e-a080-4ebaefb472d7" name="Default Changelist" comment="removing add forms.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="90508ec3-44fe-446e-a080-4ebaefb472d7" name="Default Changelist" comment="changing naming scheme for table objects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/TeamSynk.iml" afterPath="$PROJECT_DIR$/TeamSynk.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" afterPath="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/User.java" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -110,7 +105,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainAppUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainAppUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -160,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="176">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -314,12 +309,12 @@
         <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/connection/SynkConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/User.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/User.java" />
       </list>
     </option>
   </component>
@@ -558,7 +553,7 @@
       <workItem from="1540850474339" duration="144000" />
       <workItem from="1540850665094" duration="451000" />
       <workItem from="1540851165480" duration="94000" />
-      <workItem from="1540851309542" duration="1199000" />
+      <workItem from="1540851309542" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="demo ui functionality">
       <created>1538708851307</created>
@@ -679,11 +674,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540849441209</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="changing naming scheme for table objects">
+      <created>1540852567397</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540852567397</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146688000" />
+    <option name="totallyTimeSpent" value="146755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -703,7 +705,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31478772" sideWeight="0.5063291" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.49367088" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.49367088" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11346999" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -741,7 +743,8 @@
     <MESSAGE value="cleanup and reverted AppData" />
     <MESSAGE value="adding functionality to buttons." />
     <MESSAGE value="removing add forms." />
-    <option name="LAST_COMMIT_MESSAGE" value="removing add forms." />
+    <MESSAGE value="changing naming scheme for table objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing naming scheme for table objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -857,14 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
           <caret line="43" column="96" lean-forward="false" selection-start-line="43" selection-start-column="96" selection-end-line="43" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1012,6 +1007,14 @@
             <element signature="e#1878#1879#0" expanded="true" />
             <element signature="e#1975#1976#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
