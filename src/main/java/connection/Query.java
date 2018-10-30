@@ -1,22 +1,19 @@
 package connection;
 
+
 public class Query {
-    private String content;
     public static final String SELECTALL = "SELECT * FROM ";
-    public static final String VERIFYCREDENTIALS = "SELECT username,pass_hash FROM users WHERE username = ";
+    public static final String VERIFYCREDENTIALS = "SELECT username,pass_hash FROM users WHERE username = ?";
     public static final String LASTID = "SELECT LAST_INSERT_ID()";
     public static final String USERTASKATTACHED = "CALL GetUsersAttachedToTask(?)";
     public static final String USERPROJATTACHED = "CALL GetUsersAttachedToTask(?)";
-    
+    public static final String INSERTUSER = "INSERT INTO users VALUES (null,?,?,?,?)";
+    public static final String INSERTTASK = "INSERT INTO tasks VALUES (null,?,?,?)";
+    public static final String DELETETASK = "DELETE FROM tasks WHERE id = ?";
+    public static final String UPDATETASK = "UPDATE tasks SET name = ? WHERE id = ?";
 
-    public String selectAllType(String type) {
-        return SELECTALL + type;
-    }
-    public String verifyCredentials(String username) {
-        return VERIFYCREDENTIALS + username;
-    }
-    
-/*
+
+    /*
 "SELECT * FROM projects"
 "SELECT * FROM tasks"
 "SELECT * FROM users"

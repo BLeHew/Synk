@@ -7,6 +7,8 @@
             <hikariCPVersion>3.1.0</hikariCPVersion>
             <slf4jNOPVersion>1.7.25</slf4jNOPVersion>
             <mysqlConnectorVersion>8.0.13</mysqlConnectorVersion>
+            <liquibaseVersion>3.6.2</liquibaseVersion>
+            <hibernateVersion>5.3.7.Final</hibernateVersion>
     </properties>
     <dependencies>
         <dependency>
@@ -29,6 +31,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysqlConnectorVersion}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernateVersion}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

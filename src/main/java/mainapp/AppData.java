@@ -29,34 +29,12 @@ public class AppData {
         }
         return instance;
     }
+
     public void addBlankTask(int projId){
         Task task = new Task(projId);
-        Connection conn = null;
-        try {
-            conn = SynkConnection.con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
-            stmt.setInt(1,task.getProjID());
-            stmt.setString(2,task.getName());
-            stmt.setString(3,task.getDesc());
-            System.out.println(stmt);
-            stmt.executeUpdate();
-
-
-            Statement s = conn.createStatement();
-            ResultSet rs = s.executeQuery("SELECT LAST_INSERT_ID()");
-            if(rs.next()){
-                task.setId(rs.getInt("LAST_INSERT_ID()"));
-            }
-            taskItems.add(task);
-        }catch (SQLException s) {
-            s.printStackTrace();
-        }finally {
-            try {
-                if (conn != null){
-                    conn.close();
-                }
-            } catch (SQLException s) { s.printStackTrace(); }
-        }
+        SynkConnection.insertNewTask(task);
+        task.setId(SynkConnection.getLastInsertId());
+        taskItems.add(task);
     }
     public void populateData(){
         ResultSet rs;

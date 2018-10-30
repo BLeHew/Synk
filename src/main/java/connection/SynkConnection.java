@@ -2,6 +2,8 @@ package connection;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import tableobjects.*;
 
 import java.sql.*;
@@ -24,6 +26,46 @@ public class SynkConnection {
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
         con = new HikariDataSource(config);
+    }
+
+    public static void insertNewTask(Task task){
+        Connection conn = null;
+        try {
+            conn = SynkConnection.con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
+            stmt.setInt(1,task.getProjID());
+            stmt.setString(2,task.getName());
+            stmt.setString(3,task.getDesc());
+            System.out.println(stmt);
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        } finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
+        }
+    }
+    public static int getLastInsertId(){
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            ResultSet rs = conn.prepareStatement("SELECT LAST_INSERT_ID()").executeQuery();
+            if(rs.next()){
+                return rs.getInt("LAST_INSERT_ID()");
+            }
+        } catch (SQLException s){
+            s.printStackTrace();
+        }finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
+        }
+        return 0;
     }
     public static boolean validateCredentials(String userName,String password){
         ResultSet rs;
