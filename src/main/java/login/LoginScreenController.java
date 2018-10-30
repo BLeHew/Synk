@@ -18,7 +18,7 @@ public class LoginScreenController {
         return getErrorType(username,password,retypePassword,email) == SUCCESS;
     }
     public static int getErrorType(String username, String password, String retypePassword, String email){
-        if (!SynkConnection.hasConnection()){
+        if (!SynkConnection.con.isRunning()){
             errorMessage = "No connection to database.";
             return NOCONNECTION;
         }else if(username.length() < 4) {
@@ -41,7 +41,7 @@ public class LoginScreenController {
         }
     }
     public static boolean hasErrors(String username,String password) {
-        if (!SynkConnection.hasConnection) {
+        if (!SynkConnection.con.isRunning()) {
             errorMessage = "No Connection to Database";
             return true;
         } else if (!SynkConnection.validateCredentials(username, password)) {

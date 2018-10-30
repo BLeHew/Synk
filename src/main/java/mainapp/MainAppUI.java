@@ -1,5 +1,6 @@
 package mainapp;
 
+import connection.SynkConnection;
 import javafx.collections.transformation.*;
 import javafx.event.*;
 import javafx.fxml.*;
@@ -23,9 +24,13 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(listViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            MainAppUIController.selectedProjectId = listViewProjects.getSelectionModel().getSelectedItem().getId();
+           AppData.getInstance().addBlankTask(listViewProjects.getSelectionModel().getSelectedItem().getId());
         }
-        AppData.getInstance().addBlankTask();
+
+    }
+    @FXML
+    public void addProject(){
+        //AppData.getInstance().addBlankProject();
     }
     public void initialize(){
         listViewProjects.setItems(AppData.getInstance().getProjItems());

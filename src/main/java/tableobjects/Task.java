@@ -7,6 +7,8 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class Task {
@@ -21,11 +23,17 @@ public class Task {
         this.name = new SimpleStringProperty(name);
         this.projID = new SimpleIntegerProperty(projID);
     }
-    public Task(){
-        id = null;
-        desc = null;
-        name = null;
-        projID = null;
+    public Task(ResultSet rs) throws SQLException{
+        this(rs.getInt("id"),
+                rs.getString("description"),
+                rs.getString("name"),
+                rs.getInt("proj_id"));
+    }
+    /**
+     * Constructs the default task object to be inserted into the database.
+     */
+    public Task(int projId){
+        this(0,"No Description","New Task",projId);
     }
 
     @Override

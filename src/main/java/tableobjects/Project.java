@@ -8,6 +8,7 @@ import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Project {
     private final IntegerProperty id;
@@ -19,7 +20,11 @@ public class Project {
         this.name = new SimpleStringProperty(name);
         this.desc = new SimpleStringProperty(desc);
     }
-
+    public Project(ResultSet rs) throws SQLException{
+        this(rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("description"));
+    }
     public int getId() {
         return id.get();
     }

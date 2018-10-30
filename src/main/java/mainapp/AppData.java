@@ -29,18 +29,19 @@ public class AppData {
         }
         return instance;
     }
-    public void addBlankTask(){
-        Task task = new Task(0,"No Description","New Task",MainAppUIController.selectedProjectId);
-        System.out.println(MainAppUIController.selectedProjectId);
-        //taskItems.add(task);
+    public void addBlankTask(int projId){
+        Task task = new Task(projId);
+        Connection conn = null;
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
+            conn = SynkConnection.con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
             stmt.setInt(1,task.getProjID());
             stmt.setString(2,task.getName());
             stmt.setString(3,task.getDesc());
+            System.out.println(stmt);
             stmt.executeUpdate();
 
-            Statement s = SynkConnection.con.createStatement();
+            Statement s = SynkConnection.con.getConnection().createStatement();
             ResultSet rs = s.executeQuery("SELECT LAST_INSERT_ID()");
             if(rs.next()){
                 task.setId(rs.getInt("LAST_INSERT_ID()"));
@@ -49,52 +50,76 @@ public class AppData {
 
         }catch (SQLException s) {
             s.printStackTrace();
+        }finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
         }
     }
     public void populateData(){
         ResultSet rs;
+        PreparedStatement stmt;
+        Connection conn = null;
         try {
+            conn = SynkConnection.con.getConnection();
+            stmt = conn.prepareStatement("SELECT * FROM projects");
+            rs = stmt.executeQuery();
 
-            //PreparedStatement stmt = SynkConnection.con.prepareStatement("SELECT * FROM projects");
-            rs = SynkConnection.getTableItems(new Project());
-            while (rs.next()) {
-                projItems.add(new Project(rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("description")));
-            }
-            rs = SynkConnection.getTableItems(new Task());
             while(rs.next()){
-                taskItems.add(new Task(rs.getInt("id"),
-                        rs.getString("description"),
-                        rs.getString("name"),
-                        rs.getInt("proj_id")));
+                projItems.add(new Project(rs));
             }
-            rs = SynkConnection.getTableItems(new User());
+            rs = stmt.executeQuery("SELECT * FROM tasks");
+            while(rs.next()){
+                taskItems.add(new Task(rs));
+            }
+            rs = stmt.executeQuery("SELECT * FROM users");
             while (rs.next()) {
-                userItems.add(new User(rs.getInt("id"),
-                        rs.getString("username")));
+                userItems.add(new User(rs));
             }
         }catch(SQLException s){
             s.printStackTrace();
+        }finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
         }
     }
     public void remove(Task task){
         taskItems.remove(task);
+        Connection conn = null;
         try {
-            SynkConnection.con.createStatement().executeUpdate("DELETE FROM tasks WHERE id = " + task.getId());
+            conn = SynkConnection.con.getConnection();
+            conn.prepareStatement("DELETE FROM tasks WHERE id = " + task.getId()).executeUpdate();
         }catch (SQLException s){
             s.printStackTrace();
+        }finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
         }
     }
     public void updateDatabase(String type,int id,String newValue){
+        Connection conn = null;
         try {
-            PreparedStatement stmt = SynkConnection.con.prepareStatement("UPDATE " + type + " SET name = ? WHERE id = " + id);
+            conn = SynkConnection.con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("UPDATE " + type + " SET name = ? WHERE id = " + id);
             stmt.setString(1,newValue);
             System.out.println(stmt);
             stmt.executeUpdate();
         }catch (SQLException s){
-
             s.printStackTrace();
+        }finally {
+            try {
+                if (conn != null){
+                    conn.close();
+                }
+            } catch (SQLException s) { s.printStackTrace(); }
         }
     }
     public ObservableList<Project> getProjItems() {
