@@ -13,8 +13,6 @@ public class SynkConnection {
     private static String userName = "root";
     private static String password = "root";
     public static String lastError = "";
-    public static boolean hasConnection = false;
-
     public static HikariDataSource con;
 
     public static void establish(){

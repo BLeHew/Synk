@@ -41,13 +41,13 @@ public class AppData {
             System.out.println(stmt);
             stmt.executeUpdate();
 
-            Statement s = SynkConnection.con.getConnection().createStatement();
+
+            Statement s = conn.createStatement();
             ResultSet rs = s.executeQuery("SELECT LAST_INSERT_ID()");
             if(rs.next()){
                 task.setId(rs.getInt("LAST_INSERT_ID()"));
             }
             taskItems.add(task);
-
         }catch (SQLException s) {
             s.printStackTrace();
         }finally {
