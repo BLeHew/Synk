@@ -1,11 +1,12 @@
 #SET FOREIGN_KEY_CHECKS = 0;
 #set foreign_key_checks = 1;
-
--- drop table users;
--- drop table projects;
--- drop table tasks;
--- drop table user_proj_assigned;
--- drop table user_task_assigned;
+/*
+drop table users;
+drop table projects;
+drop table tasks;
+drop table user_proj_assigned;
+drop table user_task_assigned;
+*/
 /*
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT,
@@ -29,15 +30,18 @@ CREATE TABLE IF NOT EXISTS tasks (
     PRIMARY KEY (id),
     FOREIGN KEY (proj_id)
         REFERENCES projects (id)
+        ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS user_proj_assigned (
     user_id INT,
     proj_id INT,
     PRIMARY KEY (user_id , proj_id),
     FOREIGN KEY (user_id)
-        REFERENCES users (id),
+        REFERENCES users (id)
+        ON DELETE CASCADE,
     FOREIGN KEY (proj_id)
         REFERENCES projects (id)
+        ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS user_task_assigned (
@@ -45,18 +49,22 @@ CREATE TABLE IF NOT EXISTS user_task_assigned (
     task_id INT,
     PRIMARY KEY (user_id , task_id),
     FOREIGN KEY (user_id)
-        REFERENCES users (id),
+        REFERENCES users (id)
+        ON DELETE CASCADE,
     FOREIGN KEY (task_id)
         REFERENCES tasks (id)
+        ON DELETE CASCADE
 );
+*/
 /*
 insert into users values (null,'u1','u1@g.com',1509442,1);
 insert into users values (null,'u2','u2@g.com',1509442,1);
 insert into users values (null,'u3','u3@g.com',1509442,1);
 insert into users values (null,'u4','u4@g.com',1509442,1);
 insert into users values (null,'u5','u5@g.com',1509442,1);
-
-insert into projects values(null,'Project 1','This is Project 1');
+*/
+#insert into projects values(null,'Project 1','This is Project 1');
+/*
 insert into projects values(null,'Project 2','This is Project 2');
 insert into projects values(null,'Project 3','This is Project 3');
 
@@ -72,21 +80,24 @@ insert into tasks values(null,3,'Task7','Proj3Task1');
 insert into tasks values(null,3,'Task8','Proj3Task2');
 insert into tasks values(null,3,'Task9','Proj3Task3');
 
-insert into user_proj_assigned values (1,1);
-insert into user_proj_assigned values (2,1);
-insert into user_task_assigned values (2,1);
-*/
-#select * from user_task_assigned;
 
 delimiter //
-create procedure GetUsersAttachedToTask (IN TaskID int)
+create procedure GetUsersAttachedToProject (IN ProjID int)
 begin
-select u.id,u.username from users u, user_task_assigned uta
-where u.id = uta.user_id and uta.task_id = TaskID;
+select u.id from users u, user_proj_assigned upa
+where u.id = upa.user_id and upa.proj_id = ProjID;
 end //
-#delimiter;
 
-#CALL GetUsersAttachedToTask(1);
+
+
+
+
+
+
+
+
+
+
 
 
 
