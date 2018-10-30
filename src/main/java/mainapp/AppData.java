@@ -65,8 +65,8 @@ public class AppData {
         try {
             conn = SynkConnection.con.getConnection();
             stmt = conn.prepareStatement("SELECT * FROM projects");
-            rs = stmt.executeQuery();
-
+            
+            rs = stmt.executeQuery("SELECT * FROM projects");
             while(rs.next()){
                 projItems.add(new Project(rs));
             }

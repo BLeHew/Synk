@@ -12,7 +12,7 @@ import javafx.stage.*;
 
 public class SynkApp extends Application {
     private Stage stage;
-    public static String driver = "com.mysql.jdbc.Driver";
+    public static String driver = "com.mysql.cj.jdbc.Driver";
 
     public static void main(String args[]){
         try {
