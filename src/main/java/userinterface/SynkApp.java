@@ -1,16 +1,11 @@
 package userinterface;
 
-import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import connection.*;
-import javafx.application.*;
-import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.stage.*;
+import connection.SynkConnection;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class SynkApp extends Application {

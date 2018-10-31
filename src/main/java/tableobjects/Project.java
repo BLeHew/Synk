@@ -10,7 +10,7 @@ import javafx.util.StringConverter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Project {
+public class Project{
     private final IntegerProperty id;
     private final StringProperty name;
     private final StringProperty desc;

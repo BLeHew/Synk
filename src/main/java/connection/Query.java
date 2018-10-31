@@ -1,38 +1,47 @@
 package connection;
 
 
+import java.sql.PreparedStatement;
+
 public class Query {
     public static final String SELECTALL = "SELECT * FROM ";
-    public static final String VERIFYCREDENTIALS = "SELECT username,pass_hash FROM users WHERE username = ?";
+    public static final String VERIFYCREDENTIALS = "CALL GetUserCredentials(";
     public static final String LASTID = "SELECT LAST_INSERT_ID()";
-    public static final String USERTASKATTACHED = "CALL GetUsersAttachedToTask(?)";
-    public static final String USERPROJATTACHED = "CALL GetUsersAttachedToTask(?)";
-    public static final String INSERTUSER = "INSERT INTO users VALUES (null,?,?,?,?)";
-    public static final String INSERTTASK = "INSERT INTO tasks VALUES (null,?,?,?)";
-    public static final String DELETETASK = "DELETE FROM tasks WHERE id = ?";
-    public static final String UPDATETASK = "UPDATE tasks SET name = ? WHERE id = ?";
+    public static final String USERTASKATTACHED = "CALL GetUsersAttachedToTask(";
+    public static final String USERPROJATTACHED = "CALL GetUsersAttachedToTask(";
+    public static final String INSERTUSER = "CALL InsertUser(";
+    public static final String INSERTTASK = "CALL InsertTask(";
+    private static final String INSERTPROJECT = "CALL InsertProject(";
+    public static final String DELETETASK = "CALL DeleteTask(";
+    public static final String UPDATETASK = "CALL UpdateTask(";
 
+    public static String selectAll(String type){
+        return SELECTALL + type;
+    }
+    public static String getCredentials(String username){
+        return VERIFYCREDENTIALS + "'" + username + "')";
+    }
+    public static String getLastId(){
+        return LASTID;
+    }
+    public static String getUserTaskAttached(int taskId){
+        return USERTASKATTACHED + taskId + ")";
+    }
+    public static String getUserProjAttached(int projId) { return USERPROJATTACHED + projId + ")";}
+    public static String insertUser(String username, String email, int pass_hash,int priv_level){
+        return INSERTUSER + username + "," + email + "," + pass_hash + "," + priv_level + ")";
+    }
+    public static String insertTask(String name, int projId, String description){
+        return INSERTTASK + name + "," + projId + "," + description + ")";
+    }
+    public static String insertProject(String name,String description){
+        return INSERTPROJECT + name + "," + description + ")";
+    }
+    public static String deleteTask(int taskId){
+        return DELETETASK + taskId + ")";
+    }
+    public static String updateTask(String name, int taskId) {
+        return UPDATETASK + name + "," + taskId  + ")";
+    }
 
-    /*
-"SELECT * FROM projects"
-"SELECT * FROM tasks"
-"SELECT * FROM users"
-"SELECT LAST_INSERT_ID()"
-
-
-"SELECT username,pass_hash FROM users WHERE username = ?"
-"SELECT username FROM users WHERE username = '" + userName + "'"
-
-
-CALL GetUsersAttachedToTask(?)
-CALL GetUsersAttachedToProject(?)
-
-"INSERT INTO users VALUES (null,'" + userName + "','" + email + "'," + password.hashCode() + ",1)"
-"INSERT INTO tasks VALUES(null,?,?,?)"
-
-"DELETE FROM tasks WHERE id = " + task.getId()).executeUpdate();
-"UPDATE " + type + " SET name = ? WHERE id = " + id
-
-                            
- */
 }

@@ -2,7 +2,6 @@ package mainapp;
 
 import connection.SynkConnection;
 import javafx.collections.transformation.FilteredList;
-import tableobjects.Task;
 import tableobjects.User;
 
 import java.sql.Connection;

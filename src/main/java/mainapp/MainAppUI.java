@@ -1,15 +1,15 @@
 package mainapp;
 
-import connection.SynkConnection;
-import javafx.collections.transformation.*;
-import javafx.event.*;
-import javafx.fxml.*;
-import javafx.scene.control.*;
+import javafx.collections.transformation.FilteredList;
+import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import tableobjects.*;
-import userinterface.*;
-
-import java.lang.reflect.InvocationTargetException;
+import tableobjects.Project;
+import tableobjects.Task;
+import tableobjects.User;
 
 public class MainAppUI {
     @FXML private ListView<Project> listViewProjects;
@@ -51,7 +51,8 @@ public class MainAppUI {
     }
     @FXML
     public void removeTask(){
-        AppData.getInstance().remove(listViewTasks.getSelectionModel().getSelectedItem());
+        AppData.getInstance().remove(
+                listViewTasks.getSelectionModel().getSelectedItem());
     }
     public void updateDatabase(String type, int id, String newValue){
         AppData.getInstance().updateDatabase(type,id,newValue);

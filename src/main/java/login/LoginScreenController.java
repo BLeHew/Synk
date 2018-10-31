@@ -1,6 +1,6 @@
 package login;
 
-import connection.*;
+import connection.SynkConnection;
 
 public class LoginScreenController {
 
