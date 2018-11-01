@@ -1,5 +1,7 @@
 package connection;
-
+import tableobjects.Project;
+import tableobjects.Task;
+import tableobjects.User;
 
 import java.sql.PreparedStatement;
 
@@ -8,7 +10,7 @@ public class Query {
     public static final String VERIFYCREDENTIALS = "CALL GetUserCredentials(";
     public static final String LASTID = "SELECT LAST_INSERT_ID()";
     public static final String USERTASKATTACHED = "CALL GetUsersAttachedToTask(";
-    public static final String USERPROJATTACHED = "CALL GetUsersAttachedToTask(";
+    public static final String USERPROJATTACHED = "CALL GetUsersAttachedToProject(";
     public static final String INSERTUSER = "CALL InsertUser(";
     public static final String INSERTTASK = "CALL InsertTask(";
     private static final String INSERTPROJECT = "CALL InsertProject(";
@@ -34,14 +36,31 @@ public class Query {
     public static String insertTask(String name, int projId, String description){
         return INSERTTASK + name + "," + projId + "," + description + ")";
     }
-    public static String insertProject(String name,String description){
-        return INSERTPROJECT + name + "," + description + ")";
+    public static String insertItem(Project p){
+        return INSERTPROJECT + p.getName() + "," + p.getDesc() + ")";
     }
-    public static String deleteTask(int taskId){
-        return DELETETASK + taskId + ")";
+    public static String insertItem(Task t){
+        return INSERTTASK + t.getName() + "," + t.getProjID() + "," + t.getDesc() + ")";
+    }
+    public static String insertUser(User u){
+        return INSERTUSER;
+    }
+
+    public static String insertProject(){
+        return "CALL InsertProject(?,?)";
+    }
+
+    public static String delete(String type, int id){
+        return "DELETE FROM " + type + " WHERE id = " + id;
     }
     public static String updateTask(String name, int taskId) {
         return UPDATETASK + name + "," + taskId  + ")";
+    }
+
+
+
+    public static String getProjsTasksAttached(int projId){
+        return "SELECT * FROM tasks WHERE proj_id = " + projId;
     }
 
 }

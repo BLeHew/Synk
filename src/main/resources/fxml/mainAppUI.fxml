@@ -28,7 +28,7 @@
             <TextArea fx:id="txtAreaProjectDesc" editable="false" layoutX="3.0" layoutY="216.0" prefHeight="88.0" prefWidth="218.0" promptText="Project Description" />
             <ListView id="listViewProjects" fx:id="listViewProjects" editable="true" onEditCommit="#updateProjectName" onMouseClicked="#showProjectTasksAndUsers" prefHeight="210.0" prefWidth="220.0" userData="projects" />
             <Button layoutX="123.0" layoutY="312.0" mnemonicParsing="false" text="Remove Project" />
-            <Button id="btnAddProject" layoutX="2.0" layoutY="312.0" mnemonicParsing="false" text="Create Project" />
+            <Button id="btnAddProject" layoutX="2.0" layoutY="312.0" mnemonicParsing="false" onAction="#addProject" text="Create Project" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneTasks" layoutX="250.0" layoutY="265.0">

@@ -1,6 +1,6 @@
 package userinterface;
 
-import connection.SynkConnection;
+import connection.DBSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +18,6 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
-        //System.out.println("1234".hashCode());
         launch(args);
     }
 
@@ -37,7 +36,7 @@ public class SynkApp extends Application {
     public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
-            SynkConnection.establish();
+            DBSource.establish();
             gotoLogin();
         } catch (Exception ex) {
 

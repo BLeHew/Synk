@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import mainapp.AppData;
 import userinterface.SynkApp;
 
 public class LoginScreenUI {
@@ -33,7 +32,6 @@ public class LoginScreenUI {
             txtFieldError.setText(LoginScreenController.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();
-            AppData.getInstance().populateData();
         }
     }
     @FXML

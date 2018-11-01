@@ -1,7 +1,8 @@
 package mainapp;
 
-import javafx.collections.transformation.FilteredList;
-import javafx.event.Event;
+import connection.Query;
+import connection.DBSource;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -24,40 +25,41 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(listViewProjects.getSelectionModel().getSelectedIndex() > -1){
-           AppData.getInstance().addBlankTask(listViewProjects.getSelectionModel().getSelectedItem().getId());
+            listViewTasks.getItems().add(AppData.addBlankTask(listViewProjects.getSelectionModel().getSelectedItem().getId()));
         }
-
     }
     @FXML
     public void addProject(){
-        //AppData.getInstance().addBlankProject();
+        listViewProjects.getItems().add(DBSource.addBlankProject());
     }
+    @SuppressWarnings("unchecked")
     public void initialize(){
-        listViewProjects.setItems(AppData.getInstance().getProjItems());
+        listViewProjects.setItems(DBSource.getItems("project",Query.selectAll("projects")));
         listViewProjects.setCellFactory(lv -> Project.getCell());
         listViewTasks.setCellFactory(lv -> Task.getCell());
     }
     @FXML
-    public void updateProjectName(Event event){
+    public void updateProjectName(ActionEvent event){
         int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
         String projName = listViewProjects.getSelectionModel().getSelectedItem().getName();
         updateDatabase("projects",projId,projName);
     }
     @FXML
-    public void updateTaskName(Event event){
+    public void updateTaskName(){
         int taskId = listViewTasks.getSelectionModel().getSelectedItem().getId();
         String taskName = listViewTasks.getSelectionModel().getSelectedItem().getName();
         updateDatabase("tasks",taskId,taskName);
     }
     @FXML
     public void removeTask(){
-        AppData.getInstance().remove(
-                listViewTasks.getSelectionModel().getSelectedItem());
+        listViewTasks.getItems().remove(listViewTasks.getSelectionModel().getSelectedIndex());
+        AppData.remove(listViewTasks.getSelectionModel().getSelectedItem());
     }
     public void updateDatabase(String type, int id, String newValue){
-        AppData.getInstance().updateDatabase(type,id,newValue);
+        AppData.updateDatabase(type,id,newValue);
     }
     @FXML
+    @SuppressWarnings("unchecked")
     public void narrowUsers(){
         if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
@@ -65,10 +67,10 @@ public class MainAppUI {
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setText(listViewTasks.getSelectionModel().getSelectedItem().getDesc());
         int taskID = listViewTasks.getSelectionModel().getSelectedItem().getId();
-        listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
-
+        listViewUsers.setItems(DBSource.getItems("user",Query.getUserTaskAttached(taskID)));
     }
     @FXML
+    @SuppressWarnings("unchecked")
     public void showProjectTasksAndUsers(){
         btnRemoveTask.setDisable(true);
         if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
@@ -77,9 +79,9 @@ public class MainAppUI {
         anchorPaneTasks.setDisable(false);
         txtAreaProjectDesc.setText(listViewProjects.getSelectionModel().getSelectedItem().getDesc());
         int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
-        listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
-        listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
 
+        listViewTasks.setItems(DBSource.getItems("task", Query.getProjsTasksAttached(projId)));
+        listViewUsers.setItems(DBSource.getItems("user",Query.getUserProjAttached(projId)));
 
     }
 
