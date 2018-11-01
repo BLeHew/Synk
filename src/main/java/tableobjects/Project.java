@@ -69,23 +69,5 @@ public class Project implements TableObject{
         return name.get();
     }
 
-    public static TextFieldListCell<Project> getCell(){
-        TextFieldListCell<Project> cell = new TextFieldListCell<>();
-        cell.setConverter(new StringConverter<Project>() {
-            @Override
-            public String toString(Project project) {
-                return project.getName();
-            }
-            @Override
-            public Project fromString(String string) {
-                Project proj = cell.getItem();
-                if(string.length() > 0) {
-                    proj.setName(string);
-                }
-                return proj ;
-            }
-        });
-        return cell;
-    }
 
 }

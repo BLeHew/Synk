@@ -84,7 +84,7 @@ public class DBSource {
         Connection conn = null;
         try {
             conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?,0)");
             stmt.setInt(1,task.getProjID());
             stmt.setString(2,task.getName());
             stmt.setString(3,task.getDesc());

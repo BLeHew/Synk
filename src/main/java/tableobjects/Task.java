@@ -1,9 +1,6 @@
 package tableobjects;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.scene.control.Tab;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
@@ -17,32 +14,39 @@ public class Task implements TableObject {
     private final StringProperty desc;
     private final StringProperty name;
     private final IntegerProperty projID;
+    private final DoubleProperty pctComplete;
 
-    public Task(int id, String desc, String name, int projID) {
+    public Task(int id, String desc, String name, int projID,double pctComplete) {
         this.id = new SimpleIntegerProperty(id);
         this.desc = new SimpleStringProperty(desc);
         this.name = new SimpleStringProperty(name);
         this.projID = new SimpleIntegerProperty(projID);
+        this.pctComplete = new SimpleDoubleProperty(pctComplete % 100);
     }
     public Task(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
                 rs.getString("description"),
                 rs.getString("name"),
-                rs.getInt("proj_id"));
+                rs.getInt("proj_id"),
+                rs.getDouble("pctComplete"));
     }
     public Task(){
         id = null;
         desc = null;
         name = null;
         projID = null;
+        pctComplete = null;
     }
     /**
      * Constructs the default task object to be inserted into the database.
      */
     public Task(int projId){
-        this(0,"No Description","New Task",projId);
+        this(0,"No Description","New Task",projId,0);
     }
 
+    public void setPctComplete(double pctComplete){
+        this.pctComplete.setValue(pctComplete % 100);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,9 +83,6 @@ public class Task implements TableObject {
         return name.get();
     }
 
-    public StringProperty nameProperty() {
-        return name;
-    }
 
     public void setName(String name) {
         this.name.set(name);
@@ -97,26 +98,7 @@ public class Task implements TableObject {
 
     @Override
     public String toString() {
-        return  id + "," + desc + "," + name + "," + projID;
-    }
-
-    public static TextFieldListCell<Task> getCell(){
-        TextFieldListCell<Task> cell = new TextFieldListCell<>();
-        cell.setConverter(new StringConverter<Task>() {
-            @Override
-            public String toString(Task task) {
-                return task.getName();
-            }
-            @Override
-            public Task fromString(String string) {
-                Task task = cell.getItem();
-                if (string.length() > 0) {
-                    task.setName(string);
-                }
-                return task;
-            }
-        });
-        return cell;
+        return  name.get();
     }
 
 

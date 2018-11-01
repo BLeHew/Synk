@@ -28,8 +28,8 @@ public class LoginScreenUI {
     private void login(){
         System.out.println("Logging in");
 
-        if(!LoginScreenController.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
-            txtFieldError.setText(LoginScreenController.errorMessage);
+        if(!CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+            txtFieldError.setText(CredentialsCheck.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();
         }
@@ -47,13 +47,13 @@ public class LoginScreenUI {
         }else {
             if(fieldsAreEmpty()){
                 txtFieldError.setText("Please fill in all fields.");
-            }else if(LoginScreenController.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
+            }else if(CredentialsCheck.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
                 SynkApp.getInstance().getStage().setTitle("Synk Login");
                 changeUseability();
                 shiftScreenItems(SHIFTUP);
                 clicked = false;
             }else {
-                txtFieldError.setText(LoginScreenController.errorMessage);
+                txtFieldError.setText(CredentialsCheck.errorMessage);
             }
         }
 

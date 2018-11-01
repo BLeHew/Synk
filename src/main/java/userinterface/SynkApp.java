@@ -3,8 +3,10 @@ package userinterface;
 import connection.DBSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 
@@ -63,6 +65,12 @@ public class SynkApp extends Application {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);
         stage.setScene(scene);
+        double width = 640;
+        double height = 480;
+
         stage.show();
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((screenBounds.getWidth() - stage.getWidth())/ 2);
+        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
     }
 }

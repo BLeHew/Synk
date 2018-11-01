@@ -2,7 +2,7 @@ package login;
 
 import connection.DBSource;
 
-public class LoginScreenController {
+public class CredentialsCheck {
 
     private static final int NOCONNECTION = 0;
     private static final int USERTOSHORT = 1;

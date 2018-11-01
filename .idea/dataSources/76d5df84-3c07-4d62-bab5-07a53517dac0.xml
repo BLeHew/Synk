@@ -1164,141 +1164,146 @@
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="293" parent="279" name="proj_id">
+    <column id="293" parent="279" name="pctComplete">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="294" parent="279" name="proj_id">
       <ColNames>proj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="294" parent="279" name="PRIMARY">
+    <key id="295" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="295" parent="279" name="tasks_ibfk_1">
+    <foreign-key id="296" parent="279" name="tasks_ibfk_1">
       <ColNames>proj_id</ColNames>
       <RefSchemaName>synk</RefSchemaName>
       <RefTableName>projects</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="296" parent="280" name="user_id">
+    <column id="297" parent="280" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="280" name="proj_id">
+    <column id="298" parent="280" name="proj_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="298" parent="280" name="proj_id">
+    <index id="299" parent="280" name="proj_id">
       <ColNames>proj_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="280" name="PRIMARY">
+    <key id="300" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 proj_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="300" parent="280" name="user_proj_assigned_ibfk_1">
+    <foreign-key id="301" parent="280" name="user_proj_assigned_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefSchemaName>synk</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="301" parent="280" name="user_proj_assigned_ibfk_2">
+    <foreign-key id="302" parent="280" name="user_proj_assigned_ibfk_2">
       <ColNames>proj_id</ColNames>
       <RefSchemaName>synk</RefSchemaName>
       <RefTableName>projects</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="302" parent="281" name="user_id">
+    <column id="303" parent="281" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="281" name="task_id">
+    <column id="304" parent="281" name="task_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="304" parent="281" name="task_id">
+    <index id="305" parent="281" name="task_id">
       <ColNames>task_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="305" parent="281" name="PRIMARY">
+    <key id="306" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 task_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="306" parent="281" name="user_task_assigned_ibfk_1">
+    <foreign-key id="307" parent="281" name="user_task_assigned_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefSchemaName>synk</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="307" parent="281" name="user_task_assigned_ibfk_2">
+    <foreign-key id="308" parent="281" name="user_task_assigned_ibfk_2">
       <ColNames>task_id</ColNames>
       <RefSchemaName>synk</RefSchemaName>
       <RefTableName>tasks</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="308" parent="282" name="id">
+    <column id="309" parent="282" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="282" name="username">
+    <column id="310" parent="282" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="282" name="email">
+    <column id="311" parent="282" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="282" name="pass_hash">
+    <column id="312" parent="282" name="pass_hash">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="282" name="priv_lvl">
+    <column id="313" parent="282" name="priv_lvl">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="313" parent="282" name="username">
+    <index id="314" parent="282" name="username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="282" name="PRIMARY">
+    <key id="315" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="315" parent="282" name="username">
+    <key id="316" parent="282" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
-    <argument id="316" parent="283" name="ProjID">
+    <argument id="317" parent="283" name="ProjID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="317" parent="284" name="TaskID">
+    <argument id="318" parent="284" name="TaskID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
