@@ -1,6 +1,6 @@
 package login;
 
-import connection.*;
+import connection.DBSource;
 
 public class LoginScreenController {
 
@@ -18,7 +18,7 @@ public class LoginScreenController {
         return getErrorType(username,password,retypePassword,email) == SUCCESS;
     }
     public static int getErrorType(String username, String password, String retypePassword, String email){
-        if (!SynkConnection.con.isRunning()){
+        if (!DBSource.con.isRunning()){
             errorMessage = "No connection to database.";
             return NOCONNECTION;
         }else if(username.length() < 4) {
@@ -33,7 +33,7 @@ public class LoginScreenController {
         }else if(email.length() < 3){
             errorMessage = "Must enter valid email.";
             return INVALIDEMAIL;
-        }else if(!SynkConnection.registerCredentials(username,password,email)) {
+        }else if(!DBSource.registerCredentials(username,password,email)) {
             errorMessage = "Username already exists";
             return USERALREADYEXISTS;
         }else {
@@ -41,11 +41,11 @@ public class LoginScreenController {
         }
     }
     public static boolean hasErrors(String username,String password) {
-        if (!SynkConnection.con.isRunning()) {
+        if (!DBSource.con.isRunning()) {
             errorMessage = "No Connection to Database";
             return true;
-        } else if (!SynkConnection.validateCredentials(username, password)) {
-            errorMessage = SynkConnection.lastError;
+        } else if (!DBSource.validateCredentials(username, password)) {
+            errorMessage = DBSource.lastError;
             return true;
         }
         return false;

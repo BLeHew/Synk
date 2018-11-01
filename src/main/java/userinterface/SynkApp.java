@@ -1,13 +1,11 @@
 package userinterface;
 
-import java.io.*;
-import java.sql.ResultSet;
-
-import connection.*;
-import javafx.application.*;
-import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.stage.*;
+import connection.DBSource;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class SynkApp extends Application {
@@ -20,7 +18,6 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
-        //System.out.println("1234".hashCode());
         launch(args);
     }
 
@@ -39,7 +36,7 @@ public class SynkApp extends Application {
     public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
-            SynkConnection.establish();
+            DBSource.establish();
             gotoLogin();
         } catch (Exception ex) {
 

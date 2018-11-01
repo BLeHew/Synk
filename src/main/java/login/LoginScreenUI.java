@@ -1,10 +1,11 @@
 package login;
 
-import javafx.fxml.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import mainapp.*;
-import userinterface.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import userinterface.SynkApp;
 
 public class LoginScreenUI {
 
@@ -31,7 +32,6 @@ public class LoginScreenUI {
             txtFieldError.setText(LoginScreenController.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();
-            AppData.getInstance().populateData();
         }
     }
     @FXML

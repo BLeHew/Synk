@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.cell.TextFieldTableCell?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-
+<?import javafx.scene.layout.AnchorPane?>
 <AnchorPane prefHeight="393.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
       <MenuBar layoutY="2.0">
@@ -34,7 +28,7 @@
             <TextArea fx:id="txtAreaProjectDesc" editable="false" layoutX="3.0" layoutY="216.0" prefHeight="88.0" prefWidth="218.0" promptText="Project Description" />
             <ListView id="listViewProjects" fx:id="listViewProjects" editable="true" onEditCommit="#updateProjectName" onMouseClicked="#showProjectTasksAndUsers" prefHeight="210.0" prefWidth="220.0" userData="projects" />
             <Button layoutX="123.0" layoutY="312.0" mnemonicParsing="false" text="Remove Project" />
-            <Button id="btnAddProject" layoutX="2.0" layoutY="312.0" mnemonicParsing="false" text="Create Project" />
+            <Button id="btnAddProject" layoutX="2.0" layoutY="312.0" mnemonicParsing="false" onAction="#addProject" text="Create Project" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneTasks" layoutX="250.0" layoutY="265.0">

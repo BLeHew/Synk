@@ -10,7 +10,7 @@ import javafx.util.StringConverter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Project {
+public class Project implements TableObject{
     private final IntegerProperty id;
     private final StringProperty name;
     private final StringProperty desc;
@@ -24,6 +24,9 @@ public class Project {
         this(rs.getInt("id"),
                 rs.getString("name"),
                 rs.getString("description"));
+    }
+    public Project(){
+        this(0,"New Project","No Description");
     }
     public int getId() {
         return id.get();
@@ -61,12 +64,6 @@ public class Project {
         this.desc.set(desc);
     }
 
-    public Project(){
-        id = null;
-
-        name = null;
-        desc = null;
-    }
     @Override
     public String toString(){
         return name.get();

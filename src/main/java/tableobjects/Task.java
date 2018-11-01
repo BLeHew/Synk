@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Tab;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
@@ -11,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class Task {
+public class Task implements TableObject {
     private final IntegerProperty id;
     private final StringProperty desc;
     private final StringProperty name;
@@ -28,6 +29,12 @@ public class Task {
                 rs.getString("description"),
                 rs.getString("name"),
                 rs.getInt("proj_id"));
+    }
+    public Task(){
+        id = null;
+        desc = null;
+        name = null;
+        projID = null;
     }
     /**
      * Constructs the default task object to be inserted into the database.
@@ -88,10 +95,9 @@ public class Task {
         return projID.get();
     }
 
-
     @Override
-    public String toString(){
-        return name.get();
+    public String toString() {
+        return  id + "," + desc + "," + name + "," + projID;
     }
 
     public static TextFieldListCell<Task> getCell(){
