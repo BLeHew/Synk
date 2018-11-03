@@ -27,7 +27,7 @@ public class MainAppUI {
     }
     @FXML
     public void addProject(){
-        tableViewProjects.getItems().add(DBSource.addBlankProject());
+        tableViewProjects.getItems().add(DBSource.insertItem(new Project()));
     }
     @SuppressWarnings("unchecked")
     public void initialize(){
@@ -40,10 +40,15 @@ public class MainAppUI {
     @FXML
     public void updateTaskName(TableColumn.CellEditEvent<Task,String> c){
         updateDatabase("tasks",c.getRowValue().getId(),c.getNewValue());
+        if (c.getNewValue().length() == 0){
+            removeTask();
+        }
+
     }
     @FXML
-    public void updateTaskPercentage(TableColumn.CellEditEvent<Task,Double> c){
-
+    public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> c){
+        c.getRowValue().setPctComplete(c.getNewValue());
+        tableViewTasks.refresh();
     }
     @FXML
     public void removeTask(){

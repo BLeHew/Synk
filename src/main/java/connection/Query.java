@@ -3,7 +3,9 @@ import tableobjects.Project;
 import tableobjects.Task;
 import tableobjects.User;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Query {
     public static final String SELECTALL = "SELECT * FROM ";
@@ -36,16 +38,6 @@ public class Query {
     public static String insertTask(String name, int projId, String description){
         return INSERTTASK + name + "," + projId + "," + description + ")";
     }
-    public static String insertItem(Project p){
-        return INSERTPROJECT + p.getName() + "," + p.getDesc() + ")";
-    }
-    public static String insertItem(Task t){
-        return INSERTTASK + t.getName() + "," + t.getProjID() + "," + t.getDesc() + ")";
-    }
-    public static String insertUser(User u){
-        return INSERTUSER;
-    }
-
     public static String insertProject(){
         return "CALL InsertProject(?,?)";
     }
@@ -56,8 +48,13 @@ public class Query {
     public static String updateTask(String name, int taskId) {
         return UPDATETASK + name + "," + taskId  + ")";
     }
-
-
+    public static void setAndRunStatement(Project p,Connection conn) throws SQLException{
+        PreparedStatement stmt;
+        stmt = conn.prepareStatement("INSERT INTO projects VALUES(null,?,?)");
+        stmt.setString(1, p.getName());
+        stmt.setString(2, p.getDesc());
+        stmt.executeUpdate();
+    }
 
     public static String getProjsTasksAttached(int projId){
         return "SELECT * FROM tasks WHERE proj_id = " + projId;

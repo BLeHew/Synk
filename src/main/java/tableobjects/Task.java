@@ -10,97 +10,79 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 public class Task implements TableObject {
-    private final IntegerProperty id;
-    private final StringProperty desc;
-    private final StringProperty name;
-    private final IntegerProperty projID;
-    private final DoubleProperty pctComplete;
+    private int id;
+    private String desc;
+    private String name;
+    private int projID;
+    private String pctComplete;
 
-    public Task(int id, String desc, String name, int projID,double pctComplete) {
-        this.id = new SimpleIntegerProperty(id);
-        this.desc = new SimpleStringProperty(desc);
-        this.name = new SimpleStringProperty(name);
-        this.projID = new SimpleIntegerProperty(projID);
-        this.pctComplete = new SimpleDoubleProperty(pctComplete % 100);
+    public Task(int id, String desc, String name, int projID, String pctComplete) {
+        this.id = id;
+        this.desc = desc;
+        this.name = name;
+        this.projID = projID;
+        this.pctComplete = String.valueOf(Integer.parseInt(pctComplete) % 100);
     }
     public Task(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
                 rs.getString("description"),
                 rs.getString("name"),
-                rs.getInt("proj_id"),
-                rs.getDouble("pctComplete"));
+                0,//rs.getInt("proj_id"),
+                "0");//rs.getDouble("pctComplete"));
+    }
+    public Task(int projID){
+        this();
+        this.projID = projID;
     }
     public Task(){
-        id = null;
-        desc = null;
-        name = null;
-        projID = null;
-        pctComplete = null;
+        this(0,"No Description","New Task",0,"0");
     }
-    /**
-     * Constructs the default task object to be inserted into the database.
-     */
-    public Task(int projId){
-        this(0,"No Description","New Task",projId,0);
-    }
-
-    public void setPctComplete(double pctComplete){
-        this.pctComplete.setValue(pctComplete % 100);
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return Objects.equals(id, task.id);
-    }
-
     public int getId() {
-        return id.get();
-    }
-
-    public IntegerProperty idProperty() {
         return id;
     }
 
     public void setId(int id) {
-        this.id.set(id);
+        this.id = id;
     }
 
     public String getDesc() {
-        return desc.get();
-    }
-
-    public StringProperty descProperty() {
         return desc;
     }
 
     public void setDesc(String desc) {
-        this.desc.set(desc);
+        this.desc = desc;
     }
 
     public String getName() {
-        return name.get();
+        return name;
     }
-
 
     public void setName(String name) {
-        this.name.set(name);
-    }
-
-    public void setProjID(int projID) {
-        this.projID.set(projID);
+        this.name = name;
     }
 
     public int getProjID() {
-        return projID.get();
+        return projID;
     }
 
+    public void setProjID(int projID) {
+        this.projID = projID;
+    }
+
+    public String getPctComplete() {
+        return pctComplete;
+    }
+
+    public void setPctComplete(String pctComplete) {
+        if(pctComplete.length() < 5) {
+            int i = Integer.parseInt(pctComplete);
+            this.pctComplete = String.valueOf(Math.max(0, Math.min(i, 100)));
+        }
+    }
     @Override
-    public String toString() {
-        return  name.get();
+    public String toString(){
+        return name;
     }
-
-
 
 }
+

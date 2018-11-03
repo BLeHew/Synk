@@ -51,32 +51,6 @@ public class DBSource {
         }finally { close(conn); }
         return o;
     }
-    public static Object insertItem(Object item){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            //PreparedStatement stmt = conn.prepareStatement(Query.insertItem(item));
-
-        }catch (SQLException s){
-            s.printStackTrace();
-        }
-        return null;
-    }
-    public static Project addBlankProject(){
-        Connection conn = null;
-        Project p = new Project();
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO projects VALUES (null,?,?)");
-            stmt.setString(1,p.getName());
-            stmt.setString(2,p.getDesc());
-            stmt.executeUpdate();
-            p.setId(getLastInsertId());
-        }catch (SQLException s){
-            s.printStackTrace();
-        }
-        return p;
-    }
     public static void close(Connection c){
         try { if (c != null){ c.close(); } } catch (SQLException s) { s.printStackTrace(); }
     }
@@ -151,5 +125,45 @@ public class DBSource {
             System.out.println(query);
             return false;
         } finally {close(conn); }
+    }
+    public static User insertItem(User u){
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (null,?,?,?,?)");
+            stmt.setString(1, u.getUsername());
+            stmt.setString(2, u.getEmail());
+            stmt.setInt(3, u.getPass_hash());
+            stmt.setInt(4, u.getPriv_level());
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { close(conn); }
+        u.setId(getLastInsertId());
+        return u;
+    }
+    public static Task insertItem(Task t){
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES (null,?,?,?,?)");
+            stmt.setInt(1, t.getProjID());
+            stmt.setString(2, t.getName());
+            stmt.setString(3, t.getDesc());
+            stmt.setString(4, t.getPctComplete());
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { close(conn); }
+        t.setId(getLastInsertId());
+        return t;
+    }
+    public static Project insertItem(Project p){
+        Connection conn = null;
+        try { Query.setAndRunStatement(p,conn); }
+        catch (SQLException s){ s.printStackTrace(); }
+        finally {close(conn); }
+        p.setId(getLastInsertId());
+        return p;
     }
 }
