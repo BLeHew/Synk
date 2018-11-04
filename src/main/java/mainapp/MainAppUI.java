@@ -22,7 +22,9 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            tableViewTasks.getItems().add(AppData.addBlankTask(tableViewProjects.getSelectionModel().getSelectedItem().getId()));
+            tableViewTasks.getItems().add(
+                    DBSource.insertItem(
+                            new Task(tableViewProjects.getSelectionModel().getSelectedItem().getId())));
         }
     }
     @FXML

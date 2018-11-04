@@ -160,7 +160,9 @@ public class DBSource {
     }
     public static Project insertItem(Project p){
         Connection conn = null;
-        try { Query.setAndRunStatement(p,conn); }
+        try {
+            conn = con.getConnection();
+            Query.setAndRunStatement(p,conn); }
         catch (SQLException s){ s.printStackTrace(); }
         finally {close(conn); }
         p.setId(getLastInsertId());
