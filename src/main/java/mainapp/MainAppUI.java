@@ -9,6 +9,8 @@ import tableobjects.TableObject;
 import tableobjects.Task;
 import tableobjects.User;
 
+import java.util.HashSet;
+
 public class MainAppUI {
     @FXML private TableView<TableObject> tableViewProjects;
     @FXML private TableView<TableObject> tableViewTasks;
@@ -31,7 +33,9 @@ public class MainAppUI {
     }
     @FXML
     public void addProject(){
-        tableViewProjects.getItems().add(DBSource.insertItem(new Project()));
+        Project p = new Project();
+        p.insertIntoDB();
+        tableViewProjects.getItems().add(p);
     }
     @FXML
     public void removeProject(){
@@ -47,34 +51,41 @@ public class MainAppUI {
     }
     @FXML
     public void search(){
-        tableViewAllUsers.setItems(tableViewAllUsers.getItems().filtered(s -> s.getName().contains(txtFieldSearch.getText())));
-    }
-
-    //TODO can generalize this using the event source, possibly making all the cell edit events point here.
-    @FXML
-    public void updateProjectName(TableColumn.CellEditEvent<TableObject,String> c){
-        updateDatabase("project",c.getRowValue().getId(),c.getNewValue());
+        System.out.println("SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'");
+        tableViewAllUsers.setItems(DBSource
+                .getItems("users","SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'"));
     }
     @FXML
-    public void updateTaskName(TableColumn.CellEditEvent<Task,String> c){
-        updateDatabase("task",c.getRowValue().getId(),c.getNewValue());
-        if (c.getNewValue().length() == 0){
-            removeTask();
-        }
-
+    public void updateName(TableColumn.CellEditEvent<TableObject,String> c){
+        c.getRowValue().setName(c.getNewValue());
+        c.getRowValue().updateDB();
     }
     @FXML
     public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> c){
         c.getRowValue().setPctComplete(c.getNewValue());
-        tableViewTasks.refresh();
+        c.getRowValue().updateDB();
     }
     @FXML
     public void removeTask(){
         tableViewTasks.getSelectionModel().getSelectedItem().removeFromDB();
         tableViewTasks.getItems().remove(tableViewTasks.getSelectionModel().getSelectedIndex());
     }
-    public void updateDatabase(String type, int id, String newValue){
-        AppData.updateDatabase(type,id,newValue);
+    @FXML
+    public void assignUser(){
+        HashSet<TableObject> uniqueUsers = new HashSet<>(listViewUsers.getItems());
+
+        if(!uniqueUsers.add(tableViewAllUsers.getSelectionModel().getSelectedItem())){
+            return;
+        }
+
+        int userId = tableViewAllUsers.getSelectionModel().getSelectedItem().getId();
+        int projId = tableViewProjects.getSelectionModel().getSelectedItem().getId();
+        int taskId;
+        if(tableViewTasks.getSelectionModel().getSelectedIndex() == -1){
+            taskId = -1;
+        }else{ taskId = tableViewTasks.getSelectionModel().getSelectedItem().getId(); }
+        listViewUsers.getItems().add(tableViewAllUsers.getSelectionModel().getSelectedItem());
+        DBSource.insertAssignment(userId,projId,taskId);
     }
     @FXML
     public void narrowUsers(){
@@ -89,6 +100,7 @@ public class MainAppUI {
     @FXML
     public void showProjectTasksAndUsers(){
         btnRemoveTask.setDisable(true);
+        txtAreaProjectDesc.setDisable(false);
         if(tableViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
