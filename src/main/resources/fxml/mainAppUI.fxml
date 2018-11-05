@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="632.0" prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
@@ -61,11 +62,22 @@
                   <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
                   <cellFactory> <TextFieldTableCell fx:factory="forTableColumn" /> </cellFactory>
           </TableColumn>
-          <TableColumn fx:id="columnTaskPercent" onEditCommit="#updateTaskPercentage" prefWidth="50.0" text="\%" >
+          <TableColumn fx:id="columnTaskPercent" onEditCommit="#updateTaskPercentage" prefWidth="50.0" text="\%">
                 <cellValueFactory> <PropertyValueFactory property="pctComplete" /> </cellValueFactory>
                 <cellFactory> <TextFieldTableCell fx:factory="forTableColumn" /> </cellFactory>
           </TableColumn>
         </columns>
       </TableView>
+      <TableView fx:id="tableViewAllUsers" layoutX="786.0" layoutY="27.0" prefHeight="420.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="200.0" text="All Users">
+                  <cellValueFactory> <PropertyValueFactory property="username" /> </cellValueFactory>
+                  <cellFactory><TextFieldTableCell fx:factory="forTableColumn" /> </cellFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <TextField fx:id="txtFieldSearch" layoutX="786.0" layoutY="455.0" onInputMethodTextChanged="#search" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutX="786.0" layoutY="494.0" mnemonicParsing="false" onAction="#search" prefHeight="88.0" prefWidth="99.0" text="Search" />
+      <Button layoutX="886.0" layoutY="494.0" mnemonicParsing="false" onAction="#getUsers" prefHeight="88.0" prefWidth="99.0" text="Show Users" />
    </children>
 </AnchorPane>

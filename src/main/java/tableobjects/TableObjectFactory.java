@@ -15,7 +15,7 @@ public class TableObjectFactory {
         switch (type.toLowerCase()){
             case "project": return new Project(rs);
             case "task": return new Task(rs);
-            case "user": return new User(rs);
+            case "users": return new User(rs);
             default: return null;
         }
     }

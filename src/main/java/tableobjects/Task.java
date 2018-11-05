@@ -1,25 +1,16 @@
 package tableobjects;
 
-import javafx.beans.property.*;
-import javafx.scene.control.Tab;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.util.StringConverter;
+import connection.DBSource;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Objects;
+import java.sql.*;
 
-public class Task implements TableObject {
-    private int id;
-    private String desc;
-    private String name;
+public class Task extends TableObject{
     private int projID;
     private String pctComplete;
 
     public Task(int id, String desc, String name, int projID, String pctComplete) {
-        this.id = id;
-        this.desc = desc;
-        this.name = name;
+        super(id,name,desc);
+        super.type = "task";
         this.projID = projID;
         this.pctComplete = String.valueOf(Integer.parseInt(pctComplete) % 100);
     }
@@ -27,8 +18,8 @@ public class Task implements TableObject {
         this(rs.getInt("id"),
                 rs.getString("description"),
                 rs.getString("name"),
-                0,//rs.getInt("proj_id"),
-                "0");//rs.getDouble("pctComplete"));
+                rs.getInt("proj_id"),
+                String.valueOf(rs.getInt("pctComplete")));
     }
     public Task(int projID){
         this();
@@ -37,30 +28,6 @@ public class Task implements TableObject {
     public Task(){
         this(0,"No Description","New Task",0,"0");
     }
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getProjID() {
         return projID;
     }
@@ -79,10 +46,24 @@ public class Task implements TableObject {
             this.pctComplete = String.valueOf(Math.max(0, Math.min(i, 100)));
         }
     }
-    @Override
-    public String toString(){
-        return name;
+    public String toQuery(){
+        return projID + ",'" + super.getName() + "','" + super.getDesc() + "'," + pctComplete;
     }
+    public void insertIntoDB(){
+        Connection conn = null;
+        try {
+            conn = DBSource.getConnection();
+            String query = "INSERT INTO task VALUES(null," + toQuery() + ")";
+            System.out.println(query);
+            PreparedStatement s = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            s.executeUpdate();
+            ResultSet rs = s.getGeneratedKeys();
+            if(rs.next()){ super.setId(rs.getInt(1)); }
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { DBSource.close(conn); }
+    }
+
 
 }
 

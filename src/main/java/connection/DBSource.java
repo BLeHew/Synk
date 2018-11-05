@@ -4,15 +4,10 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import tableobjects.Project;
-import tableobjects.TableObjectFactory;
-import tableobjects.Task;
-import tableobjects.User;
+import javafx.fxml.FXML;
+import tableobjects.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 
 public class DBSource {
@@ -36,9 +31,11 @@ public class DBSource {
             System.out.println("Connection made");
         }
     }
-    @SuppressWarnings("unchecked")
-    public static ObservableList getItems(String type, String query){
-        ObservableList o = FXCollections.observableArrayList();
+    public static Connection getConnection() throws SQLException{
+        return con.getConnection();
+    }
+    public static ObservableList<TableObject> getItems(String type, String query){
+        ObservableList<TableObject> o = FXCollections.observableArrayList();
         Connection conn = null;
         try {
             conn = con.getConnection();
@@ -51,6 +48,17 @@ public class DBSource {
         }finally { close(conn); }
         return o;
     }
+
+    public static void remove(String type,int id){
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM " + type + " WHERE id = " + id);
+            stmt.executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { close(conn); }
+    }
     public static void close(Connection c){
         try { if (c != null){ c.close(); } } catch (SQLException s) { s.printStackTrace(); }
     }
@@ -58,7 +66,7 @@ public class DBSource {
         Connection conn = null;
         try {
             conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?,0)");
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO task VALUES(null,?,?,?,0)");
             stmt.setInt(1,task.getProjID());
             stmt.setString(2,task.getName());
             stmt.setString(3,task.getDesc());
@@ -66,21 +74,6 @@ public class DBSource {
         }catch (SQLException s){
             s.printStackTrace();
         } finally {close(conn);}
-    }
-    public static int getLastInsertId(){
-        Connection conn = null;
-        ResultSet rs = null;
-        try {
-            conn = con.getConnection();
-            rs = conn.prepareStatement("SELECT LAST_INSERT_ID()").executeQuery();
-            rs.next();
-            if(rs.next()){
-                return rs.getInt("LAST_INSERT_ID()");
-            }
-        } catch (SQLException s){
-            s.printStackTrace();
-        }finally {close(conn); }
-        return 0;
     }
     public static boolean validateCredentials(String userName,String password){
         ResultSet rs;
@@ -130,42 +123,25 @@ public class DBSource {
         Connection conn = null;
         try {
             conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (null,?,?,?,?)");
-            stmt.setString(1, u.getUsername());
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (null,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, u.getName());
             stmt.setString(2, u.getEmail());
             stmt.setInt(3, u.getPass_hash());
             stmt.setInt(4, u.getPriv_level());
-            stmt.executeUpdate();
+            u.setId(stmt.executeUpdate());
         }catch (SQLException s){
             s.printStackTrace();
         }finally { close(conn); }
-        u.setId(getLastInsertId());
         return u;
     }
-    public static Task insertItem(Task t){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES (null,?,?,?,?)");
-            stmt.setInt(1, t.getProjID());
-            stmt.setString(2, t.getName());
-            stmt.setString(3, t.getDesc());
-            stmt.setString(4, t.getPctComplete());
-            stmt.executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { close(conn); }
-        t.setId(getLastInsertId());
-        return t;
-    }
-    public static Project insertItem(Project p){
+
+    public static TableObject insertItem(Project p){
         Connection conn = null;
         try {
             conn = con.getConnection();
             Query.setAndRunStatement(p,conn); }
         catch (SQLException s){ s.printStackTrace(); }
         finally {close(conn); }
-        p.setId(getLastInsertId());
         return p;
     }
 }
