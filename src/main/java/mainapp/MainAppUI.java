@@ -24,7 +24,6 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            //tableViewTasks.getItems().add(DBSource.insertItem(new Task(tableViewProjects.getSelectionModel().getSelectedItem().getId())));
             Task t = new Task(tableViewProjects.getSelectionModel().getSelectedItem().getId());
             t.insertIntoDB();
             tableViewTasks.getItems().add(t);
@@ -33,6 +32,11 @@ public class MainAppUI {
     @FXML
     public void addProject(){
         tableViewProjects.getItems().add(DBSource.insertItem(new Project()));
+    }
+    @FXML
+    public void removeProject(){
+        tableViewProjects.getSelectionModel().getSelectedItem().removeFromDB();
+        tableViewProjects.getItems().remove(tableViewProjects.getSelectionModel().getFocusedIndex());
     }
     public void initialize(){
         tableViewProjects.setItems(DBSource.getItems("project","SELECT * FROM project"));
@@ -45,8 +49,10 @@ public class MainAppUI {
     public void search(){
         tableViewAllUsers.setItems(tableViewAllUsers.getItems().filtered(s -> s.getName().contains(txtFieldSearch.getText())));
     }
+
+    //TODO can generalize this using the event source, possibly making all the cell edit events point here.
     @FXML
-    public void updateProjectName(TableColumn.CellEditEvent<Project,String> c){
+    public void updateProjectName(TableColumn.CellEditEvent<TableObject,String> c){
         updateDatabase("project",c.getRowValue().getId(),c.getNewValue());
     }
     @FXML
@@ -65,7 +71,6 @@ public class MainAppUI {
     @FXML
     public void removeTask(){
         tableViewTasks.getSelectionModel().getSelectedItem().removeFromDB();
-        //DBSource.remove("task",tableViewTasks.getSelectionModel().getSelectedItem().getId());
         tableViewTasks.getItems().remove(tableViewTasks.getSelectionModel().getSelectedIndex());
     }
     public void updateDatabase(String type, int id, String newValue){

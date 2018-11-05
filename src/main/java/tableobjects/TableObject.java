@@ -2,9 +2,7 @@ package tableobjects;
 
 import connection.DBSource;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class TableObject implements Transactionable{
     protected String type;
@@ -38,16 +36,27 @@ public class TableObject implements Transactionable{
     public String toString(){
         return name;
     }
-    public void insertIntoDB(){}
+    public String toQuery(){return "";}
+    public void insertIntoDB(){
+            Connection conn = null;
+            try {
+                conn = DBSource.getConnection();
+                String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
+                PreparedStatement s = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+                s.executeUpdate();
+                ResultSet rs = s.getGeneratedKeys();
+                if(rs.next()){ id = (rs.getInt(1)); }
+            }catch (SQLException s){
+                s.printStackTrace();
+            }finally { DBSource.close(conn); }
+    }
     public void removeFromDB(){
         Connection conn = null;
         try {
-            conn = DBSource.con.getConnection();
+            conn = DBSource.getConnection();
             conn.prepareStatement("DELETE FROM " +  type  + " WHERE id = " + id).executeUpdate();
-            System.out.println("DELETE FROM " +  type  + " WHERE id = " + id);
         }catch (SQLException s){
             s.printStackTrace();
         }finally { DBSource.close(conn); }
     }
-
 }

@@ -49,21 +49,6 @@ public class Task extends TableObject{
     public String toQuery(){
         return projID + ",'" + super.getName() + "','" + super.getDesc() + "'," + pctComplete;
     }
-    public void insertIntoDB(){
-        Connection conn = null;
-        try {
-            conn = DBSource.getConnection();
-            String query = "INSERT INTO task VALUES(null," + toQuery() + ")";
-            System.out.println(query);
-            PreparedStatement s = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-            s.executeUpdate();
-            ResultSet rs = s.getGeneratedKeys();
-            if(rs.next()){ super.setId(rs.getInt(1)); }
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { DBSource.close(conn); }
-    }
-
 
 }
 
