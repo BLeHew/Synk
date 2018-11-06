@@ -50,5 +50,23 @@ public class Task extends TableObject{
         return projID + ",'" + super.getName() + "','" + super.getDesc() + "'," + pctComplete;
     }
 
+    @Override
+    public void updateDB(){
+        Connection conn = null;
+        try {
+            conn = DBSource.getConnection();
+            PreparedStatement ps = conn.prepareStatement("UPDATE task SET proj_id = ?,name = ?,description = ?,pctComplete = ? WHERE id = ?");
+            ps.setInt(1,projID);
+            ps.setString(2,super.getName());
+            ps.setString(3,super.getDesc());
+            ps.setString(4,pctComplete);
+            ps.setInt(5,super.getId());
+            ps.executeUpdate();
+            System.out.println(ps);
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { DBSource.close(conn); }
+    }
+
 }
 

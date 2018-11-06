@@ -34,6 +34,23 @@ public class DBSource {
     public static Connection getConnection() throws SQLException{
         return con.getConnection();
     }
+    public static void insertAssignment(int userId,int projId,int taskId){
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            if (taskId != -1) {
+                conn.prepareStatement("INSERT INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
+                        .executeUpdate();
+            }
+            conn.prepareStatement("INSERT INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
+                    .executeUpdate();
+
+        }catch (SQLIntegrityConstraintViolationException sive){
+            //discard
+        }catch (SQLException s){
+            s.printStackTrace();
+        }
+    }
     public static ObservableList<TableObject> getItems(String type, String query){
         ObservableList<TableObject> o = FXCollections.observableArrayList();
         Connection conn = null;
@@ -48,32 +65,8 @@ public class DBSource {
         }finally { close(conn); }
         return o;
     }
-
-    public static void remove(String type,int id){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("DELETE FROM " + type + " WHERE id = " + id);
-            stmt.executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { close(conn); }
-    }
     public static void close(Connection c){
         try { if (c != null){ c.close(); } } catch (SQLException s) { s.printStackTrace(); }
-    }
-    public static void insertNewTask(Task task){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO task VALUES(null,?,?,?,0)");
-            stmt.setInt(1,task.getProjID());
-            stmt.setString(2,task.getName());
-            stmt.setString(3,task.getDesc());
-            stmt.executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        } finally {close(conn);}
     }
     public static boolean validateCredentials(String userName,String password){
         ResultSet rs;
@@ -99,6 +92,7 @@ public class DBSource {
         }finally {close(conn); }
         return true;
     }
+
     public static boolean registerCredentials(String userName, String password,String email){
         String query = "SELECT username FROM users WHERE username = '" + userName + "'";
         Connection conn = null;
@@ -119,29 +113,5 @@ public class DBSource {
             return false;
         } finally {close(conn); }
     }
-    public static User insertItem(User u){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (null,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, u.getName());
-            stmt.setString(2, u.getEmail());
-            stmt.setInt(3, u.getPass_hash());
-            stmt.setInt(4, u.getPriv_level());
-            u.setId(stmt.executeUpdate());
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { close(conn); }
-        return u;
-    }
 
-    public static TableObject insertItem(Project p){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            Query.setAndRunStatement(p,conn); }
-        catch (SQLException s){ s.printStackTrace(); }
-        finally {close(conn); }
-        return p;
-    }
 }

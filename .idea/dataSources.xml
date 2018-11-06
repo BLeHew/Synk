@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="synk@localhost" uuid="76d5df84-3c07-4d62-bab5-07a53517dac0">
+    <data-source source="LOCAL" name="synk@localhost" uuid="04c3e7f2-486a-4466-94a5-943e39bf0986">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -13,24 +13,6 @@
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="hibernate:hibernate.cfg.xml/Hibernate" uuid="79436de8-78a6-4450-99c0-700019ce8452">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate
-
-C:/Users/Brice/IdeaProjects/TeamSynk/src/main/resources/hibernate/hibernate.cfg.xml</remarks>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/synk</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="yearIsDateType" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="tinyInt1isBit" value="false" />
       </driver-properties>
     </data-source>
   </component>
