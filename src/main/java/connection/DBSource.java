@@ -46,7 +46,7 @@ public class DBSource {
                     .executeUpdate();
 
         }catch (SQLIntegrityConstraintViolationException sive){
-
+            //discard
         }catch (SQLException s){
             s.printStackTrace();
         }
@@ -92,6 +92,7 @@ public class DBSource {
         }finally {close(conn); }
         return true;
     }
+
     public static boolean registerCredentials(String userName, String password,String email){
         String query = "SELECT username FROM users WHERE username = '" + userName + "'";
         Connection conn = null;

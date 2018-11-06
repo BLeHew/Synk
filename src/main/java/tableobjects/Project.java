@@ -32,7 +32,6 @@ public class Project extends TableObject {
             ps.setString(2,super.getDesc());
             ps.setInt(3,super.getId());
             ps.executeUpdate();
-            System.out.println(ps);
         }catch (SQLException s){
             s.printStackTrace();
         }finally { DBSource.close(conn); }

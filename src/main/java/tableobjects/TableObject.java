@@ -18,11 +18,20 @@ public class TableObject{
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
     }
+    public TableObject(String s){
+        String[] splitString = s.split("\\s+");
+        type = splitString[0];
+        id = Integer.parseInt(splitString[1]);
+        name = new SimpleStringProperty(splitString[2]);
+        description = new SimpleStringProperty(splitString[3]);
+    }
+    public String getString(){
+        return type + " " + id + " " + name.get() + " " + description.get();
+    }
     public void update(TableObject other){
         id = other.id;
         name.set(other.name.get());
         description.set(other.description.get());
-
     }
     public int getId(){
         return id;

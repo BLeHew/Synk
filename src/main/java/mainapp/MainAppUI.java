@@ -3,6 +3,10 @@ package mainapp;
 import connection.DBSource;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import tableobjects.Project;
 import tableobjects.TableObject;
@@ -51,7 +55,6 @@ public class MainAppUI {
     }
     @FXML
     public void search(){
-        System.out.println("SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'");
         tableViewAllUsers.setItems(DBSource
                 .getItems("users","SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'"));
     }
@@ -86,6 +89,15 @@ public class MainAppUI {
         }else{ taskId = tableViewTasks.getSelectionModel().getSelectedItem().getId(); }
         listViewUsers.getItems().add(tableViewAllUsers.getSelectionModel().getSelectedItem());
         DBSource.insertAssignment(userId,projId,taskId);
+    }
+    @FXML
+    public void saveChange(KeyEvent k){
+        if(k.getCode().getName().equals("Enter")){
+            tableViewProjects.getSelectionModel().getSelectedItem().setDesc(txtAreaProjectDesc.getText());
+            tableViewProjects.getSelectionModel().getSelectedItem().updateDB();
+            txtAreaProjectDesc.setDisable(true);
+        }
+
     }
     @FXML
     public void narrowUsers(){
