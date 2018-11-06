@@ -2,18 +2,15 @@ package connection;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import tableobjects.Project;
-import tableobjects.Task;
-import tableobjects.User;
+import javafx.fxml.FXML;
+import tableobjects.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 
-public class SynkConnection {
+public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
 
     private static String userName = "root";
@@ -30,53 +27,46 @@ public class SynkConnection {
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
         con = new HikariDataSource(config);
+        if(con.isRunning()){
+            System.out.println("Connection made");
+        }
     }
-    @SuppressWarnings("unchecked")
-    public static void addItemsToList(ObservableList o,String type){
+    public static Connection getConnection() throws SQLException{
+        return con.getConnection();
+    }
+    public static void insertAssignment(int userId,int projId,int taskId){
         Connection conn = null;
         try {
             conn = con.getConnection();
-            ResultSet rs = conn.prepareStatement(Query.selectAll(type)).executeQuery();
-            switch (type) {
-                case "projects": while(rs.next()){ o.add(new Project((rs))); }
-                case "tasks": while(rs.next()){ o.add(new Task((rs))); }
-                case "users": while(rs.next()){ o.add(new User((rs))); }
+            if (taskId != -1) {
+                conn.prepareStatement("INSERT INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
+                        .executeUpdate();
+            }
+            conn.prepareStatement("INSERT INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
+                    .executeUpdate();
+
+        }catch (SQLIntegrityConstraintViolationException sive){
+            //discard
+        }catch (SQLException s){
+            s.printStackTrace();
+        }
+    }
+    public static ObservableList<TableObject> getItems(String type, String query){
+        ObservableList<TableObject> o = FXCollections.observableArrayList();
+        Connection conn = null;
+        try {
+            conn = con.getConnection();
+            ResultSet rs = conn.prepareStatement(query).executeQuery();
+            while (rs.next()){
+                o.add(TableObjectFactory.getTableObject(type,rs));
             }
         }catch (SQLException s){
             s.printStackTrace();
         }finally { close(conn); }
+        return o;
     }
-
     public static void close(Connection c){
         try { if (c != null){ c.close(); } } catch (SQLException s) { s.printStackTrace(); }
-    }
-    public static void insertNewTask(Task task){
-        Connection conn = null;
-        try {
-            conn = con.getConnection();
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO tasks VALUES(null,?,?,?)");
-            stmt.setInt(1,task.getProjID());
-            stmt.setString(2,task.getName());
-            stmt.setString(3,task.getDesc());
-            System.out.println(stmt);
-            stmt.executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        } finally {close(conn);} }
-    public static int getLastInsertId(){
-        Connection conn = null;
-        ResultSet rs = null;
-        try {
-            conn = con.getConnection();
-            rs = conn.prepareStatement("SELECT LAST_INSERT_ID()").executeQuery();
-            rs.next();
-            if(rs.next()){
-                return rs.getInt("LAST_INSERT_ID()");
-            }
-        } catch (SQLException s){
-            s.printStackTrace();
-        }finally {SynkConnection.close(conn); }
-        return 0;
     }
     public static boolean validateCredentials(String userName,String password){
         ResultSet rs;
@@ -99,15 +89,10 @@ public class SynkConnection {
             lastError = "Error in SQL Connection";
             System.err.println(e);
             return false;
-        }finally {
-            try {
-                if (conn != null){
-                    conn.close();
-                }
-            } catch (SQLException s) { s.printStackTrace(); }
-        }
+        }finally {close(conn); }
         return true;
     }
+
     public static boolean registerCredentials(String userName, String password,String email){
         String query = "SELECT username FROM users WHERE username = '" + userName + "'";
         Connection conn = null;
@@ -126,12 +111,7 @@ public class SynkConnection {
             e.printStackTrace();
             System.out.println(query);
             return false;
-        } finally {
-            try {
-                if (conn != null){
-                    conn.close();
-                }
-            } catch (SQLException s) { s.printStackTrace(); }
-        }
+        } finally {close(conn); }
     }
+
 }

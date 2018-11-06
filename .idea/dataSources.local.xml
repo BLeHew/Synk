@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="synk@localhost" uuid="04c3e7f2-486a-4466-94a5-943e39bf0986">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
+    </data-source>
+  </component>
+</project>

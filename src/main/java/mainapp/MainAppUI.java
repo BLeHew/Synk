@@ -1,85 +1,126 @@
 package mainapp;
 
-import javafx.collections.transformation.FilteredList;
-import javafx.event.Event;
+import connection.DBSource;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import tableobjects.Project;
+import tableobjects.TableObject;
 import tableobjects.Task;
 import tableobjects.User;
 
+import java.util.HashSet;
+
 public class MainAppUI {
-    @FXML private ListView<Project> listViewProjects;
-    @FXML private ListView<Task> listViewTasks;
-    @FXML private ListView<User> listViewUsers;
+    @FXML private TableView<TableObject> tableViewProjects;
+    @FXML private TableView<TableObject> tableViewTasks;
+    @FXML private TableView<TableObject> tableViewAllUsers;
+    @FXML private ListView<TableObject> listViewUsers;
     @FXML private TextArea txtAreaProjectDesc;
     @FXML private TextArea txtAreaTaskDesc;
     @FXML private AnchorPane anchorPaneTasks;
     @FXML private Button btnRemoveTask;
+    @FXML private TextField txtFieldSearch;
     //TODO add functionality to only display projects that the user is on, maybe through saved session user_id
 
     @FXML
     public void addTask(){
-        if(listViewProjects.getSelectionModel().getSelectedIndex() > -1){
-           AppData.getInstance().addBlankTask(listViewProjects.getSelectionModel().getSelectedItem().getId());
+        if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
+            Task t = new Task(tableViewProjects.getSelectionModel().getSelectedItem().getId());
+            t.insertIntoDB();
+            tableViewTasks.getItems().add(t);
         }
-
     }
     @FXML
     public void addProject(){
-        //AppData.getInstance().addBlankProject();
+        Project p = new Project();
+        p.insertIntoDB();
+        tableViewProjects.getItems().add(p);
+    }
+    @FXML
+    public void removeProject(){
+        tableViewProjects.getSelectionModel().getSelectedItem().removeFromDB();
+        tableViewProjects.getItems().remove(tableViewProjects.getSelectionModel().getFocusedIndex());
     }
     public void initialize(){
-        listViewProjects.setItems(AppData.getInstance().getProjItems());
-        listViewProjects.setCellFactory(lv -> Project.getCell());
-        listViewTasks.setCellFactory(lv -> Task.getCell());
+        tableViewProjects.setItems(DBSource.getItems("project","SELECT * FROM project"));
     }
     @FXML
-    public void updateProjectName(Event event){
-        int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
-        String projName = listViewProjects.getSelectionModel().getSelectedItem().getName();
-        updateDatabase("projects",projId,projName);
+    public void getUsers(){
+        tableViewAllUsers.setItems(DBSource.getItems("users","SELECT * FROM users"));
     }
     @FXML
-    public void updateTaskName(Event event){
-        int taskId = listViewTasks.getSelectionModel().getSelectedItem().getId();
-        String taskName = listViewTasks.getSelectionModel().getSelectedItem().getName();
-        updateDatabase("tasks",taskId,taskName);
+    public void search(){
+        tableViewAllUsers.setItems(DBSource
+                .getItems("users","SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'"));
+    }
+    @FXML
+    public void updateName(TableColumn.CellEditEvent<TableObject,String> c){
+        c.getRowValue().setName(c.getNewValue());
+        c.getRowValue().updateDB();
+    }
+    @FXML
+    public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> c){
+        c.getRowValue().setPctComplete(c.getNewValue());
+        c.getRowValue().updateDB();
     }
     @FXML
     public void removeTask(){
-        AppData.getInstance().remove(
-                listViewTasks.getSelectionModel().getSelectedItem());
+        tableViewTasks.getSelectionModel().getSelectedItem().removeFromDB();
+        tableViewTasks.getItems().remove(tableViewTasks.getSelectionModel().getSelectedIndex());
     }
-    public void updateDatabase(String type, int id, String newValue){
-        AppData.getInstance().updateDatabase(type,id,newValue);
+    @FXML
+    public void assignUser(){
+        HashSet<TableObject> uniqueUsers = new HashSet<>(listViewUsers.getItems());
+
+        if(!uniqueUsers.add(tableViewAllUsers.getSelectionModel().getSelectedItem())){
+            return;
+        }
+
+        int userId = tableViewAllUsers.getSelectionModel().getSelectedItem().getId();
+        int projId = tableViewProjects.getSelectionModel().getSelectedItem().getId();
+        int taskId;
+        if(tableViewTasks.getSelectionModel().getSelectedIndex() == -1){
+            taskId = -1;
+        }else{ taskId = tableViewTasks.getSelectionModel().getSelectedItem().getId(); }
+        listViewUsers.getItems().add(tableViewAllUsers.getSelectionModel().getSelectedItem());
+        DBSource.insertAssignment(userId,projId,taskId);
+    }
+    @FXML
+    public void saveChange(KeyEvent k){
+        if(k.getCode().getName().equals("Enter")){
+            tableViewProjects.getSelectionModel().getSelectedItem().setDesc(txtAreaProjectDesc.getText());
+            tableViewProjects.getSelectionModel().getSelectedItem().updateDB();
+            txtAreaProjectDesc.setDisable(true);
+        }
+
     }
     @FXML
     public void narrowUsers(){
-        if(listViewTasks.getSelectionModel().getSelectedIndex() ==-1){
+        if(tableViewTasks.getSelectionModel().getSelectedIndex() ==-1){
             return;
         }
         btnRemoveTask.setDisable(false);
-        txtAreaTaskDesc.setText(listViewTasks.getSelectionModel().getSelectedItem().getDesc());
-        int taskID = listViewTasks.getSelectionModel().getSelectedItem().getId();
-        listViewUsers.setItems(MainAppUIController.getFilteredUsersToDisplay(taskID));
-
+        txtAreaTaskDesc.setText(tableViewTasks.getSelectionModel().getSelectedItem().getDesc());
+        int taskID = tableViewTasks.getSelectionModel().getSelectedItem().getId();
+        listViewUsers.setItems(DBSource.getItems("users","CALL GetUsersAttachedToTask(" + taskID + ")"));
     }
     @FXML
     public void showProjectTasksAndUsers(){
         btnRemoveTask.setDisable(true);
-        if(listViewProjects.getSelectionModel().getSelectedIndex() == -1){
+        txtAreaProjectDesc.setDisable(false);
+        if(tableViewProjects.getSelectionModel().getSelectedIndex() == -1){
             return;
         }
         anchorPaneTasks.setDisable(false);
-        txtAreaProjectDesc.setText(listViewProjects.getSelectionModel().getSelectedItem().getDesc());
-        int projId = listViewProjects.getSelectionModel().getSelectedItem().getId();
-        listViewTasks.setItems(new FilteredList<>(AppData.getInstance().getTaskItems()).filtered(s->s.getProjID() == projId));
-        listViewUsers.setItems(MainAppUIController.getUsersToDisplay(projId));
-
+        txtAreaProjectDesc.setText(tableViewProjects.getSelectionModel().getSelectedItem().getDesc());
+        int projId = tableViewProjects.getSelectionModel().getSelectedItem().getId();
+        tableViewTasks.setItems(DBSource.getItems("task", "SELECT * FROM task WHERE proj_id = " + projId));
+        listViewUsers.setItems(DBSource.getItems("users","CALL GetUsersAttachedToProject(" + projId + ")"));
 
     }
 

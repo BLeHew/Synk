@@ -1,41 +1,26 @@
 package tableobjects;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class User {
+public class User extends TableObject {
 
-    private final IntegerProperty id;
+    private String email;
+    private int pass_hash;
+    private int priv_level;
 
-    private final StringProperty username;
-
-    public User(int id, String username) {
-        this.id = new SimpleIntegerProperty(id);
-        this.username =  new SimpleStringProperty(username);
+    public User(int id, String username, String email, int pass_hash, int priv_level) {
+        super(id,username,"");
+        this.email = email;
+        this.pass_hash = pass_hash;
+        this.priv_level = priv_level;
     }
     public User(ResultSet rs) throws SQLException{
-        this(rs.getInt("id"),rs.getString("username"));
+        this(rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getInt("pass_hash"),
+                rs.getInt("priv_lvl"));
     }
-    public User(){
-        id = null;
-        username = null;
-    }
-    public int getUserId(){
-        return id.get();
-    }
-    @Override
-    public String toString(){
-        return username.get();
-    }
-
-
-
-
-
 }

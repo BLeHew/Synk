@@ -1,11 +1,14 @@
 package userinterface;
 
-import connection.SynkConnection;
+import connection.DBSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import tableobjects.TableObject;
 
 
 public class SynkApp extends Application {
@@ -18,7 +21,6 @@ public class SynkApp extends Application {
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
         }
-        //System.out.println("1234".hashCode());
         launch(args);
     }
 
@@ -37,7 +39,7 @@ public class SynkApp extends Application {
     public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
-            SynkConnection.establish();
+            DBSource.establish();
             gotoLogin();
         } catch (Exception ex) {
 
@@ -64,6 +66,12 @@ public class SynkApp extends Application {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);
         stage.setScene(scene);
+        double width = 640;
+        double height = 480;
+
         stage.show();
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((screenBounds.getWidth() - stage.getWidth())/ 2);
+        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
     }
 }
