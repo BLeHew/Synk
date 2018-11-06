@@ -1,6 +1,8 @@
 package tableobjects;
 
 import connection.DBSource;
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+import userinterface.Toast;
 
 import java.sql.*;
 
@@ -12,14 +14,14 @@ public class Task extends TableObject{
         super(id,name,desc);
         super.type = "task";
         this.projID = projID;
-        this.pctComplete = String.valueOf(Integer.parseInt(pctComplete) % 100);
+        this.pctComplete = pctComplete;
     }
     public Task(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
                 rs.getString("description"),
                 rs.getString("name"),
                 rs.getInt("proj_id"),
-                String.valueOf(rs.getInt("pctComplete")));
+                rs.getString("pctComplete"));
     }
     public Task(int projID){
         this();
@@ -41,9 +43,14 @@ public class Task extends TableObject{
     }
 
     public void setPctComplete(String pctComplete) {
-        if(pctComplete.length() < 5) {
+        if(pctComplete.length() < 4) {
             int i = Integer.parseInt(pctComplete);
+            if (i > 100){
+                Toast.makeText("TOO BIG");
+            }
             this.pctComplete = String.valueOf(Math.max(0, Math.min(i, 100)));
+        }else {
+            Toast.makeText("TOO BIG");
         }
     }
     public String toQuery(){
@@ -62,7 +69,6 @@ public class Task extends TableObject{
             ps.setString(4,pctComplete);
             ps.setInt(5,super.getId());
             ps.executeUpdate();
-            System.out.println(ps);
         }catch (SQLException s){
             s.printStackTrace();
         }finally { DBSource.close(conn); }
