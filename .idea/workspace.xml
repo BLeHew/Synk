@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb11b67a-91bf-4220-87ad-84c988546693" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/79436de8-78a6-4450-99c0-700019ce8452.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamSynk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamSynk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/Query.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cb11b67a-91bf-4220-87ad-84c988546693" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,13 +56,13 @@
     <session id="407852862">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="12" />
+          <entry key="project.open.time.6" value="13" />
           <entry key="project.open.time.7" value="8" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -94,14 +78,14 @@
           <entry key="fxml" value="397" />
           <entry key="java" value="11159" />
           <entry key="sql" value="25" />
-          <entry key="txt" value="10" />
+          <entry key="txt" value="12" />
           <entry key="xml" value="175" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="11159" />
-          <entry key="PLAIN_TEXT" value="50" />
+          <entry key="PLAIN_TEXT" value="52" />
           <entry key="SQL" value="25" />
           <entry key="XML" value="572" />
         </counts>
@@ -334,6 +318,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -419,7 +404,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -562,6 +546,7 @@
       <workItem from="1541462417330" duration="7990000" />
       <workItem from="1541516176601" duration="773000" />
       <workItem from="1541524352982" duration="409000" />
+      <workItem from="1541527358193" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
       <created>1541103286131</created>
@@ -616,7 +601,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114545000" />
+    <option name="totallyTimeSpent" value="114784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,9 +614,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -647,8 +631,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49707174" weight="0.36392406" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49707174" visible="true" weight="0.3637375" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3557833" side_tool="true" weight="0.37974682" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4941435" weight="0.32911393" />
@@ -780,12 +764,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/connection/Query.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="190" selection-start-line="31" selection-start-column="190" selection-end-line="31" selection-end-column="190" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
       <provider selected="true" editor-type-id="text-editor">
