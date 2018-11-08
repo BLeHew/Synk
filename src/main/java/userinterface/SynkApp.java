@@ -66,12 +66,8 @@ public class SynkApp extends Application {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);
         stage.setScene(scene);
-        double width = 640;
-        double height = 480;
-
         stage.show();
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - stage.getWidth())/ 2);
-        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
+        stage.centerOnScreen();
+
     }
 }

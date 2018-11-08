@@ -12,7 +12,7 @@ public class TableObjectFactory {
         }
     }
     public static TableObject getTableObject(String type, ResultSet rs) throws SQLException{
-        switch (type.toLowerCase()){
+        switch (type){
             case "project": return new Project(rs);
             case "task": return new Task(rs);
             case "users": return new User(rs);

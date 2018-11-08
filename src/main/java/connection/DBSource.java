@@ -12,7 +12,6 @@ import java.sql.*;
 
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
-
     private static String userName = "root";
     private static String password = "root";
     public static String lastError = "";
@@ -34,22 +33,21 @@ public class DBSource {
     public static Connection getConnection() throws SQLException{
         return con.getConnection();
     }
-    public static void insertAssignment(int userId,int projId,int taskId){
+    public static boolean insertAssignment(int userId,int projId,int taskId){
         Connection conn = null;
         try {
             conn = con.getConnection();
             if (taskId != -1) {
-                conn.prepareStatement("INSERT INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
+                conn.prepareStatement("INSERT IGNORE INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
                         .executeUpdate();
             }
-            conn.prepareStatement("INSERT INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
+            conn.prepareStatement("INSERT IGNORE INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
                     .executeUpdate();
-
-        }catch (SQLIntegrityConstraintViolationException sive){
-            //discard
+            return true;
         }catch (SQLException s){
             s.printStackTrace();
-        }
+        }finally { close(conn); }
+        return false;
     }
     public static ObservableList<TableObject> getItems(String type, String query){
         ObservableList<TableObject> o = FXCollections.observableArrayList();

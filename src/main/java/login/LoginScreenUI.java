@@ -28,7 +28,7 @@ public class LoginScreenUI {
     private void login(){
         System.out.println("Logging in");
 
-        if(!CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+        if(CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
             txtFieldError.setText(CredentialsCheck.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();
