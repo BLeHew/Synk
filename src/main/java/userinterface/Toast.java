@@ -22,6 +22,8 @@ public final class Toast {
     public static void makeText(String toastMsg) {
         makeText(toastMsg,MAINSTAGE,TOASTDELAY,FADEINDELAY,FADEOUTDELAY);
     }
+    
+
     public static void makeText(String toastMsg,Stage outputStage,int toastDelay, int fadeInDelay,int fadeOutDelay){
         //allows us to turn off all toast messages
         if(!show){
@@ -65,6 +67,4 @@ public final class Toast {
         });
         fadeInTimeline.play();
     }
-
-
 }

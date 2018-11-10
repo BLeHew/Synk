@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "root";
+    private static String password = "JtroykyM";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -28,6 +28,8 @@ public class DBSource {
         con = new HikariDataSource(config);
         if(con.isRunning()){
             System.out.println("Connection made");
+        }else {
+        	System.out.println("Error in Database Connection");
         }
     }
     public static Connection getConnection() throws SQLException{

@@ -14,14 +14,36 @@ import tableobjects.TableObject;
 public class SynkApp extends Application {
     private Stage stage;
     public static String driver = "com.mysql.cj.jdbc.Driver";
+    
+    
+  /*  
+    public void Design(Stage primaryStage) {
 
+   	 try {
+        	Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        	Scene scene = new Scene(root,400,400);
+        	scene.getStylesheets().add(getClass().getResource("AppStyles.css").toExternalForm());
+        	primaryStage.setScene(scene);
+        	primaryStage.show();
+        	
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }
+    	
+    }
+    */
+     
     public static void main(String args[]){
+    	System.out.println("in main");
         try {
             Class.forName(driver);
         }catch(Exception e){
             System.err.println("Error in loading driver " + e);
+            
         }
+       
         launch(args);
+        
     }
 
     private static SynkApp instance;
@@ -41,9 +63,27 @@ public class SynkApp extends Application {
             stage = primaryStage;
             DBSource.establish();
             gotoLogin();
+            
         } catch (Exception ex) {
 
         }
+        
+       /* try {
+        	Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        	Scene scene = new Scene(root,400,400);
+        	scene.getStylesheets().add(getClass().getResource("AppStyles.css").toExternalForm());
+        	primaryStage.setScene(scene);
+        	primaryStage.show();
+        	
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }*/
+        
+        
+        
+        
+        
+        
     }
     public void gotoMainUI(){
         try {
@@ -65,7 +105,9 @@ public class SynkApp extends Application {
     public void replaceSceneContent(String fxml) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(page);
+        scene.getStylesheets().add("/fxml/style.css");
         stage.setScene(scene);
+        
         stage.show();
         stage.centerOnScreen();
 
