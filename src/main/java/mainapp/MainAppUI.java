@@ -1,6 +1,7 @@
 package mainapp;
 
 import connection.DBSource;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
@@ -51,13 +52,22 @@ public class MainAppUI {
             return row ;
         });
     }
-    public void showProjectTasksAndUsers(TableObject t) {
+    public void showProjectTasksAndUsers(TableObject project) {
+        Project p = (Project) project;
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
         anchorPaneTasks.setDisable(false);
-        txtAreaProjectDesc.setText(t.getDesc());
-        tableViewTasks.setItems(DBSource.getItems("task", "SELECT * FROM task WHERE proj_id = " + t.getId()));
-        tableViewUsers.setItems(DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + t.getId() + ")"));
+        txtAreaProjectDesc.setText(project.getDesc());
+        //tableViewTasks.setItems(DBSource.getItems("task", "SELECT * FROM task WHERE proj_id = " + project.getId()));
+
+        //tableViewUsers.setItems(DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")"));
+        if(null != p.getTasks()){
+            tableViewTasks.setItems(FXCollections.observableArrayList(p.getTasks()));
+        }
+        if (null != p.getUsers()){
+            tableViewUsers.setItems(FXCollections.observableArrayList(p.getUsers()));
+        }
+
     }
     public void narrowUsers(TableObject t){
         btnRemoveTask.setDisable(false);
@@ -69,6 +79,8 @@ public class MainAppUI {
     public void addTask(){
         if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
             Task t = new Task(selectedProject.getId());
+            Project p = (Project)selectedProject;
+            p.getTasks().add(t);
             t.insertIntoDB();
             tableViewTasks.getItems().add(t);
         }

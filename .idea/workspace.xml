@@ -7,12 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb11b67a-91bf-4220-87ad-84c988546693" name="Default" comment="refactoring mainAppUi">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamSynk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamSynk.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/setupqueries" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/setupqueries" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +64,7 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="project: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="task: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -77,59 +80,59 @@
     <session id="407852862">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="31" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="12" />
-          <entry key="project.open.time.7" value="8" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.5" value="6" />
+          <entry key="project.open.time.6" value="13" />
+          <entry key="project.open.time.7" value="9" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
           <entry key="git.branch.create.new" value="3" />
-          <entry key="git.branch.delete.local" value="3" />
-          <entry key="git.branch.rename" value="2" />
+          <entry key="git.branch.delete.local" value="4" />
+          <entry key="git.branch.rename" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="40" />
+          <entry key="dummy" value="50" />
           <entry key="fxml" value="397" />
-          <entry key="java" value="11159" />
+          <entry key="java" value="13198" />
           <entry key="sql" value="25" />
           <entry key="txt" value="10" />
-          <entry key="xml" value="175" />
+          <entry key="xml" value="177" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11159" />
-          <entry key="PLAIN_TEXT" value="50" />
+          <entry key="JAVA" value="13198" />
+          <entry key="PLAIN_TEXT" value="60" />
           <entry key="SQL" value="25" />
-          <entry key="XML" value="572" />
+          <entry key="XML" value="574" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="7" />
-          <entry key="java" value="83" />
+          <entry key="fxml" value="8" />
+          <entry key="java" value="98" />
           <entry key="setupqueries" value="1" />
           <entry key="sql" value="5" />
           <entry key="tasks" value="1" />
           <entry key="tld" value="1" />
-          <entry key="xml" value="20" />
+          <entry key="xml" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="1" />
-          <entry key="JAVA" value="83" />
+          <entry key="JAVA" value="98" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="4" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="28" />
+          <entry key="XML" value="30" />
         </counts>
       </usages-collector>
     </session>
@@ -183,66 +186,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-71">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+              <folding>
+                <element signature="e#3586#3587#0" expanded="true" />
+                <element signature="e#3682#3683#0" expanded="true" />
+                <element signature="e#3720#3721#0" expanded="true" />
+                <element signature="e#3812#3813#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="106" />
-              <folding>
-                <marker date="1541547618919" expanded="true" signature="1439:1514" ph="INSERT INTO user_task_assigned... " />
-                <marker date="1541547618919" expanded="true" signature="1608:1683" ph="INSERT INTO user_proj_assigned... " />
-                <marker date="1541547618919" expanded="true" signature="2836:2891" ph="SELECT usern... users" />
-                <marker date="1541547618919" expanded="true" signature="3581:3643" ph="SELECT usern... users" />
-                <marker date="1541547618919" expanded="true" signature="3857:3953" ph="INSERT INTO users... " />
-              </folding>
+            <state relative-caret-position="1181">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="60" />
+            <state relative-caret-position="458">
+              <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-501">
-              <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+            <state relative-caret-position="276">
+              <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
-            </state>
-          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+            <state relative-caret-position="506">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#203#204#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/sql/synk.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -250,8 +246,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+            <state relative-caret-position="270">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding>
+                <element signature="e#349#350#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#454#455#0" expanded="true" />
+                <element signature="e#324#325#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#334#335#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -259,17 +275,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            <state relative-caret-position="197">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/Toast.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+            <state relative-caret-position="468">
+              <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -318,24 +346,27 @@
         <option value="/392dea51/76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/routine/getusersattachedtoproject@(int(11)).sql" />
         <option value="/392dea51/76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/routine/getusersattachedtotask@(int(11)).sql" />
         <option value="$PROJECT_DIR$/src/main/java/connection/Query.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Transactionable.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainapp/MainUIFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/connection/DBSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/userinterface/Toast.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/synk@localhost" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/synk.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/setupqueries" />
+        <option value="$PROJECT_DIR$/src/main/java/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/SynkServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
       </list>
     </option>
   </component>
@@ -364,8 +395,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-3" />
-    <option name="y" value="89" />
+    <option name="x" value="209" />
+    <option name="y" value="-11" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -398,6 +429,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -437,7 +469,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="mainapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
@@ -445,7 +477,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mainapp" type="462c0819:PsiDirectoryNode" />
+              <item name="tableobjects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
@@ -468,13 +500,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,7 +560,6 @@
     <configuration name="SynkApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="userinterface.SynkApp" />
       <module name="TeamSynk" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -633,6 +664,11 @@
       <workItem from="1541539310538" duration="9022000" />
       <workItem from="1541550523463" duration="1811000" />
       <workItem from="1541552404023" duration="2064000" />
+      <workItem from="1541566107720" duration="2029000" />
+      <workItem from="1541568211866" duration="940000" />
+      <workItem from="1541689604420" duration="434000" />
+      <workItem from="1541708750264" duration="2037000" />
+      <workItem from="1541718458207" duration="5422000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
       <created>1541103286131</created>
@@ -697,11 +733,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541548348594</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactoring mainAppUi">
+      <created>1541708906415</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541708906415</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134776000" />
+    <option name="totallyTimeSpent" value="148040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,7 +756,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
@@ -721,25 +764,26 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20121029" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26492536" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Image Layers" order="7" />
+      <window_info id="Learn" order="8" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="1" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32925472" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32925472" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.24841772" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.12274959" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.24805339" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.2836485" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32925472" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32814237" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.28139183" />
+      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.15938166" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
@@ -786,11 +830,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactoring mainAppUi" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/SynkApp.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/tableobjects/Users.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/tableobjects/Users.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/tableobjects/Projects.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/tableobjects/Projects.hbm.xml" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/cell/TextFieldTableCell.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/TableColumn.java" />
     <entry file="das://76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/table/tasks" />
@@ -806,53 +845,13 @@
     <entry file="dbSrc:///392dea51/76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/routine/getusersattachedtoproject@(int(11)).sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1fa325a3-b8d1-4075-a017-5c9918411ba8/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/04c3e7f2-486a-4466-94a5-943e39bf0986/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/connection/Query.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Transactionable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="2560" column="18" selection-start-line="2560" selection-start-column="18" selection-end-line="2560" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-511">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/util/Callback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2371">
-          <caret line="343" column="17" selection-start-line="343" selection-start-column="17" selection-end-line="343" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/util/Callback.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Properties.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/3.1.0/HikariCP-3.1.0-sources.jar!/com/zaxxer/hikari/HikariConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -861,132 +860,183 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainUIFacade.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableView.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableView.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/stage/Window.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/@localhost" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b502d2a-c06e-4239-906e-76208bb24265/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/synk@localhost" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/82f8cd2a-828e-42b7-853d-49ba8fce5095/console.sql" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/synk.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="999" column="44" selection-start-line="999" selection-start-column="44" selection-end-line="999" selection-end-column="44" />
+        <state relative-caret-position="2244">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/stage/Window.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/net/ServerSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
+        <state relative-caret-position="595">
+          <caret line="506" column="18" selection-start-line="506" selection-start-column="18" selection-end-line="506" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/DataOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="57" column="86" selection-start-line="57" selection-start-column="86" selection-end-line="57" selection-end-column="86" />
+        <state relative-caret-position="396">
+          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/login/CredentialsCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        <state relative-caret-position="517">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/Toast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/@localhost">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b502d2a-c06e-4239-906e-76208bb24265/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/synk@localhost">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="52" lean-forward="true" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/82f8cd2a-828e-42b7-853d-49ba8fce5095/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="106" />
-          <folding>
-            <marker date="1541547618919" expanded="true" signature="1439:1514" ph="INSERT INTO user_task_assigned... " />
-            <marker date="1541547618919" expanded="true" signature="1608:1683" ph="INSERT INTO user_proj_assigned... " />
-            <marker date="1541547618919" expanded="true" signature="2836:2891" ph="SELECT usern... users" />
-            <marker date="1541547618919" expanded="true" signature="3581:3643" ph="SELECT usern... users" />
-            <marker date="1541547618919" expanded="true" signature="3857:3953" ph="INSERT INTO users... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/synk.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="287">
+          <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/SynkServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="60" />
+        <state relative-caret-position="92">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/CredentialsCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="e#3914#3915#0" expanded="true" />
+            <element signature="e#3960#3961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-501">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        <state relative-caret-position="23">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="197">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1181">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+          <folding>
+            <element signature="e#3586#3587#0" expanded="true" />
+            <element signature="e#3682#3683#0" expanded="true" />
+            <element signature="e#3720#3721#0" expanded="true" />
+            <element signature="e#3812#3813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

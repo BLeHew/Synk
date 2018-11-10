@@ -34,7 +34,7 @@
             <TextArea fx:id="txtAreaProjectDesc" disable="true" layoutY="426.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="250.0" promptText="Project Description" wrapText="true" />
             <Button id="btnAddProject" layoutY="527.0" mnemonicParsing="false" onAction="#addProject" text="Create Project" />
             <Button fx:id="btnRemoveProject" layoutX="151.0" layoutY="527.0" mnemonicParsing="false" onAction="#removeProject" text="Remove Project" />
-            <TableView fx:id="tableViewProjects" editable="true" onMouseEntered="#refreshProjects" prefHeight="420.0" prefWidth="250.0" userData="project">
+            <TableView fx:id="tableViewProjects" editable="true" prefHeight="420.0" prefWidth="250.0" userData="project">
               <columns>
                 <TableColumn fx:id="columnProjectName" onEditCommit="#updateName" prefWidth="250.0" text="Project Name">
                   <cellValueFactory>

@@ -1,19 +1,20 @@
 package userinterface;
 
-import connection.DBSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import tableobjects.TableObject;
+import connection.*;
+
+import java.net.*;
+import java.io.*;
 
 
 public class SynkApp extends Application {
     private Stage stage;
     public static String driver = "com.mysql.cj.jdbc.Driver";
+
 
     public static void main(String args[]){
         try {
@@ -42,8 +43,8 @@ public class SynkApp extends Application {
             DBSource.establish();
             gotoLogin();
         } catch (Exception ex) {
-
         }
+
     }
     public void gotoMainUI(){
         try {
@@ -71,3 +72,4 @@ public class SynkApp extends Application {
 
     }
 }
+

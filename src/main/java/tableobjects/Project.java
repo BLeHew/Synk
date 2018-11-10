@@ -3,11 +3,28 @@ package tableobjects;
 import connection.DBSource;
 
 import java.sql.*;
+import java.util.Set;
 
 public class Project extends TableObject {
+
+    private Set<Task> tasks;
+    private Set<User> users;
+
     public Project(int id, String name, String desc){
         super(id,name,desc);
         super.type = "project";
+    }
+    public Set<User> getUsers(){
+        return users;
+    }
+    public void setUsers(Set<User> users){
+        this.users = users;
+    }
+    public Set<Task> getTasks(){
+        return tasks;
+    }
+    public void setTasks(Set<Task> tasks){
+        this.tasks = tasks;
     }
     public Project(ResultSet rs) throws SQLException {
         this(rs.getInt("id"),
