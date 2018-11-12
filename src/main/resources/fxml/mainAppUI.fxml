@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import java.awt.event.ComponentEvent?>
 
-<AnchorPane prefHeight="632.0" prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<AnchorPane minHeight="632.0"  prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
       <MenuBar layoutY="2.0">
         <menus>
@@ -33,7 +33,7 @@
          <children>
             <TextArea fx:id="txtAreaProjectDesc" disable="true" layoutY="426.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="250.0" promptText="Project Description" wrapText="true" />
             <Button id="btnAddProject" layoutY="527.0" mnemonicParsing="false" onAction="#addProject" text="Create Project" />
-            <Button fx:id="btnRemoveProject" layoutX="151.0" layoutY="527.0" mnemonicParsing="false" onAction="#removeProject" text="Remove Project" />
+            <Button fx:id="btnRemoveProject" disable="true" layoutX="151.0" layoutY="527.0" mnemonicParsing="false" onAction="#removeProject" text="Remove Project" />
             <TableView fx:id="tableViewProjects" editable="true" prefHeight="420.0" prefWidth="250.0" userData="project">
               <columns>
                 <TableColumn fx:id="columnProjectName" onEditCommit="#updateName" prefWidth="250.0" text="Project Name">
@@ -45,6 +45,14 @@
                   </cellFactory>
               </TableColumn>
               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addProject" text="Add Project" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeProject" text="Remove Project" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
             </TableView>
          </children>
       </AnchorPane>

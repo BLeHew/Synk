@@ -14,21 +14,16 @@ public class LoginScreenUI {
     @FXML private TextField txtFieldEmail;
     @FXML private PasswordField passwordFieldPassword;
     @FXML private PasswordField passwordFieldReType;
-    @FXML private Button btnCancelRegistration;
-    @FXML private Button btnRegister;
-    @FXML private Button btnLogin;
     @FXML private AnchorPane paneRegister;
 
 
     private boolean clicked = false;
-    private static final double SHIFTDOWN = 50;
-    private static final double SHIFTUP = -50;
 
     @FXML
     private void login(){
         System.out.println("Logging in");
 
-        if(!CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+        if(CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
             txtFieldError.setText(CredentialsCheck.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();
@@ -42,7 +37,6 @@ public class LoginScreenUI {
             System.out.println("Registering");
             SynkApp.getInstance().getStage().setTitle("Register");
             changeUseability();
-            shiftScreenItems(SHIFTDOWN);
             clicked = true;
         }else {
             if(fieldsAreEmpty()){
@@ -50,7 +44,6 @@ public class LoginScreenUI {
             }else if(CredentialsCheck.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
                 SynkApp.getInstance().getStage().setTitle("Synk Login");
                 changeUseability();
-                shiftScreenItems(SHIFTUP);
                 clicked = false;
             }else {
                 txtFieldError.setText(CredentialsCheck.errorMessage);
@@ -81,15 +74,8 @@ public class LoginScreenUI {
     @FXML
     private void cancelRegistration(){
         txtFieldError.clear();
-        SynkApp.getInstance().getStage().setTitle("Synk Login");
         changeUseability();
-        shiftScreenItems(SHIFTUP);
+        SynkApp.getInstance().getStage().setTitle("Synk Login");
         clicked = false;
-    }
-    private void shiftScreenItems(double movement){
-        SynkApp.getInstance().getStage().setHeight(SynkApp.getInstance().getStage().getHeight() + movement);
-        btnRegister.setLayoutY(btnRegister.getLayoutY() + movement);
-        btnLogin.setLayoutY(btnLogin.getLayoutY() + movement);
-        txtFieldError.setLayoutY(txtFieldError.getLayoutY() + movement);
     }
 }

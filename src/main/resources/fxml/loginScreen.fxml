@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-<AnchorPane id="loginScreen" prefHeight="378.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
+
+<AnchorPane id="loginScreen" prefHeight="572.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
    <children>
-      <TextField fx:id="txtFieldUsername" layoutY="2.0" onAction="#login" prefHeight="68.0" prefWidth="402.0" promptText="Username">
+      <TextField fx:id="txtFieldUsername" layoutX="259.0" layoutY="122.0" onAction="#login" prefHeight="68.0" prefWidth="402.0" promptText="Username">
          <font>
             <Font size="24.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordFieldPassword" layoutY="70.0" onAction="#login" prefHeight="74.0" prefWidth="402.0" promptText="Password">
+      <PasswordField fx:id="passwordFieldPassword" layoutX="259.0" layoutY="213.0" onAction="#login" prefHeight="74.0" prefWidth="402.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font></PasswordField>
-      <Button id="btnLogin" fx:id="btnLogin" layoutX="198.0" layoutY="319.0" mnemonicParsing="false" onAction="#login" prefHeight="58.0" prefWidth="207.0" text="Login">
+      <Button id="btnLogin" fx:id="btnLogin" layoutX="474.0" layoutY="485.0" mnemonicParsing="false" onAction="#login" prefHeight="58.0" prefWidth="191.0" text="Login">
          <font>
             <Font size="24.0" />
          </font></Button>
-      <TextField fx:id="txtFieldError" layoutX="1.0" layoutY="288.0" prefHeight="31.0" prefWidth="402.0" style="-fx-text-fill: red; -fx-background-color: white;" >
+      <TextField fx:id="txtFieldError" layoutY="543.0" prefHeight="31.0" prefWidth="689.0" style="-fx-text-fill: red; -fx-background-color: white;">
           <font>
               <Font size="13.0" />
           </font></TextField>
-      <Button id="btnRegister" fx:id="btnRegister" layoutY="319.0" mnemonicParsing="false" onAction="#register" prefHeight="58.0" prefWidth="198.0" text="Register">
+      <Button id="btnRegister" fx:id="btnRegister" layoutX="262.0" layoutY="485.0" mnemonicParsing="false" onAction="#register" prefHeight="58.0" prefWidth="198.0" text="Register">
          <font>
             <Font size="24.0" />
          </font></Button>
-      <AnchorPane id="paneRegister" fx:id="paneRegister" layoutY="144.0" prefHeight="176.0" prefWidth="402.0" visible="false">
+      <AnchorPane id="paneRegister" fx:id="paneRegister" layoutX="259.0" layoutY="295.0" prefHeight="176.0" prefWidth="402.0" visible="false">
          <children>
             <PasswordField fx:id="passwordFieldReType" onAction="#login" prefHeight="74.0" prefWidth="402.0" promptText="Re-Type Password">
                <font>
@@ -37,7 +40,7 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-             <Button fx:id="btnCancelRegistration" layoutY="133.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="45.0" prefWidth="402.0" text="Cancel Registration" >
+             <Button fx:id="btnCancelRegistration" layoutY="133.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="45.0" prefWidth="402.0" text="Cancel Registration">
              <font>
                  <Font size="20.0" />
              </font></Button>

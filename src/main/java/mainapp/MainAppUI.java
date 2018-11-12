@@ -15,9 +15,11 @@ public class MainAppUI {
     @FXML private TableView<TableObject> tableViewTasks;
     @FXML private TableView<TableObject> tableViewAllUsers;
     @FXML private TableView<TableObject> tableViewUsers;
+
     @FXML private TextArea txtAreaProjectDesc;
     @FXML private TextArea txtAreaTaskDesc;
     @FXML private AnchorPane anchorPaneTasks;
+    @FXML private Button btnRemoveProject;
     @FXML private Button btnRemoveTask;
     @FXML private TextField txtFieldSearch;
 
@@ -54,13 +56,13 @@ public class MainAppUI {
     }
     public void showProjectTasksAndUsers(TableObject project) {
         Project p = (Project) project;
+
+        btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
         anchorPaneTasks.setDisable(false);
         txtAreaProjectDesc.setText(project.getDesc());
-        //tableViewTasks.setItems(DBSource.getItems("task", "SELECT * FROM task WHERE proj_id = " + project.getId()));
 
-        //tableViewUsers.setItems(DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")"));
         if(null != p.getTasks()){
             tableViewTasks.setItems(FXCollections.observableArrayList(p.getTasks()));
         }
@@ -95,7 +97,7 @@ public class MainAppUI {
     public void removeProject(){
         tableViewProjects
                 .getItems()
-                .remove(tableViewProjects.getSelectionModel().getFocusedIndex())
+                .remove(tableViewProjects.getSelectionModel().getSelectedIndex())
                 .removeFromDB();
 
     }
