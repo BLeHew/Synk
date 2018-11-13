@@ -43,8 +43,14 @@ public class Task extends TableObject{
     }
 
     public void setPctComplete(String pctComplete) {
+        int i;
         if(pctComplete.length() < 4) {
-            int i = Integer.parseInt(pctComplete);
+            try {
+                i = Integer.parseInt(pctComplete);
+            }catch (NumberFormatException e){
+                Toast.makeText("NOT A NUMBER");
+                return;
+            }
             if (i > 100){
                 Toast.makeText("TOO BIG");
             }

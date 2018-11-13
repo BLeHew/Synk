@@ -5,9 +5,6 @@ import javafx.collections.ObservableList;
 import tableobjects.TableObject;
 
 public class AppData {
-    public ObservableList<TableObject> getAll(String type){
-        return DBSource.getItems(type,"SELECT * FROM " + type);
-    }
     /*
     DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")")
     DBSource.getItems("users","CALL GetUsersAttachedToTask(" + t.getId() + ")")
