@@ -5,6 +5,12 @@ import javafx.collections.ObservableList;
 import tableobjects.TableObject;
 
 public class AppData {
+    public static void insertIntoDB(TableObject t){
+        DBSource.runQuery("insert",t);
+    }
+    public static void removeFromDB(TableObject t){
+        DBSource.runQuery("delete",t);
+    }
     /*
     DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")")
     DBSource.getItems("users","CALL GetUsersAttachedToTask(" + t.getId() + ")")
