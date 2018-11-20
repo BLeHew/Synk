@@ -1,10 +1,10 @@
 package login;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import login.credentials.CredentialsCheck;
 import userinterface.SynkApp;
 
 public class LoginScreenUI {
@@ -23,7 +23,7 @@ public class LoginScreenUI {
     private void login(){
         System.out.println("Logging in");
 
-        if(!CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+        if(CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
             txtFieldError.setText(CredentialsCheck.errorMessage);
         }else {
             SynkApp.getInstance().gotoMainUI();

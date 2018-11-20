@@ -89,9 +89,9 @@ public class MainAppUI {
     }
     @FXML
     public void addProject(){
-        Project p = new Project();
-        AppData.insertIntoDB(p);
-        tableViewProjects.getItems().add(p);
+        Project project = new Project();
+        AppData.insertIntoDB(project);
+        tableViewProjects.getItems().add(project);
     }
     @FXML
     public void removeProject(){

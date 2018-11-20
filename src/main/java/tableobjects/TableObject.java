@@ -50,21 +50,6 @@ public class TableObject{
     }
     public String toQuery(){return "";}
     public void updateDB(){}
-    /*
-    public void insertIntoDB(){
-        Connection conn = null;
-        try {
-            conn = DBSource.getConnection();
-            String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
-            PreparedStatement s = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            s.executeUpdate();
-            ResultSet rs = s.getGeneratedKeys();
-            if(rs.next()){ id = rs.getInt(1); }
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { DBSource.close(conn); }
-    }
-    */
     public PreparedStatement insert(Connection conn) throws SQLException{
         String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
         PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -82,17 +67,6 @@ public class TableObject{
         statement.setInt(1,id);
         return statement;
     }
-    /*
-    public void removeFromDB(){
-        Connection conn = null;
-        try {
-            conn = DBSource.getConnection();
-            conn.prepareStatement("DELETE FROM " +  type  + " WHERE id = " + id).executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { DBSource.close(conn); }
-    }
-    */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
