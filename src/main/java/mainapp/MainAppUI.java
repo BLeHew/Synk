@@ -63,12 +63,12 @@ public class MainAppUI {
         anchorPaneTasks.setDisable(false);
         txtAreaProjectDesc.setText(project.getDesc());
 
-        if(null != p.getTasks()){
+        if(p.getTasks() != null){
             tableViewTasks.setItems(FXCollections.observableArrayList(p.getTasks()));
-        }
-        if (null != p.getUsers()){
+        }else { tableViewTasks.setItems(FXCollections.observableArrayList()); }
+        if (p.getUsers() != null){
             tableViewUsers.setItems(FXCollections.observableArrayList(p.getUsers()));
-        }
+        }else { tableViewTasks.setItems(FXCollections.observableArrayList()); }
 
     }
     public void narrowUsers(TableObject t){
@@ -82,28 +82,21 @@ public class MainAppUI {
         if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
             Task t = new Task(selectedProject.getId());
             Project p = (Project)selectedProject;
+            AppData.insertIntoDB(t);
             p.getTasks().add(t);
-            t.insertIntoDB();
             tableViewTasks.getItems().add(t);
         }
     }
     @FXML
     public void addProject(){
-        Project p = new Project();
-        p.insertIntoDB();
-        tableViewProjects.getItems().add(p);
+        Project project = new Project();
+        AppData.insertIntoDB(project);
+        tableViewProjects.getItems().add(project);
     }
     @FXML
     public void removeProject(){
-        tableViewProjects
-                .getItems()
-                .remove(tableViewProjects.getSelectionModel().getSelectedIndex())
-                .removeFromDB();
-
-    }
-    @FXML
-    public void refreshProjects(){
-        tableViewProjects.setItems(DBSource.getItems("project","SELECT * FROM project"));
+        tableViewProjects.getItems().remove(tableViewProjects.getSelectionModel().getSelectedIndex());
+        AppData.removeFromDB(selectedProject);
     }
     @FXML
     public void getUsers(){
@@ -127,10 +120,9 @@ public class MainAppUI {
     }
     @FXML
     public void removeTask(){
-        tableViewTasks
-                .getItems()
-                .remove(tableViewTasks.getSelectionModel().getSelectedIndex())
-                .removeFromDB();
+        tableViewTasks.getItems().remove(tableViewTasks.getSelectionModel().getSelectedIndex());
+        ((Project) selectedProject).removeTask((Task)tableViewTasks.getSelectionModel().getSelectedItem());
+        AppData.removeFromDB(tableViewTasks.getSelectionModel().getSelectedItem());
     }
     @FXML
     public void assignUser(){

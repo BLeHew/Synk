@@ -49,6 +49,30 @@ public class DBSource {
         }finally { close(conn); }
         return false;
     }
+    public static void runQuery(String type,TableObject object){
+        Connection conn = null;
+        try {
+            PreparedStatement stmt = null;
+            conn = con.getConnection();
+            switch (type){
+                case "insert": stmt = object.insert(conn);
+                    stmt.executeUpdate();
+                    runInsert(stmt,object);
+                    break;
+                case "delete": stmt = conn.prepareStatement("DELETE FROM " + object.getType() + " WHERE id = " + object.getId());
+                    stmt.executeUpdate();
+                    break;
+                case "update": object.update(conn).executeUpdate();
+                    break;
+            }
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { close(conn); }
+    }
+    private static void runInsert(PreparedStatement stmt, TableObject object) throws SQLException{
+        ResultSet rs = stmt.getGeneratedKeys();
+        if(rs.next()){ object.setId(rs.getInt(1)); }
+    }
     public static ObservableList<TableObject> getItems(String type, String query){
         ObservableList<TableObject> o = FXCollections.observableArrayList();
         Connection conn = null;

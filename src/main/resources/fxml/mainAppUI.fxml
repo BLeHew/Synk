@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import java.awt.event.ComponentEvent?>
 
-<AnchorPane minHeight="632.0"  prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<AnchorPane minHeight="632.0" prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
       <MenuBar layoutY="2.0">
         <menus>
@@ -96,7 +96,4 @@
       <Button layoutX="786.0" layoutY="494.0" mnemonicParsing="false" onAction="#search" prefHeight="88.0" prefWidth="99.0" text="Search" />
       <Button layoutX="886.0" layoutY="494.0" mnemonicParsing="false" onAction="#getUsers" prefHeight="88.0" prefWidth="99.0" text="Show Users (May be slow)" textAlignment="CENTER" wrapText="true" />
    </children>
-   <effect>
-      <DropShadow radius="9.940000000000001" spread="0.52" width="20.76" />
-   </effect>
 </AnchorPane>

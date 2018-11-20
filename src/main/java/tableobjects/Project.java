@@ -20,6 +20,9 @@ public class Project extends TableObject {
     public void setUsers(Set<User> users){
         this.users = users;
     }
+    public void removeTask(Task t){
+        tasks.remove(t);
+    }
     public Set<Task> getTasks(){
         return tasks;
     }
