@@ -41,7 +41,11 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.3.7.Final</version>
         </dependency>
-
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.9</version>
+        </dependency>
 
     </dependencies>
     <build>
