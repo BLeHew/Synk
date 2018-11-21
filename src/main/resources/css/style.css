@@ -1,0 +1,100 @@
+
+*{
+	-fx-primary : #2A2E37;
+	-fx-secondary : #FFFF8D;
+	-fx-primarytext : B2B2B2;
+	-fx-red: #FF0000;
+	-fx-green: #5cf442;
+}
+
+#loginScreen{
+	-fx-background-color: -fx-primary;
+  	-fx-background-radius: 10 10 0 0;
+}
+
+#mainAppID{
+	-fx-background-color: -fx-primary;
+}
+
+.glyph-icon{
+	-fx-fill: -fx-primarytext;
+}
+
+#synkLabel{
+	-fx-text-fill: #2196F3;
+	-fx-font-weight: bold;
+	-fx-font-size: 40px;
+}
+
+#appLabel{
+	-fx-text-fill: -fx-primarytext;
+	-fx-font-weight: bold;
+	-fx-font-size: 40px;
+}
+
+#txtFieldUsername{
+	-fx-text-fill: black;
+    -fx-border-width: 1;
+}
+
+.label{
+	-fx-text-fill: #e8e8e8;
+}
+
+#btnLogin{
+	-fx-background-color: #A1B56C;
+}
+
+#btnRegister{
+	-fx-background-color: #F7CA88;
+}
+
+#btnLogin:hover, #btnRegister:hover{
+	-fx-text-fill: white;
+}
+
+#btnCancelRegistration{
+	-fx-background-color: #AB4642;
+}
+
+#btnCancelRegistration:hover{
+	-fx-text-fill: white;
+}
+
+#Menu{
+	-fx-background-color: #86C1B9;
+	-fx-text-fill: #181818;
+	-fx-background-radius: 0 0 10 10;
+}
+
+#btnAddProject, #btnAddTask, #assignUser{
+	-fx-background-color: #A1B56C;
+	-fx-text-fill: white;
+}
+
+#btnAddProject:hover, #btnAddTask:hover, #assignUser:hover{
+	-fx-text-fill: black;
+}
+
+#btnRemoveProject, #btnRemoveTask, #removeUser{
+	-fx-background-color: #AB4642;
+	-fx-text-fill: white;
+}
+
+#btnRemoveProject:hover, #btnRemoveTask:hover, #removeUser:hover{
+	-fx-text-fill: black;
+}
+
+#btnSearch{
+	-fx-background-color: #DC9656;
+	-fx-text-fill: white;
+}
+
+#btnSearch:hover{
+	-fx-text-fill: black;
+}
+
+#btnSearchMore{
+	-fx-background-color: #BA8BAF;
+}
+

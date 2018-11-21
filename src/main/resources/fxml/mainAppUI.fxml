@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.cell.TextFieldTableCell?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import java.awt.event.ComponentEvent?>
 
-<AnchorPane minHeight="632.0"  prefWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<AnchorPane fx:id="mainAppID" minHeight="632.0" prefHeight="716.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
-      <MenuBar layoutY="2.0">
+      <MenuBar fx:id="Menu" layoutY="2.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -31,10 +37,8 @@
       </MenuBar>
       <AnchorPane fx:id="anchorPaneProjects" layoutX="12.0" layoutY="29.0">
          <children>
-            <TextArea fx:id="txtAreaProjectDesc" disable="true" layoutY="426.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="250.0" promptText="Project Description" wrapText="true" />
-            <Button id="btnAddProject" layoutY="527.0" mnemonicParsing="false" onAction="#addProject" text="Create Project" />
-            <Button fx:id="btnRemoveProject" disable="true" layoutX="151.0" layoutY="527.0" mnemonicParsing="false" onAction="#removeProject" text="Remove Project" />
-            <TableView fx:id="tableViewProjects" editable="true" prefHeight="420.0" prefWidth="250.0" userData="project">
+            <TextArea fx:id="txtAreaProjectDesc" disable="true" layoutX="14.0" layoutY="506.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="251.0" promptText="Project Description" wrapText="true" />
+            <TableView fx:id="tableViewProjects" editable="true" layoutX="14.0" layoutY="36.0" prefHeight="446.0" prefWidth="251.0" userData="project">
               <columns>
                 <TableColumn fx:id="columnProjectName" onEditCommit="#updateName" prefWidth="250.0" text="Project Name">
                   <cellValueFactory>
@@ -58,21 +62,19 @@
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneTasks" layoutX="278.0" layoutY="455.0">
          <children>
-            <TextArea fx:id="txtAreaTaskDesc" editable="false" prefHeight="88.0" prefWidth="250.0" promptText="Task Description" />
-            <Button fx:id="btnAddTask" layoutY="101.0" mnemonicParsing="false" onAction="#addTask" text="Create Task" />
-            <Button fx:id="btnRemoveTask" disable="true" layoutX="134.0" layoutY="102.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="25.0" prefWidth="116.0" text="Remove Task" />
+            <TextArea fx:id="txtAreaTaskDesc" editable="false" layoutX="40.0" layoutY="81.0" prefHeight="88.0" prefWidth="251.0" promptText="Task Description" />
          </children>
       </AnchorPane>
-      <TableView fx:id="tableViewUsers" editable="true" layoutX="547.0" layoutY="29.0" prefHeight="420.0" prefWidth="220.0" userData="users">
+      <TableView fx:id="tableViewUsers" editable="true" layoutX="604.0" layoutY="63.0" prefHeight="446.0" prefWidth="221.0" userData="users">
           <columns>
               <TableColumn prefWidth="220" text="Assigned Users">
                   <cellValueFactory><PropertyValueFactory property="name" /> </cellValueFactory>
               </TableColumn>
           </columns>
       </TableView>
-      <Button layoutX="555.0" layoutY="556.0" mnemonicParsing="false" onAction="#assignUser" text="Assign User" />
-      <Button layoutX="640.0" layoutY="557.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Remove User Assign" />
-      <TableView fx:id="tableViewTasks" editable="true" layoutX="278.0" layoutY="29.0" prefHeight="420.0" prefWidth="250.0" userData="tasks">
+      <Button fx:id="assignUser" layoutX="604.0" layoutY="652.0" mnemonicParsing="false" onAction="#assignUser" prefHeight="37.0" prefWidth="105.0" text="Assign User" />
+      <Button fx:id="removeUser" layoutX="720.0" layoutY="652.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Remove" />
+      <TableView fx:id="tableViewTasks" editable="true" layoutX="318.0" layoutY="63.0" prefHeight="446.0" prefWidth="251.0" userData="tasks">
         <columns>
           <TableColumn fx:id="columnTaskName" onEditCommit="#updateName" prefWidth="200.0" text="Task Name">
                   <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
@@ -84,7 +86,7 @@
           </TableColumn>
         </columns>
       </TableView>
-      <TableView fx:id="tableViewAllUsers" layoutX="786.0" layoutY="29.0" prefHeight="420.0" prefWidth="200.0" userData="allUsers">
+      <TableView fx:id="tableViewAllUsers" layoutX="861.0" layoutY="63.0" prefHeight="446.0" prefWidth="202.0" userData="allUsers">
         <columns>
           <TableColumn prefWidth="200.0" text="All Users">
                   <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
@@ -92,9 +94,13 @@
           </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="txtFieldSearch" layoutX="786.0" layoutY="455.0" onInputMethodTextChanged="#search" prefHeight="25.0" prefWidth="200.0" />
-      <Button layoutX="786.0" layoutY="494.0" mnemonicParsing="false" onAction="#search" prefHeight="88.0" prefWidth="99.0" text="Search" />
-      <Button layoutX="886.0" layoutY="494.0" mnemonicParsing="false" onAction="#getUsers" prefHeight="88.0" prefWidth="99.0" text="Show Users (May be slow)" textAlignment="CENTER" wrapText="true" />
+      <TextField fx:id="txtFieldSearch" layoutX="861.0" layoutY="540.0" onInputMethodTextChanged="#search" prefHeight="37.0" prefWidth="202.0" />
+      <Button fx:id="btnSearch" alignment="CENTER" layoutX="861.0" layoutY="652.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="99.0" text="Search" />
+      <Button layoutX="964.0" layoutY="601.0" mnemonicParsing="false" onAction="#getUsers" prefHeight="88.0" prefWidth="99.0" text="Show Users (May be slow)" textAlignment="CENTER" wrapText="true" />
+      <Button id="btnAddProject" layoutX="32.0" layoutY="652.0" mnemonicParsing="false" onAction="#addProject" prefHeight="37.0" prefWidth="105.0" text="Add Project" />
+      <Button fx:id="btnRemoveProject" alignment="CENTER" disable="true" layoutX="143.0" layoutY="652.0" mnemonicParsing="false" onAction="#removeProject" prefHeight="37.0" prefWidth="135.0" text="Remove Project" />
+      <Button fx:id="btnAddTask" alignment="CENTER_RIGHT" layoutX="318.0" layoutY="652.0" mnemonicParsing="false" onAction="#addTask" text="Add Task" />
+      <Button fx:id="btnRemoveTask" alignment="CENTER" disable="true" layoutX="449.0" layoutY="652.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="37.0" prefWidth="120.0" text="Remove Task" />
    </children>
    <effect>
       <DropShadow radius="9.940000000000001" spread="0.52" width="20.76" />
