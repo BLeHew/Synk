@@ -33,6 +33,24 @@ public class DBSource {
     public static Connection getConnection() throws SQLException{
         return con.getConnection();
     }
+    public static void removeUserTaskAssignment(int userId, int taskId){
+        String query = "DELETE FROM user_task_assigned WHERE user_id = " + userId + " AND task_id = " + taskId;
+        removeAssignment(query);
+    }
+    public static void removeUserProjectAssignment(int userId, int projId){
+        String query = "DELETE FROM user_proj_assigned WHERE user_id = " + userId + " AND proj_id = " + projId;
+        removeAssignment(query);
+    }
+    private static void removeAssignment(String query){
+        Connection conn = null;
+        System.out.println(query);
+        try {
+            conn = con.getConnection();
+            conn.prepareStatement(query).executeUpdate();
+        }catch (SQLException s){
+            s.printStackTrace();
+        }finally { close(conn); }
+    }
     public static boolean insertAssignment(int userId,int projId,int taskId){
         Connection conn = null;
         try {
