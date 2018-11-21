@@ -1,5 +1,7 @@
 package login.credentials.credentialserrors;
 
+import java.util.HashMap;
+
 public class CredentialsError {
     protected String errorMessage = "SUCCESS";
 
@@ -7,7 +9,7 @@ public class CredentialsError {
         return errorMessage;
     }
 
-    public boolean check(String username,String password, String passwordReenter, String email){
+    public boolean check(HashMap<String,String> userItems){
         return true;
     }
 }

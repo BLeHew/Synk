@@ -1,9 +1,11 @@
 package login.credentials.credentialserrors;
 
+import java.util.HashMap;
+
 public class PassDoesntMatchError extends CredentialsError{
     @Override
-    public boolean check(String username,String password, String passwordReenter, String email){
-        if(!password.equals(passwordReenter)){
+    public boolean check(HashMap<String,String> userItems){
+        if(!userItems.get("password").equals(userItems.get("passwordReenter"))){
             super.errorMessage = "Passwords Must Match";
             return false;
         }

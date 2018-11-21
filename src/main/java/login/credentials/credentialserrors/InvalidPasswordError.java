@@ -1,5 +1,6 @@
 package login.credentials.credentialserrors;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,8 +21,8 @@ public class InvalidPasswordError extends CredentialsError{
      * Correct Format - mkyong1A@
      */
     @Override
-    public boolean check(String username,String password, String passwordReenter, String email){
-        Matcher matcher = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})").matcher(password);
+    public boolean check(HashMap<String,String> userItems){
+        Matcher matcher = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})").matcher(userItems.get("password"));
         if(!matcher.matches()){
             super.errorMessage = "Password must be in the correct format. e.g., mkyong1A@";
             return false;

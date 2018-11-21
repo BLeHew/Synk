@@ -1,56 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="701.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
+<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="701.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
    <children>
-      <TextField fx:id="txtFieldUsername" layoutX="149.0" layoutY="167.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Username">
+      <TextField fx:id="txtFieldUsername" layoutX="227.0" layoutY="197.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Username">
+         <font> <Font size="24.0" /> </font>
+         <effect> <DropShadow blurType="GAUSSIAN" color="#383838" /></effect>
+      </TextField>
+      <PasswordField fx:id="passwordFieldPassword" layoutX="227.0" layoutY="279.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Password">
          <font>
             <Font size="24.0" />
-         </font>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" color="#383838" />
-         </effect></TextField>
-      <PasswordField fx:id="passwordFieldPassword" layoutX="149.0" layoutY="245.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Password">
-         <font>
-            <Font size="24.0" />
-         </font></PasswordField>
-      <AnchorPane id="paneRegister" fx:id="paneRegister" layoutX="-1.0" layoutY="350.0" prefHeight="257.0" prefWidth="689.0" visible="false">
-         <children>
-            <PasswordField fx:id="passwordFieldReType" layoutX="259.0" layoutY="6.0" onAction="#login" prefHeight="74.0" prefWidth="402.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </PasswordField>
-            <Label layoutX="12.0" layoutY="16.0" prefHeight="50.0" prefWidth="243.0" text="Re-Type Password:">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtFieldEmail" layoutX="260.0" layoutY="94.0" prefHeight="68.0" prefWidth="402.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </TextField>
-             <Button fx:id="btnCancelRegistration" layoutX="260.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="45.0" prefWidth="402.0" text="Cancel Registration">
-             <font>
-                 <Font size="20.0" />
-             </font></Button>
-            <Label layoutX="62.0" layoutY="102.0" prefHeight="45.0" prefWidth="164.0" text="Email:">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
          </font>
          <effect>
             <DropShadow blurType="GAUSSIAN" />
@@ -58,8 +29,7 @@
       <Button id="btnLogin" fx:id="btnLogin" layoutX="344.0" layoutY="616.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="122.0" text="Login">
          <font>
             <Font size="24.0" />
-         </font>   
-         
+         </font>
       </Button>
       <TextField fx:id="txtFieldError" layoutX="186.0" layoutY="549.0" prefHeight="50.0" prefWidth="280.0" style="-fx-text-fill: red; -fx-background-color: white;">
           <font>
@@ -82,7 +52,7 @@
             <Font size="34.0" />
          </font>
       </Label>
-      <Label layoutX="273.0" layoutY="19.0" prefHeight="157.0" prefWidth="374.0" text="W E L C O M E !">
+      <Label layoutX="227.0" layoutY="75.0" prefHeight="157.0" prefWidth="374.0" text="W E L C O M E !">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
@@ -100,13 +70,8 @@
       <FontAwesomeIconView glyphName="KEY" layoutX="81.0" layoutY="287.0" size="50" text="" />
       <AnchorPane id="paneRegister" fx:id="paneRegister" layoutX="-1.0" layoutY="350.0" prefHeight="257.0" prefWidth="653.0" visible="false">
          <children>
-            <PasswordField fx:id="passwordFieldReType" layoutX="150.0" layoutY="-25.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Re-Type Password">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </PasswordField>
             <FontAwesomeIconView glyphName="KEY" layoutX="85.0" layoutY="15.0" size="50" />
-            <TextField fx:id="txtFieldEmail" layoutX="150.0" layoutY="53.0" prefHeight="53.0" prefWidth="374.0">
+            <TextField fx:id="txtFieldEmail" layoutX="227.0" layoutY="68.0" prefHeight="51.0" prefWidth="374.0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -116,10 +81,15 @@
              <font>
                  <Font size="20.0" />
              </font></Button>
+            <PasswordField fx:id="passwordFieldReType" layoutX="227.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Re-Type Password">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </PasswordField>
          </children>
       </AnchorPane>
       <FontAwesomeIconView glyphName="LOCK" layoutX="304.0" layoutY="118.0" size="100" />
-      <Label fx:id="synkLabel" layoutX="173.0" layoutY="66.0" prefHeight="58.0" prefWidth="108.0" text="SYNK">
+      <Label fx:id="synkLabel" layoutX="236.0" layoutY="57.0" prefHeight="58.0" prefWidth="108.0" text="SYNK">
          <font>
             <Font size="37.0" />
          </font>
@@ -127,7 +97,7 @@
             <DropShadow color="#b91212" />
          </effect>
       </Label>
-      <Label fx:id="appLabel" layoutX="390.0" layoutY="66.0" prefHeight="58.0" prefWidth="83.0" text="APP">
+      <Label fx:id="appLabel" layoutX="396.0" layoutY="57.0" prefHeight="58.0" prefWidth="83.0" text="APP">
          <font>
             <Font size="37.0" />
          </font>

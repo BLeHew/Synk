@@ -3,6 +3,7 @@ package login.credentials;
 import login.credentials.credentialserrors.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class CredentialChecker {
@@ -29,9 +30,15 @@ public class CredentialChecker {
         return errorMessage;
     }
     public String check(String username,String password, String passwordReenter, String email){
+        HashMap<String,String> userItems = new HashMap<>();
+        userItems.put("username",username);
+        userItems.put("password",password);
+        userItems.put("passwordReenter",passwordReenter);
+        userItems.put("email",email);
+
         errorMessage = "SUCCESS";
         for(CredentialsError credentialsError : errorsList){
-            if(!credentialsError.check(username,password,passwordReenter,email)){
+            if(!credentialsError.check(userItems)){
                 errorMessage = credentialsError.getErrorMessage();
                 return errorMessage;
             }
