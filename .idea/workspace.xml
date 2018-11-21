@@ -6,22 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb11b67a-91bf-4220-87ad-84c988546693" name="Default" comment="moving queries into appdata">
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/CredentialChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/CredentialsError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidEmailError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidPasswordError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/PassDoesntMatchError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/UserToShortError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamSynk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamSynk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/login/CredentialsCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/CredentialsCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cb11b67a-91bf-4220-87ad-84c988546693" name="Default" comment="refactoring the registration ui logic" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +37,7 @@
     <session id="407852862">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="50" />
+          <entry key="project.closed" value="51" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="8" />
@@ -77,14 +62,14 @@
           <entry key="fxml" value="397" />
           <entry key="java" value="17752" />
           <entry key="sql" value="25" />
-          <entry key="txt" value="135" />
+          <entry key="txt" value="184" />
           <entry key="xml" value="242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="17752" />
-          <entry key="PLAIN_TEXT" value="254" />
+          <entry key="PLAIN_TEXT" value="303" />
           <entry key="SQL" value="25" />
           <entry key="XML" value="639" />
         </counts>
@@ -346,6 +331,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+              <item name="credentialserrors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
@@ -629,7 +633,7 @@
       <workItem from="1542662461665" duration="1893000" />
       <workItem from="1542731235701" duration="301000" />
       <workItem from="1542731554784" duration="306000" />
-      <workItem from="1542731878854" duration="11716000" />
+      <workItem from="1542731878854" duration="11966000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
       <created>1541103286131</created>
@@ -743,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542664265410</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactoring the registration ui logic">
+      <created>1542743906512</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542743906512</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -779,7 +790,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184750000" />
+    <option name="totallyTimeSpent" value="185000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,7 +809,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20895523" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20895523" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Image Layers" order="7" />
       <window_info id="Learn" order="8" />
@@ -809,7 +820,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32925472" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.24805339" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.35595107" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.35595107" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -864,7 +875,8 @@
     <MESSAGE value="generalizing queries" />
     <MESSAGE value="integrating java 11 and maven" />
     <MESSAGE value="moving queries into appdata" />
-    <option name="LAST_COMMIT_MESSAGE" value="moving queries into appdata" />
+    <MESSAGE value="refactoring the registration ui logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring the registration ui logic" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
