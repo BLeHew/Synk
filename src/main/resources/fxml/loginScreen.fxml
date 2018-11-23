@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="701.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
+<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="610.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
    <children>
       <TextField fx:id="txtFieldUsername" layoutX="227.0" layoutY="197.0" onAction="#login" prefHeight="53.0" prefWidth="374.0" promptText="Username">
          <font> <Font size="24.0" /> </font>
@@ -26,19 +26,19 @@
          <effect>
             <DropShadow blurType="GAUSSIAN" />
          </effect></PasswordField>
-      <Button id="btnLogin" fx:id="btnLogin" layoutX="344.0" layoutY="616.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="122.0" text="Login">
+      <Button id="btnLogin" fx:id="btnLogin" layoutX="435.0" layoutY="550.0" mnemonicParsing="false" onAction="#login" prefHeight="50.0" prefWidth="122.0" text="Login">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="txtFieldError" layoutX="186.0" layoutY="549.0" prefHeight="50.0" prefWidth="280.0" style="-fx-text-fill: red; -fx-background-color: white;">
+      <TextField fx:id="txtFieldError" layoutX="10.0" layoutY="550.0" prefHeight="50.0" prefWidth="280.0" style="-fx-text-fill: red; -fx-background-color: white;">
           <font>
               <Font size="12.0" />
           </font>
          <effect>
             <DropShadow />
          </effect></TextField>
-      <Button id="btnRegister" fx:id="btnRegister" layoutX="186.0" layoutY="616.0" mnemonicParsing="false" onAction="#register" prefHeight="51.0" prefWidth="122.0" text="Register">
+      <Button id="btnRegister" fx:id="btnRegister" layoutX="300.0" layoutY="550.0" mnemonicParsing="false" onAction="#register" prefHeight="50.0" prefWidth="122.0" text="Register">
          <font>
             <Font size="24.0" />
          </font></Button>
@@ -52,7 +52,7 @@
             <Font size="34.0" />
          </font>
       </Label>
-      <Label layoutX="227.0" layoutY="75.0" prefHeight="157.0" prefWidth="374.0" text="W E L C O M E !">
+      <Label layoutX="227.0" layoutY="110.0" prefHeight="45.0" prefWidth="374.0" text="W E L C O M E !">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
@@ -61,7 +61,7 @@
          <image>
             <Image url="https://achieve.lausd.net/cms/lib/CA01000043/Centricity/domain/779/welligentbuttons/login.png" />
          </image></ImageView>
-	        <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="617.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true">
+	        <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="610.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
 	          <image>
 	            <Image url="http://godiaperfree.com/wp-content/uploads/checkmark-300x300.png" />
 	          </image>
@@ -71,7 +71,7 @@
       <AnchorPane id="paneRegister" fx:id="paneRegister" layoutX="-1.0" layoutY="350.0" prefHeight="257.0" prefWidth="653.0" visible="false">
          <children>
             <FontAwesomeIconView glyphName="KEY" layoutX="85.0" layoutY="15.0" size="50" />
-            <TextField fx:id="txtFieldEmail" layoutX="227.0" layoutY="68.0" prefHeight="51.0" prefWidth="374.0">
+            <TextField fx:id="txtFieldEmail" layoutX="227.0" layoutY="68.0" prefHeight="51.0" prefWidth="374.0" promptText="Email">
                <font>
                   <Font size="24.0" />
                </font>

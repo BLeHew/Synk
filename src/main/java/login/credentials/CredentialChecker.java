@@ -15,10 +15,12 @@ public class CredentialChecker {
     private static CredentialChecker instance;
 
     private CredentialChecker(){
+        errorsList.add(new NoConnectionError());
         errorsList.add(new InvalidEmailError());
         errorsList.add(new PassDoesntMatchError());
         errorsList.add(new InvalidPasswordError());
         errorsList.add(new UserToShortError());
+        errorsList.add(new UserAlreadyExistsError());
     }
     public static CredentialChecker getInstance(){
         if(instance == null){
