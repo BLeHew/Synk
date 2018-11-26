@@ -18,6 +18,9 @@
 }
 .button{
     -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
 }
 .button:hover{
     -fx-text-fill: white;
