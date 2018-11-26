@@ -50,7 +50,6 @@ public class SynkApp extends Application {
     @Override
     public void stop(){
         DBSource.con.close();
-        Platform.exit();
     }
     public void gotoMainUI(){
         try {

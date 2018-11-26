@@ -6,15 +6,15 @@ import java.util.regex.Pattern;
 import connection.DBSource;
 
 public class CredentialsCheck {
-    public static String errorMessage;
+    public static String errorMessage = "SUCCESS";
 
     public static boolean success(String username, String password, String retypePassword, String email){
+        boolean isSuccess = true;
         if(!CredentialChecker.getInstance().check(username,password,retypePassword,email).equals("SUCCESS")){
             errorMessage = CredentialChecker.getInstance().errorMessage();
-            return false;
-        } else {
-            return true;
+            isSuccess = false;
         }
+        return isSuccess;
     }
     
     /**

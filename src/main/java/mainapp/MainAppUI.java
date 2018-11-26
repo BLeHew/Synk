@@ -32,7 +32,7 @@ public class MainAppUI {
 
 
     public void initialize(){
-        tableViewProjects.setItems(DBSource.getItems("project","SELECT * FROM project"));
+        tableViewProjects.setItems(AppData.getAll("project"));
         tableViewProjects.setRowFactory( tv -> {
             TableRow<TableObject> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
@@ -83,6 +83,7 @@ public class MainAppUI {
 
         tableViewTasks.setItems(FXCollections.observableArrayList(p.getTasks()));
         tableViewUsersToProject.setItems(FXCollections.observableArrayList(p.getUsers()));
+        tableViewUsersToTask.setItems(FXCollections.observableArrayList());
 
     }
     public void narrowUsers(TableObject t){
@@ -114,12 +115,11 @@ public class MainAppUI {
     }
     @FXML
     public void getUsers(){
-        tableViewAllUsers.setItems(DBSource.getItems("users","SELECT * FROM users"));
+        tableViewAllUsers.setItems(AppData.getAll("users"));
     }
     @FXML
     public void search(){
-        tableViewAllUsers.setItems(DBSource
-                .getItems("users","SELECT * FROM users WHERE username LIKE '%" + txtFieldSearch.getText() + "%'"));
+        tableViewAllUsers.setItems(AppData.searchUsersWithUsername(txtFieldSearch.getText()));
     }
     @FXML
     public void updateName(TableColumn.CellEditEvent<TableObject,String> c){
@@ -140,7 +140,12 @@ public class MainAppUI {
     }
     @FXML
     public void assignUserToProject(){
-
+        if (lastChosenUser == null){
+            return;
+        }
+        if(selectedProject.getUsers().add(lastChosenUser)){
+            tableViewUsersToProject.getItems().add(lastChosenUser);
+        }
     }
     @FXML
     public void assignUserToTask(){

@@ -1,0 +1,76 @@
+
+*{
+	-fx-primary : #2A2E37;
+	-fx-secondary : #FFFF8D;
+	-fx-primarytext : B2B2B2;
+	-fx-red: #FF0000;
+	-fx-green: #5cf442;
+}
+.table-view .column-header .label{
+	-fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+.btn-adding{
+    -fx-background-color: #A1B56C;
+}
+.btn-removing{
+    -fx-background-color: #AB4642;
+}
+.button{
+    -fx-text-fill: black;
+}
+.button:hover{
+    -fx-text-fill: white;
+}
+
+#loginScreen{
+	-fx-background-color: -fx-primary;
+  	-fx-background-radius: 10 10 0 0;
+}
+
+#mainAppID{
+	-fx-background-color: -fx-primary;
+}
+
+.glyph-icon{
+	-fx-fill: -fx-primarytext;
+}
+
+#synkLabel{
+	-fx-text-fill: #2196F3;
+	-fx-font-weight: bold;
+	-fx-font-size: 40px;
+}
+
+#appLabel{
+	-fx-text-fill: -fx-primarytext;
+	-fx-font-weight: bold;
+	-fx-font-size: 40px;
+}
+
+#txtFieldUsername{
+	-fx-text-fill: black;
+    -fx-border-width: 1;
+}
+
+.label{
+	-fx-text-fill: #e8e8e8;
+}
+
+#btnLogin{
+	-fx-background-color: #A1B56C;
+}
+
+#btnRegister{
+	-fx-background-color: #F7CA88;
+}
+#btnCancelRegistration{
+	-fx-background-color: #AB4642;
+}
+
+#Menu{
+	-fx-background-color: #86C1B9;
+	-fx-text-fill: #181818;
+	-fx-background-radius: 0 0 10 10;
+}
+

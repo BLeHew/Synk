@@ -18,6 +18,12 @@ public class AppData {
     public static ObservableList<TableObject> getUsersAttachdToTask(int taskId){
         return DBSource.getItems("users","CALL GetUsersAttachedToTask(" + taskId +")");
     }
+    public static ObservableList<TableObject> getAll(String type){
+        return DBSource.getItems(type,"SELECT * FROM " + type);
+    }
+    public static ObservableList<TableObject> searchUsersWithUsername(String username){
+        return DBSource.getItems("users","SELECT * FROM users WHERE username LIKE '%" + username + "%'");
+    }
     /*
     DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")")
     DBSource.getItems("users","CALL GetUsersAttachedToTask(" + t.getId() + ")")
