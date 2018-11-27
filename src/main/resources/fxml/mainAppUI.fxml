@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainAppID" prefHeight="610.0" prefWidth="950.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<AnchorPane fx:id="mainAppID" prefHeight="610.0" prefWidth="950.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
    <children>
          <AnchorPane fx:id="anchorPaneTasks" layoutX="245.0" layoutY="460.0">
             <children>
@@ -104,5 +103,16 @@
          <Button id="btnAssignUserToProject" fx:id="btnAssignUserToProject" layoutX="480.0" layoutY="554.0" mnemonicParsing="false" onAction="#assignUserToProject" prefHeight="45.0" prefWidth="110.0" styleClass="btn-adding" text="Assign User to Project" textAlignment="CENTER" wrapText="true" />
          <Button id="btnAddProject" layoutX="10.0" layoutY="560.0" mnemonicParsing="false" onAction="#addProject" prefHeight="37.0" prefWidth="105.0" styleClass="btn-adding" text="Add Project" />
          <Button id="btnRemoveProject" fx:id="btnRemoveProject" layoutX="128.0" layoutY="560.0" mnemonicParsing="false" onAction="#removeProject" prefHeight="37.0" prefWidth="105.0" styleClass="btn-removing" text="Remove Project" />
+       <FontAwesomeIconView glyphName="CLIPBOARD" layoutX="96.0" layoutY="692.0" size="30" />
+       <FontAwesomeIconView glyphName="CLIPBOARD" layoutX="220.0" layoutY="691.0" size="30" />
+       <FontAwesomeIconView glyphName="TASKS" layoutX="378.0" layoutY="691.0" size="30" />
+       <FontAwesomeIconView glyphName="USER" layoutX="643.0" layoutY="692.0" size="30" />
+       <FontAwesomeIconView glyphName="USER" layoutX="762.0" layoutY="691.0" size="30" />
+       <FontAwesomeIconView glyphName="PLUS" layoutX="61.0" layoutY="691.0" size="30" />
+       <FontAwesomeIconView glyphName="MINUS" layoutX="186.0" layoutY="692.0" size="30" />
+       <FontAwesomeIconView glyphName="PLUS" layoutX="344.0" layoutY="691.0" size="30" text="" />
+       <FontAwesomeIconView glyphName="TASKS" layoutX="509.0" layoutY="690.0" size="30" />
+       <FontAwesomeIconView glyphName="MINUS" layoutX="475.0" layoutY="691.0" size="30" />
+       <FontAwesomeIconView glyphName="SEARCH" layoutX="897.0" layoutY="692.0" size="30" />
    </children>
 </AnchorPane>
