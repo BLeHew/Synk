@@ -3,12 +3,13 @@ package tableobjects;
 import connection.DBSource;
 
 import java.sql.*;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Project extends TableObject {
 
-    private Set<Task> tasks;
-    private Set<User> users;
+    private Set<Task> tasks = new HashSet<>();
+    private Set<User> users = new HashSet<>();
 
     public Project(int id, String name, String desc){
         super(id,name,desc);
@@ -19,6 +20,9 @@ public class Project extends TableObject {
     }
     public void setUsers(Set<User> users){
         this.users = users;
+    }
+    public void removeTask(Task t){
+        tasks.remove(t);
     }
     public Set<Task> getTasks(){
         return tasks;

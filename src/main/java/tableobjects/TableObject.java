@@ -18,6 +18,9 @@ public class TableObject{
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
     }
+    public String getType(){
+        return type;
+    }
     public int getId(){
         return id;
     }
@@ -46,30 +49,24 @@ public class TableObject{
         return name.get();
     }
     public String toQuery(){return "";}
-    public void updateDB(){};
-    public void insertIntoDB(){
-        Connection conn = null;
-        try {
-            conn = DBSource.getConnection();
-            String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
-            PreparedStatement s = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            s.executeUpdate();
-            ResultSet rs = s.getGeneratedKeys();
-            if(rs.next()){ id = rs.getInt(1); }
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { DBSource.close(conn); }
+    public void updateDB(){}
+    public PreparedStatement insert(Connection conn) throws SQLException{
+        String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
+        PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        return stmt;
     }
-    public void removeFromDB(){
-        Connection conn = null;
-        try {
-            conn = DBSource.getConnection();
-            conn.prepareStatement("DELETE FROM " +  type  + " WHERE id = " + id).executeUpdate();
-        }catch (SQLException s){
-            s.printStackTrace();
-        }finally { DBSource.close(conn); }
+    public PreparedStatement update(Connection conn) throws SQLException{
+        PreparedStatement statement = conn.prepareStatement("UPDATE " + type + " SET name = ?, description = ? WHERE id = ?");
+        statement.setString(1,name.get());
+        statement.setString(2,description.get());
+        statement.setInt(3,id);
+        return statement;
     }
-
+    public PreparedStatement delete(Connection conn) throws SQLException{
+        PreparedStatement statement = conn.prepareStatement("DELETE FROM " + type + " WHERE id = ?");
+        statement.setInt(1,id);
+        return statement;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

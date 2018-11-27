@@ -1,6 +1,7 @@
 package userinterface;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -45,6 +46,10 @@ public class SynkApp extends Application {
         } catch (Exception ex) {
         }
 
+    }
+    @Override
+    public void stop(){
+        DBSource.con.close();
     }
     public void gotoMainUI(){
         try {
