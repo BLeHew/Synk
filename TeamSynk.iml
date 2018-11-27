@@ -32,5 +32,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.4.Final" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:font-awesome:5.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.7" level="project" />
   </component>
 </module>
