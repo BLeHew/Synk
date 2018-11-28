@@ -166,7 +166,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextArea fx:id="txtAreaTaskDesc" editable="false" layoutX="280.0" layoutY="509.0" prefHeight="88.0" prefWidth="251.0" promptText="Task Description" />
+      <TextArea fx:id="txtAreaTaskDesc" layoutX="280.0" layoutY="509.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="251.0" promptText="Task Description" />
       <Button alignment="CENTER" layoutX="553.0" layoutY="514.0" mnemonicParsing="false" onAction="#assignUserToProject" prefHeight="79.0" prefWidth="105.0" text="Assign User To Project" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />

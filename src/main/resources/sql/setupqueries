@@ -74,59 +74,19 @@ create index task_id
 	on user_task_assigned (task_id)
 ;
 
-create procedure DeleteProject (IN projId int)
-begin
-delete from project where id = projId;
-end
-;
-
-create procedure DeleteTask (IN taskId int)
-begin
-delete from tasks where id = taskId;
-end
-;
-
-create procedure GetUserCredentials (IN user_name varchar(255))
-begin
-select username,pass_hash from users where username = user_name;
-end
-;
-
+delimiter //
 create procedure GetUsersAttachedToProject (IN ProjID int)
 begin
 select * from users u, user_proj_assigned upa
 where u.id = upa.user_id and upa.proj_id = ProjID;
-end
-;
+end //
 
+
+delimiter //
 create procedure GetUsersAttachedToTask (IN TaskID int)
 begin
 select * from users u, user_task_assigned uta
 where u.id = uta.user_id and uta.task_id = TaskID;
-end
-;
+end //
 
-create procedure InsertProject (IN name varchar(30), IN description text)
-begin
-insert into project values(null,name,description);
-end
-;
-
-create procedure InsertTask (IN name varchar(30), IN proj_id int, IN description text)
-begin
-insert into task values(null,proj_id,name,description);
-end
-;
-
-create procedure InsertUser (IN username varchar(30), IN email varchar(50), IN pass_hash bigint, IN priv_level int)
-begin
-insert into users values(null,username,email,pass_hash,priv_level);
-end
-;
-
-create procedure UpdateTask (IN newname varchar(50), IN id int)
-begin
-update task set name = newname where task.id = id;
-end
-;
 

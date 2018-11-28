@@ -92,6 +92,7 @@ public class MainAppUI {
     }
     public void narrowUsers(TableObject task){
         btnRemoveTask.setDisable(false);
+        txtAreaTaskDesc.setDisable(false);
         txtAreaTaskDesc.setText(task.getDesc());
         tableViewUsersToTask.setItems(AppData.getUsersAttachdToTask(task.getId()));
     }
@@ -203,10 +204,18 @@ public class MainAppUI {
     @FXML
     public void saveChange(KeyEvent k){
         if(k.getCode().getName().equals("Enter")){
-            selectedProject.setDesc(txtAreaProjectDesc.getText());
-            selectedProject.updateDB();
-            txtAreaProjectDesc.setDisable(true);
+            if(txtAreaProjectDesc.isFocused()){
+                selectedProject.setDesc(txtAreaProjectDesc.getText());
+                DBSource.runQuery("update",selectedProject);
+                txtAreaProjectDesc.setDisable(true);
+            }else if (txtAreaTaskDesc.isFocused()){
+                selectedTask.setDesc(txtAreaTaskDesc.getText());
+                DBSource.runQuery("update",selectedTask);
+                txtAreaTaskDesc.setDisable(true);
+            }
+
         }
+
 
     }
 
