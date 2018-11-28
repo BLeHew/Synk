@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="692.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginScreenUI">
+<AnchorPane id="loginScreen" fx:id="loginScreen" prefHeight="692.0" prefWidth="652.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="login.LoginScreenUI">
    <children>
       <TextField fx:id="txtFieldError" layoutX="134.0" layoutY="132.0" prefHeight="40.0" prefWidth="397.0" style="-fx-text-fill: red;">
           <font>
