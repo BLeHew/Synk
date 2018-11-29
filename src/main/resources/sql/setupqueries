@@ -89,4 +89,13 @@ select * from users u, user_task_assigned uta
 where u.id = uta.user_id and uta.task_id = TaskID;
 end //
 
-
+insert into users values (null,'John','u1@g.com',1509442,1);
+insert into users values (null,'Bohn','u2@g.com',1509442,1);
+insert into users values (null,'Tim','u3@g.com',1509442,1);
+insert into users values (null,'Homer','u4@g.com',1509442,1);
+insert into users values (null,'Lisa','u5@g.com',1509442,1);
+insert into users values (null,'Bart','u1@g.com',1509442,1);
+insert into users values (null,'Marge','u2@g.com',1509442,1);
+insert into users values (null,'Maggie','u3@g.com',1509442,1);
+insert into users values (null,'Flanders','u4@g.com',1509442,1);
+insert into users values (null,'Santa','u5@g.com',1509442,1);

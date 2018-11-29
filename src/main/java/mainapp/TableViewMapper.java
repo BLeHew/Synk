@@ -22,4 +22,7 @@ public class TableViewMapper {
     public int getIndex(String tableView){
         return tableViewMap.get(tableView).getSelectionModel().getSelectedIndex();
     }
+    public TableObject getObject(String tableView){
+        return tableViewMap.get(tableView).getSelectionModel().getSelectedItem();
+    }
 }
