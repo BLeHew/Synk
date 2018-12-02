@@ -40,7 +40,7 @@
       <AnchorPane fx:id="anchorPaneProjects" layoutX="12.0" layoutY="29.0">
          <children>
             <TextArea fx:id="txtAreaProjectDesc" disable="true" layoutY="480.0" onKeyPressed="#saveChange" prefHeight="88.0" prefWidth="251.0" promptText="Project Description" wrapText="true" />
-            <TableView fx:id="tableViewProjects" editable="true" prefHeight="446.0" prefWidth="251.0" userData="projects">
+            <TableView fx:id="tableViewProjects" editable="true" onMousePressed="#showProjectTasksAndUsers" prefHeight="446.0" prefWidth="251.0" userData="project">
               <columns>
                 <TableColumn fx:id="columnProjectName" onEditCommit="#updateName" prefWidth="250.0" text="Project Name">
                   <cellValueFactory>
@@ -62,7 +62,7 @@
             </TableView>
          </children>
       </AnchorPane>
-      <TableView fx:id="tableViewUsersToProject" editable="true" layoutX="550.0" layoutY="29.0" prefHeight="446.0" prefWidth="110.0" userData="usersToProject">
+      <TableView fx:id="tableViewUsersToProject" editable="true" layoutX="550.0" layoutY="29.0" onMousePressed="#setChosenUser" prefHeight="446.0" prefWidth="110.0" userData="usersToProject">
           <columns>
               <TableColumn prefWidth="110.0" text="To Project">
                   <cellValueFactory><PropertyValueFactory property="name" /> </cellValueFactory>
@@ -73,7 +73,7 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TableView fx:id="tableViewTasks" editable="true" layoutX="280.0" layoutY="29.0" prefHeight="446.0" prefWidth="251.0" userData="tasks">
+      <TableView fx:id="tableViewTasks" editable="true" layoutX="280.0" layoutY="29.0" onMousePressed="#narrowUsers" prefHeight="446.0" prefWidth="251.0" userData="task">
         <columns>
           <TableColumn fx:id="columnTaskName" onEditCommit="#updateName" prefWidth="200.0" text="Task Name">
                   <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
@@ -93,7 +93,7 @@
             </ContextMenu>
          </contextMenu>
       </TableView>
-      <TableView fx:id="tableViewAllUsers" layoutX="810.0" layoutY="29.0" prefHeight="446.0" prefWidth="202.0" userData="allUsers">
+      <TableView fx:id="tableViewAllUsers" layoutX="810.0" layoutY="29.0" onMousePressed="#setChosenUser" prefHeight="446.0" prefWidth="202.0" userData="allUser">
         <columns>
           <TableColumn prefWidth="200.0" text="All Users">
                   <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
@@ -147,7 +147,7 @@
       <FontAwesomeIconView disable="true" glyphName="TASKS" layoutX="471.0" layoutY="645.0" size="30" />
       <FontAwesomeIconView disable="true" glyphName="MINUS" layoutX="437.0" layoutY="646.0" size="30" />
       <FontAwesomeIconView disable="true" glyphName="SEARCH" layoutX="846.0" layoutY="643.0" size="30" />
-      <TableView fx:id="tableViewUsersToTask" editable="true" layoutX="680.0" layoutY="29.0" prefHeight="446.0" prefWidth="110.0" userData="usersToTask">
+      <TableView fx:id="tableViewUsersToTask" editable="true" layoutX="680.0" layoutY="29.0" onMousePressed="#setChosenUser" prefHeight="446.0" prefWidth="110.0" userData="usersToTask">
          <columns>
             <TableColumn prefWidth="110.0" text="To Task">
                <cellValueFactory>

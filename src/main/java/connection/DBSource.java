@@ -40,10 +40,10 @@ public class DBSource {
     public static void removeUserProjectAssignment(int userId, int projId){
         String query = "DELETE FROM user_proj_assigned WHERE user_id = " + userId + " AND proj_id = " + projId;
         removeAssignment(query);
+
     }
     private static void removeAssignment(String query){
         Connection conn = null;
-        System.out.println(query);
         try {
             conn = con.getConnection();
             conn.prepareStatement(query).executeUpdate();
