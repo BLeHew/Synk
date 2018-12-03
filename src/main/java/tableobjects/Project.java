@@ -24,6 +24,9 @@ public class Project extends TableObject {
     public void removeTask(Task t){
         tasks.remove(t);
     }
+    public void removeUser(User u){
+        users.remove(u);
+    }
     public Set<Task> getTasks(){
         return tasks;
     }

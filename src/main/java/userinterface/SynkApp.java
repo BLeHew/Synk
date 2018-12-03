@@ -44,6 +44,7 @@ public class SynkApp extends Application {
             DBSource.establish();
             gotoLogin();
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
 
     }

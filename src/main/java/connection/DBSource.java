@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "root";
+    private static String password = "1234";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -40,10 +40,10 @@ public class DBSource {
     public static void removeUserProjectAssignment(int userId, int projId){
         String query = "DELETE FROM user_proj_assigned WHERE user_id = " + userId + " AND proj_id = " + projId;
         removeAssignment(query);
+
     }
     private static void removeAssignment(String query){
         Connection conn = null;
-        System.out.println(query);
         try {
             conn = con.getConnection();
             conn.prepareStatement(query).executeUpdate();
