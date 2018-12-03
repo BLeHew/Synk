@@ -43,7 +43,6 @@ public class TableObject{
         return name.get();
     }
     public String toQuery(){return "";}
-    public void updateDB(){}
     public PreparedStatement insert(Connection conn) throws SQLException{
         String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
         PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);

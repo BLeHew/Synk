@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "1234";
+    private static String password = "root";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -141,7 +141,7 @@ public class DBSource {
             ResultSet rs = conn.createStatement().executeQuery(query);
             if(!rs.first()){
                 query = "INSERT INTO users VALUES (null,'" + userName + "','" + email + "'," + password.hashCode() + ",1)";
-                con.getConnection().createStatement().executeUpdate(query);
+                conn.createStatement().executeUpdate(query);
                 return true;
             }else {
                 return false;

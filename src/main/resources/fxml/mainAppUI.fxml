@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAppID" minHeight="632.0" prefHeight="693.0" prefWidth="1022.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainapp.MainAppUI">
+<AnchorPane fx:id="mainAppID" minHeight="632.0" prefHeight="693.0" prefWidth="1022.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="mainapp.MainAppUI">
    <children>
       <MenuBar fx:id="Menu" layoutY="2.0">
         <menus>

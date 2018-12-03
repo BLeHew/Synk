@@ -23,37 +23,43 @@ public class MainAppUI {
     @FXML private Button btnRemoveTask;
     @FXML private TextField txtFieldSearch;
 
+    private static final String PROJECT = "project";
+    private static final String TASK = "task";
+    private static final String ALLUSERS = "allUsers";
+    private static final String USERSTOPROJECT = "usersToProject";
+    private static final String USERSTOTASK = "usersToTask";
+
     private User lastChosenUser;
     private TableViewMapper tableViews;
 
     public void initialize(){
         tableViews = new TableViewMapper(
-                new ArrayList<>(Arrays.asList(tableViewProjects,
+                new ArrayList<>(Arrays.asList(
+                        tableViewProjects,
                         tableViewTasks,
                         tableViewAllUsers,
                         tableViewUsersToProject,
                         tableViewUsersToTask)));
 
-        tableViewProjects.setItems(AppData.getAll("project"));
+        tableViewProjects.setItems(AppData.getAll(PROJECT));
     }
     @FXML
     public void showProjectTasksAndUsers() {
-        Project p = (Project) tableViews.getSelected("project");
+        Project project = (Project) tableViews.getSelected(PROJECT);
 
         btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
-        txtAreaProjectDesc.setText(p.getDesc());
+        txtAreaProjectDesc.setText(project.getDesc());
 
-        tableViewTasks.setItems(FXCollections.observableArrayList(p.getTasks()));
-        tableViewUsersToProject.setItems(FXCollections.observableArrayList(p.getUsers()));
-        tableViewUsersToTask.setItems(FXCollections.observableArrayList());
-
+        tableViewTasks.setItems(AppData.getProjectTasks(project.getId()));
+        tableViewUsersToProject.setItems(AppData.getUsersAttachedToProject(project.getId()));
+        tableViewUsersToTask.getItems().clear();
     }
     @FXML
     public void narrowUsers(){
-        TableObject task = tableViews.getSelected("task");
+        TableObject task = tableViews.getSelected(TASK);
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
         txtAreaTaskDesc.setText(task.getDesc());
@@ -63,9 +69,8 @@ public class MainAppUI {
     @FXML
     public void addTask(){
         if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            Task t = new Task(tableViews.getSelectedId("project"));
+            Task t = new Task(tableViews.getSelectedId(PROJECT));
             AppData.insertIntoDB(t);
-            ((Project)tableViews.getSelected("project")).getTasks().add(t);
             tableViewTasks.getItems().add(t);
         }
     }
@@ -77,8 +82,8 @@ public class MainAppUI {
     }
     @FXML
     public void removeProject(){
-        AppData.removeFromDB(tableViews.getSelected("project"));
-        tableViewProjects.getItems().remove(tableViewProjects.getSelectionModel().getSelectedIndex());
+        AppData.removeFromDB(tableViews.getSelected(PROJECT));
+        tableViews.removeSelected(PROJECT);
         tableViewUsersToProject.getItems().clear();
         tableViewTasks.getItems().clear();
     }
@@ -96,26 +101,27 @@ public class MainAppUI {
         AppData.updateDB(c.getRowValue());
     }
     @FXML
-    public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> c){
-        c.getRowValue().setPctComplete(c.getNewValue());
-        c.getTableView().refresh();
-        AppData.updateDB(c.getRowValue());
+    public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> taskCell){
+        taskCell.getRowValue().setPctComplete(taskCell.getNewValue());
+        taskCell.getTableView().refresh();
+        AppData.updateDB(taskCell.getRowValue());
     }
     @FXML
     public void removeTask(){
-        AppData.removeFromDB(tableViewTasks.getSelectionModel().getSelectedItem());
-        tableViewTasks.getItems().remove(tableViewTasks.getSelectionModel().getSelectedIndex());
+        AppData.removeFromDB(tableViews.getSelected(TASK));
+        tableViews.removeSelected(TASK);
         tableViewUsersToTask.getItems().clear();
-        ((Project)tableViews.getSelected("project")).removeTask((Task)tableViewTasks.getSelectionModel().getSelectedItem());
     }
     @FXML
     public void assignUserToProject(){
         if (lastChosenUser == null){
             return;
         }
-        if(((Project)tableViews.getSelected("project")).getUsers().add(lastChosenUser)){
+        HashSet<TableObject> uniqueUsers = new HashSet<>(tableViewUsersToProject.getItems());
+
+        if (uniqueUsers.add(lastChosenUser))
             tableViewUsersToProject.getItems().add(lastChosenUser);
-        }
+            DBSource.insertAssignment(lastChosenUser.getId(),tableViews.getSelectedId(PROJECT),-1);
     }
     @FXML
     public void assignUserToTask(){
@@ -123,17 +129,15 @@ public class MainAppUI {
             return;
         }
         HashSet<TableObject> uniqueTaskUsers = new HashSet<>(tableViewUsersToTask.getItems());
+        HashSet<TableObject> uniqueProjectUsers = new HashSet<>(tableViewUsersToProject.getItems());
         if(!uniqueTaskUsers.add(lastChosenUser)){
             return;
         }
-        int projId = tableViews.getSelectedId("project");
-        int taskId;
-        taskId = tableViewTasks.getSelectionModel().getSelectedIndex() == -1 ?
-                -1 : tableViewTasks.getSelectionModel().getSelectedItem().getId();
-
+        int projId = tableViews.getSelectedId(PROJECT);
+        int taskId = tableViews.getSelectedId(TASK);
         if(DBSource.insertAssignment(lastChosenUser.getId(),projId,taskId)){
             tableViewUsersToTask.getItems().add(lastChosenUser);
-            if(((Project)tableViews.getSelected("project")).getUsers().add(lastChosenUser)){
+            if(uniqueProjectUsers.add(lastChosenUser)){
                 tableViewUsersToProject.getItems().add(lastChosenUser);
             }
 
@@ -147,8 +151,7 @@ public class MainAppUI {
         int userId = tableViewUsersToTask.getSelectionModel().getSelectedItem().getId();
         int taskId = tableViewTasks.getSelectionModel().getSelectedItem().getId();
 
-        tableViewUsersToTask.getItems().remove(tableViewUsersToTask.getSelectionModel().getSelectedIndex());
-
+        tableViews.removeSelected(USERSTOTASK);
         DBSource.removeUserTaskAssignment(userId,taskId);
 
     }
@@ -160,14 +163,12 @@ public class MainAppUI {
     @FXML
     public void removeUserFromProject(){
 
-        if(tableViews.getSelected("usersToProject") == null){
+        if(tableViews.getSelected(USERSTOPROJECT) == null){
             return;
         }
 
-        int userId = tableViews.getSelectedId("usersToProject");
-        int projectId = tableViewProjects.getSelectionModel().getSelectedItem().getId();
-
-        ((Project)tableViews.getSelected("project")).removeUser((User)tableViews.getSelected("usersToProject"));
+        int userId = tableViews.getSelectedId(USERSTOPROJECT);
+        int projectId = tableViews.getSelectedId(PROJECT);
 
         tableViewUsersToTask.getItems().remove(tableViewUsersToProject.getSelectionModel().getSelectedItem());
         tableViews.removeSelected("usersToProject");
@@ -178,12 +179,12 @@ public class MainAppUI {
     public void saveChange(KeyEvent k){
         if(k.getCode().getName().equals("Enter")){
             if(txtAreaProjectDesc.isFocused()){
-                tableViews.getSelected("project").setDesc(txtAreaProjectDesc.getText());
-                DBSource.runQuery("update",tableViews.getSelected("project"));
+                tableViews.getSelected(PROJECT).setDesc(txtAreaProjectDesc.getText());
+                DBSource.runQuery("update",tableViews.getSelected(PROJECT));
                 txtAreaProjectDesc.setDisable(true);
             }else if (txtAreaTaskDesc.isFocused()){
-                tableViews.getSelected("task").setDesc(txtAreaTaskDesc.getText());
-                DBSource.runQuery("update",tableViews.getSelected("task"));
+                tableViews.getSelected(TASK).setDesc(txtAreaTaskDesc.getText());
+                DBSource.runQuery("update",tableViews.getSelected(TASK));
                 txtAreaTaskDesc.setDisable(true);
             }
 

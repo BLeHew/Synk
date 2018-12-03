@@ -18,6 +18,9 @@ public class TableViewMapper extends HashMap<String,TableView<TableObject>>{
         }
     }
     public int getSelectedId(String tableView){
+        if(noSelection(tableView)){
+            return -1;
+        }
         return get(tableView).getSelectionModel().getSelectedItem().getId();
     }
     public int getIndex(String tableView){
@@ -25,6 +28,9 @@ public class TableViewMapper extends HashMap<String,TableView<TableObject>>{
     }
     public void removeSelected(String tableView){
         get(tableView).getItems().remove(get(tableView).getSelectionModel().getSelectedIndex());
+    }
+    public boolean noSelection(String tableView){
+        return get(tableView).getSelectionModel().getSelectedIndex() == -1;
     }
     public TableObject getSelected(String tableView){
         return get(tableView).getSelectionModel().getSelectedItem();

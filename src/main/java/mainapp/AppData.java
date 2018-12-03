@@ -27,6 +27,9 @@ public class AppData {
     public static ObservableList<TableObject> searchUsersWithUsername(String username){
         return DBSource.getItems("users","SELECT * FROM users WHERE username LIKE '%" + username + "%'");
     }
+    public static ObservableList<TableObject> getProjectTasks(int projId){
+        return DBSource.getItems("task", "SELECT * FROM task where proj_id = " + projId);
+    }
     /*
     DBSource.getItems("users", "CALL GetUsersAttachedToProject(" + project.getId() + ")")
     DBSource.getItems("users","CALL GetUsersAttachedToTask(" + t.getId() + ")")
