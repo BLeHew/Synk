@@ -12,10 +12,13 @@ public class AppData {
     public static void removeFromDB(TableObject t){
         DBSource.runQuery("delete",t);
     }
+    public static void updateDB(TableObject t){
+        DBSource.runQuery("update",t);
+    }
     public static ObservableList<TableObject> getUsersAttachedToProject(int projectId){
         return DBSource.getItems("users","CALL GetUsersAttachedToProject(" + projectId + ")");
     }
-    public static ObservableList<TableObject> getUsersAttachdToTask(int taskId){
+    public static ObservableList<TableObject> getUsersAttachedToTask(int taskId){
         return DBSource.getItems("users","CALL GetUsersAttachedToTask(" + taskId +")");
     }
     public static ObservableList<TableObject> getAll(String type){

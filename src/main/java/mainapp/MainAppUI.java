@@ -3,7 +3,6 @@ package mainapp;
 import connection.DBSource;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -58,7 +57,7 @@ public class MainAppUI {
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
         txtAreaTaskDesc.setText(task.getDesc());
-        tableViewUsersToTask.setItems(AppData.getUsersAttachdToTask(task.getId()));
+        tableViewUsersToTask.setItems(AppData.getUsersAttachedToTask(task.getId()));
     }
 
     @FXML
@@ -94,13 +93,13 @@ public class MainAppUI {
     @FXML
     public void updateName(TableColumn.CellEditEvent<TableObject,String> c){
         c.getRowValue().setName(c.getNewValue());
-        c.getRowValue().updateDB();
+        AppData.updateDB(c.getRowValue());
     }
     @FXML
     public void updateTaskPercentage(TableColumn.CellEditEvent<Task,String> c){
         c.getRowValue().setPctComplete(c.getNewValue());
         c.getTableView().refresh();
-        c.getRowValue().updateDB();
+        AppData.updateDB(c.getRowValue());
     }
     @FXML
     public void removeTask(){

@@ -33,12 +33,6 @@ public class TableObject{
     public void setName(String name){
         this.name.set(name);
     }
-    public StringProperty nameProperty(){
-        return name;
-    }
-    public StringProperty descriptionProperty(){
-        return description;
-    }
     public String getDesc(){
         return description.get();
     }
