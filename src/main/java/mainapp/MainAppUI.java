@@ -46,7 +46,6 @@ public class MainAppUI {
     @FXML
     public void showProjectTasksAndUsers() {
         Project project = (Project) tableViews.getSelected(PROJECT);
-
         btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
@@ -192,6 +191,5 @@ public class MainAppUI {
 
 
     }
-
 
 }
