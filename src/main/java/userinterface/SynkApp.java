@@ -17,7 +17,7 @@ public class SynkApp extends Application {
     public static String driver = "com.mysql.cj.jdbc.Driver";
 
 
-    public static void main(String args[]){
+    public static void run(String args[]){
         try {
             Class.forName(driver);
         }catch(Exception e){

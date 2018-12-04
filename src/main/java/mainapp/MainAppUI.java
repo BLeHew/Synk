@@ -46,6 +46,9 @@ public class MainAppUI {
     @FXML
     public void showProjectTasksAndUsers() {
         Project project = (Project) tableViews.getSelected(PROJECT);
+        if(project == null){
+            return;
+        }
         btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
@@ -59,6 +62,9 @@ public class MainAppUI {
     @FXML
     public void narrowUsers(){
         TableObject task = tableViews.getSelected(TASK);
+        if(task == null){
+            return;
+        }
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
         txtAreaTaskDesc.setText(task.getDesc());
@@ -118,9 +124,10 @@ public class MainAppUI {
         }
         HashSet<TableObject> uniqueUsers = new HashSet<>(tableViewUsersToProject.getItems());
 
-        if (uniqueUsers.add(lastChosenUser))
+        if (uniqueUsers.add(lastChosenUser)) {
             tableViewUsersToProject.getItems().add(lastChosenUser);
-            DBSource.insertAssignment(lastChosenUser.getId(),tableViews.getSelectedId(PROJECT),-1);
+            DBSource.insertAssignment(lastChosenUser.getId(), tableViews.getSelectedId(PROJECT), -1);
+        }
     }
     @FXML
     public void assignUserToTask(){

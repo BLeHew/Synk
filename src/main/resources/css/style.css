@@ -72,14 +72,14 @@
 
 .table-view{
 	-fx-background-color: -fx-primarytext;
+	-fx-border-color: -fx-primary;
+	-fx-border-width: 2px;
 }
-
 .table-view .column-header .label {
 	-fx-text-fill: -fx-primarytext;
 	-fx-font-weight: bold;
 	-fx-background-color: derive(-fx-primary, 10%);
 }
-
 
 /* Styling add and remove button on the MainApp */
 .button{
