@@ -60,7 +60,7 @@ public class SynkApp extends Application {
             ex.printStackTrace();
         }
     }
-    private void gotoLogin() {
+    public void gotoLogin() {
         try {
             stage.setTitle("Synk Login");
             replaceSceneContent("/fxml/loginScreen.fxml");

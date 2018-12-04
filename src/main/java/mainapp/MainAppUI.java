@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import tableobjects.*;
+import userinterface.SynkApp;
 
 import java.util.*;
 
@@ -198,6 +199,10 @@ public class MainAppUI {
         }
 
 
+    }
+    @FXML
+    public void logout(){
+        SynkApp.getInstance().gotoLogin();
     }
 
 }

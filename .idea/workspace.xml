@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a69a5fa3-e2d3-4066-8e14-228a1c542f47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,10 +129,10 @@
     <session id="-1679297180">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.24" value="3" />
@@ -142,7 +141,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -150,8 +149,8 @@
           <entry key="@localhost" value="1" />
           <entry key="css" value="4" />
           <entry key="fxml" value="16" />
-          <entry key="java" value="58" />
-          <entry key="setupqueries" value="2" />
+          <entry key="java" value="67" />
+          <entry key="setupqueries" value="3" />
           <entry key="sql" value="6" />
           <entry key="synk@localhost" value="1" />
           <entry key="synk@localhost_1" value="1" />
@@ -163,18 +162,18 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="Database Element" value="1" />
-          <entry key="JAVA" value="58" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="67" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="9" />
           <entry key="XML" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="463" />
+          <entry key="css" value="489" />
           <entry key="dummy" value="15" />
           <entry key="fxml" value="172" />
-          <entry key="java" value="4848" />
+          <entry key="java" value="4914" />
           <entry key="setupqueries" value="20" />
           <entry key="sql" value="18" />
           <entry key="synk@localhost" value="7" />
@@ -184,8 +183,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="463" />
-          <entry key="JAVA" value="4848" />
+          <entry key="CSS" value="489" />
+          <entry key="JAVA" value="4914" />
           <entry key="PLAIN_TEXT" value="67" />
           <entry key="SQL" value="18" />
           <entry key="Scratch" value="7" />
@@ -197,7 +196,7 @@
           <entry key="git.branch.checkout.local" value="1" />
           <entry key="git.branch.checkout.remote" value="1" />
           <entry key="git.branch.create.new" value="2" />
-          <entry key="git.branch.delete.local" value="1" />
+          <entry key="git.branch.delete.local" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -205,28 +204,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
+        <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+            <state relative-caret-position="1691">
+              <caret line="148" column="64" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1416">
+              <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
+              <folding>
+                <element signature="e#7355#7356#0" expanded="true" />
+                <element signature="e#7404#7405#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding>
+                <element signature="e#93#94#0" expanded="true" />
+                <element signature="e#126#127#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,8 +278,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="87" column="37" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="37" />
+            <state relative-caret-position="1615">
+              <caret line="95" column="37" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -318,10 +361,11 @@
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/connection/DBSource.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
       </list>
     </option>
@@ -351,9 +395,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
-    <option name="width" value="683" />
-    <option name="height" value="728" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -384,8 +428,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -433,34 +477,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="credentials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="credentials" type="462c0819:PsiDirectoryNode" />
-              <item name="credentialserrors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mainapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
@@ -491,14 +508,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -515,6 +524,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="connection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -526,7 +549,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="76d5df84-3c07-4d62-bab5-07a53517dac0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543955610741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543966362799" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/resources/tableobjects" />
@@ -710,7 +733,8 @@
       <workItem from="1543866467571" duration="229000" />
       <workItem from="1543880880367" duration="418000" />
       <workItem from="1543882246171" duration="1213000" />
-      <workItem from="1543952510869" duration="2816000" />
+      <workItem from="1543952510869" duration="7628000" />
+      <workItem from="1543967265464" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
       <created>1541103286131</created>
@@ -838,11 +862,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543882767964</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1543955761034</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1543955761034</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187079000" />
+    <option name="totallyTimeSpent" value="192597000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -855,14 +886,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Persistence" order="3" sideWeight="0.1119403" side_tool="true" weight="0.35325265" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.89689034" visible="true" weight="0.26701966" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.89689034" visible="true" weight="0.2708018" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Image Layers" order="7" />
       <window_info id="Learn" order="8" />
@@ -874,7 +904,7 @@
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.32925472" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.24805339" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.20621932" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.16202946" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -935,15 +965,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Properties.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/3.1.0/HikariCP-3.1.0-sources.jar!/com/zaxxer/hikari/HikariConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="1080" column="20" lean-forward="true" selection-start-line="1080" selection-start-column="20" selection-end-line="1080" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainUIFacade.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/stage/Window.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/@localhost" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b502d2a-c06e-4239-906e-76208bb24265/console.sql" />
@@ -1022,13 +1043,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9a7edde-dcc9-4808-b9ae-2ebf3a76064c/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -1040,13 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="354" column="13" selection-start-line="354" selection-start-column="13" selection-end-line="354" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1105,6 +1112,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/SynkServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/login/CredentialsCheckTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/connection/DBSourceTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Model.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="965" column="55" selection-start-line="965" selection-start-column="55" selection-end-line="965" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1116,67 +1183,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/SynkServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+        <state relative-caret-position="1615">
+          <caret line="95" column="37" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="1691">
           <caret line="148" column="64" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="89" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="87" column="37" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        <state relative-caret-position="1416">
+          <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
+          <folding>
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7404#7405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
