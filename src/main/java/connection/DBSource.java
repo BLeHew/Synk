@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "root";
+    private static String password = "1234";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -77,8 +77,7 @@ public class DBSource {
                     stmt.executeUpdate();
                     runInsert(stmt,object);
                     break;
-                case "delete": stmt = conn.prepareStatement("DELETE FROM " + object.getType() + " WHERE id = " + object.getId());
-                    stmt.executeUpdate();
+                case "delete": object.delete(conn).executeUpdate();//conn.prepareStatement("DELETE FROM " + object.getType() + " WHERE id = " + object.getId());
                     break;
                 case "update": object.update(conn).executeUpdate();
                     break;

@@ -128,10 +128,11 @@ public class MainAppUI {
             return;
         }
         HashSet<TableObject> uniqueTaskUsers = new HashSet<>(tableViewUsersToTask.getItems());
-        HashSet<TableObject> uniqueProjectUsers = new HashSet<>(tableViewUsersToProject.getItems());
         if(!uniqueTaskUsers.add(lastChosenUser)){
             return;
         }
+
+        HashSet<TableObject> uniqueProjectUsers = new HashSet<>(tableViewUsersToProject.getItems());
         int projId = tableViews.getSelectedId(PROJECT);
         int taskId = tableViews.getSelectedId(TASK);
         if(DBSource.insertAssignment(lastChosenUser.getId(),projId,taskId)){

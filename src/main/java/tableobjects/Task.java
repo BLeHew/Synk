@@ -44,25 +44,27 @@ public class Task extends TableObject{
 
     public void setPctComplete(String pctComplete) {
         int i;
-        if(pctComplete.length() < 4) {
+        if(pctComplete.length() <= 3) {
             try {
                 i = Integer.parseInt(pctComplete);
             }catch (NumberFormatException e){
-                Toast.makeText("NOT A NUMBER");
                 return;
             }
-            if (i > 100){
-                Toast.makeText("TOO BIG");
-            }
             this.pctComplete = String.valueOf(Math.max(0, Math.min(i, 100)));
-        }else {
-            Toast.makeText("TOO BIG");
         }
     }
     public String toQuery(){
         return projID + ",'" + super.getName() + "','" + super.getDesc() + "'," + pctComplete;
     }
-
+    @Override
+    public PreparedStatement update(Connection conn) throws SQLException{
+        PreparedStatement statement = conn.prepareStatement("UPDATE " + type + " SET name = ?, description = ?, pctComplete = ? WHERE id = ?");
+        statement.setString(1,super.getName());
+        statement.setString(2,super.getDesc());
+        statement.setString(3,pctComplete);
+        statement.setInt(4,super.getId());
+        return statement;
+    }
 
 }
 
