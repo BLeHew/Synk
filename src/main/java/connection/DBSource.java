@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "root";
+    private static String password = "1234";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -55,12 +55,13 @@ public class DBSource {
         Connection conn = null;
         try {
             conn = con.getConnection();
+            conn.prepareStatement("INSERT IGNORE INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
+                    .executeUpdate();
             if (taskId != -1) {
                 conn.prepareStatement("INSERT IGNORE INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
                         .executeUpdate();
             }
-            conn.prepareStatement("INSERT IGNORE INTO user_proj_assigned VALUES(" + userId + "," + projId + ")")
-                    .executeUpdate();
+
             return true;
         }catch (SQLException s){
             s.printStackTrace();
@@ -77,7 +78,7 @@ public class DBSource {
                     stmt.executeUpdate();
                     runInsert(stmt,object);
                     break;
-                case "delete": object.delete(conn).executeUpdate();//conn.prepareStatement("DELETE FROM " + object.getType() + " WHERE id = " + object.getId());
+                case "delete": object.delete(conn).executeUpdate();
                     break;
                 case "update": object.update(conn).executeUpdate();
                     break;
