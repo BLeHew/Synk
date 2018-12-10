@@ -1,7 +1,6 @@
 package mainapp;
 
 import connection.DBSource;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
@@ -12,11 +11,11 @@ import userinterface.SynkApp;
 import java.util.*;
 
 public class MainAppUI {
-    @FXML private TableView<TableObject> tableViewProjects;
-    @FXML private TableView<TableObject> tableViewTasks;
-    @FXML private TableView<TableObject> tableViewAllUsers;
-    @FXML private TableView<TableObject> tableViewUsersToProject;
-    @FXML private TableView<TableObject> tableViewUsersToTask;
+    @FXML private TableView<TableObject> project;
+    @FXML private TableView<TableObject> task;
+    @FXML private TableView<TableObject> allUsers;
+    @FXML private TableView<TableObject> userToProject;
+    @FXML private TableView<TableObject> userToTask;
 
     @FXML private TextArea txtAreaProjectDesc;
     @FXML private TextArea txtAreaTaskDesc;
@@ -27,79 +26,70 @@ public class MainAppUI {
     private static final String PROJECT = "project";
     private static final String TASK = "task";
     private static final String ALLUSERS = "allUsers";
-    private static final String USERSTOPROJECT = "usersToProject";
-    private static final String USERSTOTASK = "usersToTask";
+    private static final String USERSTOPROJECT = "userToProject";
+    private static final String USERSTOTASK = "userToTask";
 
     private User lastChosenUser;
-    private TableViewMapper tableViews;
 
     public void initialize(){
-        tableViews = new TableViewMapper(
-                new ArrayList<>(Arrays.asList(
-                        tableViewProjects,
-                        tableViewTasks,
-                        tableViewAllUsers,
-                        tableViewUsersToProject,
-                        tableViewUsersToTask)));
-
-        tableViewProjects.setItems(AppData.getAll(PROJECT));
+        project.setItems(AppData.getAll(PROJECT));
     }
     @FXML
     public void showProjectTasksAndUsers() {
-        Project project = (Project) tableViews.getSelected(PROJECT);
-        if(project == null){
+        TableObject p = selected(project);
+        if(p == null){
             return;
         }
         btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
-        txtAreaProjectDesc.setText(project.getDesc());
+        txtAreaProjectDesc.setText(p.getDesc());
 
-        tableViewTasks.setItems(AppData.getProjectTasks(project.getId()));
-        tableViewUsersToProject.setItems(AppData.getUsersAttachedToProject(project.getId()));
-        tableViewUsersToTask.getItems().clear();
+        task.setItems(AppData.getProjectTasks(p.getId()));
+        userToProject.setItems(AppData.getUsersAttachedToProject(p.getId()));
+        userToTask.getItems().clear();
     }
     @FXML
     public void narrowUsers(){
-        TableObject task = tableViews.getSelected(TASK);
-        if(task == null){
+        TableObject t = selected(task);
+        if(t == null){
             return;
         }
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
-        txtAreaTaskDesc.setText(task.getDesc());
-        tableViewUsersToTask.setItems(AppData.getUsersAttachedToTask(task.getId()));
+        txtAreaTaskDesc.setText(t.getDesc());
+        userToTask.setItems(AppData.getUsersAttachedToTask(t.getId()));
     }
 
     @FXML
     public void addTask(){
-        if(tableViewProjects.getSelectionModel().getSelectedIndex() > -1){
-            Task t = new Task(tableViews.getSelectedId(PROJECT));
+        if(project.getSelectionModel().getSelectedIndex() > -1){
+            Task t = new Task(getId(project));
             AppData.insertIntoDB(t);
-            tableViewTasks.getItems().add(t);
+            task.getItems().add(t);
         }
     }
     @FXML
     public void addProject(){
         Project project = new Project();
         AppData.insertIntoDB(project);
-        tableViewProjects.getItems().add(project);
+        this.project.getItems().add(project);
     }
     @FXML
     public void removeProject(){
-        AppData.removeFromDB(tableViews.getSelected(PROJECT));
-        tableViews.removeSelected(PROJECT);
-        tableViewUsersToProject.getItems().clear();
-        tableViewTasks.getItems().clear();
+        AppData.removeFromDB(selected(project));
+        removeSelected(project);
+        userToProject.getItems().clear();
+        task.getItems().clear();
     }
     @FXML
     public void getUsers(){
-        tableViewAllUsers.setItems(AppData.getAll("users"));
+        allUsers.setItems(AppData.getAll("users"));
     }
     @FXML
     public void search(){
-        tableViewAllUsers.setItems(AppData.searchUsersWithUsername(txtFieldSearch.getText()));
+        allUsers.setItems(AppData.searchUsersWithUsername(txtFieldSearch.getText()));
     }
     @FXML
     public void updateName(TableColumn.CellEditEvent<TableObject,String> c){
@@ -114,20 +104,20 @@ public class MainAppUI {
     }
     @FXML
     public void removeTask(){
-        AppData.removeFromDB(tableViews.getSelected(TASK));
-        tableViews.removeSelected(TASK);
-        tableViewUsersToTask.getItems().clear();
+        AppData.removeFromDB(selected(task));
+        removeSelected(task);
+        userToTask.getItems().clear();
     }
     @FXML
     public void assignUserToProject(){
         if (lastChosenUser == null){
             return;
         }
-        HashSet<TableObject> uniqueUsers = new HashSet<>(tableViewUsersToProject.getItems());
+        HashSet<TableObject> uniqueUsers = new HashSet<>(userToProject.getItems());
 
         if (uniqueUsers.add(lastChosenUser)) {
-            tableViewUsersToProject.getItems().add(lastChosenUser);
-            DBSource.insertAssignment(lastChosenUser.getId(), tableViews.getSelectedId(PROJECT), -1);
+            userToProject.getItems().add(lastChosenUser);
+            DBSource.insertAssignment(lastChosenUser.getId(), getId(project), -1);
         }
     }
     @FXML
@@ -135,31 +125,31 @@ public class MainAppUI {
         if (lastChosenUser == null){
             return;
         }
-        HashSet<TableObject> uniqueTaskUsers = new HashSet<>(tableViewUsersToTask.getItems());
+        HashSet<TableObject> uniqueTaskUsers = new HashSet<>(userToTask.getItems());
         if(!uniqueTaskUsers.add(lastChosenUser)){
             return;
         }
 
-        HashSet<TableObject> uniqueProjectUsers = new HashSet<>(tableViewUsersToProject.getItems());
-        int projId = tableViews.getSelectedId(PROJECT);
-        int taskId = tableViews.getSelectedId(TASK);
+        HashSet<TableObject> uniqueProjectUsers = new HashSet<>(userToProject.getItems());
+        int projId = getId(project);
+        int taskId = getId(task);
         if(DBSource.insertAssignment(lastChosenUser.getId(),projId,taskId)){
-            tableViewUsersToTask.getItems().add(lastChosenUser);
+            userToTask.getItems().add(lastChosenUser);
             if(uniqueProjectUsers.add(lastChosenUser)){
-                tableViewUsersToProject.getItems().add(lastChosenUser);
+                userToProject.getItems().add(lastChosenUser);
             }
 
         }
     }
     @FXML
     public void removeUserFromTask(){
-        if(tableViewUsersToTask.getSelectionModel().getSelectedIndex() == -1){
+        if(selected(userToTask) == null){
             return;
         }
-        int userId = tableViewUsersToTask.getSelectionModel().getSelectedItem().getId();
-        int taskId = tableViewTasks.getSelectionModel().getSelectedItem().getId();
+        int userId = getId(userToTask);
+        int taskId = getId(task);
 
-        tableViews.removeSelected(USERSTOTASK);
+        removeSelected(userToTask);
         DBSource.removeUserTaskAssignment(userId,taskId);
 
     }
@@ -171,28 +161,30 @@ public class MainAppUI {
     @FXML
     public void removeUserFromProject(){
 
-        if(tableViews.getSelected(USERSTOPROJECT) == null){
+        if(selected(userToProject) == null){
             return;
         }
 
-        int userId = tableViews.getSelectedId(USERSTOPROJECT);
-        int projectId = tableViews.getSelectedId(PROJECT);
+        int userId = getId(userToProject);
+        int projectId = getId(project);
 
-        tableViewUsersToTask.getItems().remove(tableViewUsersToProject.getSelectionModel().getSelectedItem());
-        tableViews.removeSelected("usersToProject");
-        tableViewUsersToTask.refresh();
+
+
+        userToTask.getItems().remove(selected(userToProject));
+        removeSelected(userToProject);
+        userToTask.refresh();
         DBSource.removeUserProjectAssignment(userId,projectId);
     }
     @FXML
     public void saveChange(KeyEvent k){
         if(k.getCode().getName().equals("Enter")){
             if(txtAreaProjectDesc.isFocused()){
-                tableViews.getSelected(PROJECT).setDesc(txtAreaProjectDesc.getText());
-                DBSource.runQuery("update",tableViews.getSelected(PROJECT));
+                selected(project).setDesc(txtAreaProjectDesc.getText());
+                DBSource.runQuery("update", selected(project));
                 txtAreaProjectDesc.setDisable(true);
             }else if (txtAreaTaskDesc.isFocused()){
-                tableViews.getSelected(TASK).setDesc(txtAreaTaskDesc.getText());
-                DBSource.runQuery("update",tableViews.getSelected(TASK));
+                selected(task).setDesc(txtAreaTaskDesc.getText());
+                DBSource.runQuery("update", selected(task));
                 txtAreaTaskDesc.setDisable(true);
             }
 
@@ -203,6 +195,15 @@ public class MainAppUI {
     @FXML
     public void logout(){
         SynkApp.getInstance().gotoLogin();
+    }
+    public int getId(TableView<TableObject> tableView){
+        return selected(tableView).getId();
+    }
+    public TableObject selected(TableView<TableObject> tableView){
+        return tableView.getSelectionModel().getSelectedItem();
+    }
+    public void removeSelected(TableView<TableObject> tableView){
+        tableView.getItems().remove(tableView.getSelectionModel().getSelectedIndex());
     }
 
 }

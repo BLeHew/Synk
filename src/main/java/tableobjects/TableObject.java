@@ -5,7 +5,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.sql.*;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class TableObject{
     protected String type;
@@ -13,10 +16,20 @@ public class TableObject{
     private StringProperty name;
     private StringProperty description;
 
+    protected HashMap<String,HashSet<TableObject>> relations;
     public TableObject(int id, String name, String description){
         this.id = id;
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
+    }
+    public void addToRelation(TableObject other){
+        relations.get(other.type).add(other);
+    }
+    public HashSet<TableObject> getRelated(String type){
+        return relations.get(type);
+    }
+    public void removeRelatedItem(TableObject object){
+        relations.get(object.type).remove(object);
     }
     public String getType(){
         return type;
@@ -70,6 +83,6 @@ public class TableObject{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return id;
     }
 }

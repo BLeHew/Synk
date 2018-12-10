@@ -16,6 +16,7 @@ public class User extends TableObject {
         this.pass_hash = pass_hash;
         this.priv_level = priv_level;
     }
+
     public User(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
                 rs.getString("username"),

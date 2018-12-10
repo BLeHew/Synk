@@ -61,11 +61,12 @@ public class DBSource {
                 conn.prepareStatement("INSERT IGNORE INTO user_task_assigned VALUES(" + userId + "," + taskId + ")")
                         .executeUpdate();
             }
-
             return true;
         }catch (SQLException s){
             s.printStackTrace();
-        }finally { close(conn); }
+        }finally {
+            close(conn);
+        }
         return false;
     }
     public static void runQuery(String type,TableObject object){

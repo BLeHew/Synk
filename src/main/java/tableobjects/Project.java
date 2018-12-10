@@ -3,6 +3,7 @@ package tableobjects;
 import connection.DBSource;
 
 import java.sql.*;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,8 +11,12 @@ public class Project extends TableObject {
 
     public Project(int id, String name, String desc){
         super(id,name,desc);
+        super.relations = new HashMap<>();
         super.type = "project";
+        super.relations.put("user",new HashSet<>());
+        super.relations.put("task",new HashSet<>());
     }
+
     public Project(ResultSet rs) throws SQLException {
         this(rs.getInt("id"),
                 rs.getString("name"),

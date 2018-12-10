@@ -5,6 +5,8 @@ import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 import userinterface.Toast;
 
 import java.sql.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Task extends TableObject{
     private int projID;
@@ -13,8 +15,10 @@ public class Task extends TableObject{
     public Task(int id, String desc, String name, int projID, String pctComplete) {
         super(id,name,desc);
         super.type = "task";
+        super.relations = new HashMap<>();
         this.projID = projID;
         this.pctComplete = pctComplete;
+        super.relations.put("user",new HashSet<>());
     }
     public Task(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
