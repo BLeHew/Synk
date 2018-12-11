@@ -1,3 +1,4 @@
+import tableobjects.TableObject;
 import userinterface.SynkApp;
 
 public class Main {

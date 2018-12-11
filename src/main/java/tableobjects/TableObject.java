@@ -16,20 +16,10 @@ public class TableObject{
     private StringProperty name;
     private StringProperty description;
 
-    protected HashMap<String,HashSet<TableObject>> relations;
     public TableObject(int id, String name, String description){
         this.id = id;
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
-    }
-    public void addToRelation(TableObject other){
-        relations.get(other.type).add(other);
-    }
-    public HashSet<TableObject> getRelated(String type){
-        return relations.get(type);
-    }
-    public void removeRelatedItem(TableObject object){
-        relations.get(object.type).remove(object);
     }
     public String getType(){
         return type;

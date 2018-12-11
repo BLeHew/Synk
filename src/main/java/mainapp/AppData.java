@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Tab;
 import tableobjects.TableObject;
 
+import java.util.List;
+
 public class AppData {
     public static void insertIntoDB(TableObject t){
         DBSource.runQuery("insert",t);

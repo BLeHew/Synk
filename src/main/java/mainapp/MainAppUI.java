@@ -23,16 +23,11 @@ public class MainAppUI {
     @FXML private Button btnRemoveTask;
     @FXML private TextField txtFieldSearch;
 
-    private static final String PROJECT = "project";
-    private static final String TASK = "task";
-    private static final String ALLUSERS = "allUsers";
-    private static final String USERSTOPROJECT = "userToProject";
-    private static final String USERSTOTASK = "userToTask";
 
     private User lastChosenUser;
 
     public void initialize(){
-        project.setItems(AppData.getAll(PROJECT));
+        project.setItems(AppData.getAll("project"));
     }
     @FXML
     public void showProjectTasksAndUsers() {
@@ -56,6 +51,7 @@ public class MainAppUI {
         if(t == null){
             return;
         }
+
         btnRemoveTask.setDisable(false);
         txtAreaTaskDesc.setDisable(false);
         txtAreaTaskDesc.setText(t.getDesc());
@@ -151,7 +147,6 @@ public class MainAppUI {
 
         removeSelected(userToTask);
         DBSource.removeUserTaskAssignment(userId,taskId);
-
     }
     @FXML
     public void setChosenUser(MouseEvent mouseEvent){

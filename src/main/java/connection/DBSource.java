@@ -13,7 +13,7 @@ import java.sql.*;
 public class DBSource {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "1234";
+    private static String password = "root";
     public static String lastError = "";
     public static HikariDataSource con;
 
@@ -128,7 +128,7 @@ public class DBSource {
             }
         }catch(SQLException e){
             lastError = "Error in SQL Connection";
-            System.err.println(e);
+            e.printStackTrace();
             return false;
         }finally {close(conn); }
         return true;

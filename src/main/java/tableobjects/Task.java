@@ -15,10 +15,8 @@ public class Task extends TableObject{
     public Task(int id, String desc, String name, int projID, String pctComplete) {
         super(id,name,desc);
         super.type = "task";
-        super.relations = new HashMap<>();
         this.projID = projID;
         this.pctComplete = pctComplete;
-        super.relations.put("user",new HashSet<>());
     }
     public Task(ResultSet rs) throws SQLException{
         this(rs.getInt("id"),
