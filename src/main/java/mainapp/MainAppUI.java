@@ -1,14 +1,17 @@
 package mainapp;
 
-import connection.DBSource;
+import connection.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import tableobjects.*;
+import tableobjects.Project;
+import tableobjects.TableObject;
+import tableobjects.Task;
+import tableobjects.User;
 import userinterface.SynkApp;
 
-import java.util.*;
+import java.util.HashSet;
 
 public class MainAppUI {
     @FXML private TableView<TableObject> project;
@@ -35,6 +38,7 @@ public class MainAppUI {
         if(p == null){
             return;
         }
+
         btnRemoveProject.setDisable(false);
         btnRemoveTask.setDisable(true);
         txtAreaProjectDesc.setDisable(false);
@@ -113,7 +117,7 @@ public class MainAppUI {
 
         if (uniqueUsers.add(lastChosenUser)) {
             userToProject.getItems().add(lastChosenUser);
-            DBSource.insertAssignment(lastChosenUser.getId(), getId(project), -1);
+            Database.insertAssignment(lastChosenUser.getId(), getId(project), -1);
         }
     }
     @FXML
@@ -129,7 +133,7 @@ public class MainAppUI {
         HashSet<TableObject> uniqueProjectUsers = new HashSet<>(userToProject.getItems());
         int projId = getId(project);
         int taskId = getId(task);
-        if(DBSource.insertAssignment(lastChosenUser.getId(),projId,taskId)){
+        if(Database.insertAssignment(lastChosenUser.getId(),projId,taskId)){
             userToTask.getItems().add(lastChosenUser);
             if(uniqueProjectUsers.add(lastChosenUser)){
                 userToProject.getItems().add(lastChosenUser);
@@ -146,7 +150,7 @@ public class MainAppUI {
         int taskId = getId(task);
 
         removeSelected(userToTask);
-        DBSource.removeUserTaskAssignment(userId,taskId);
+        Database.removeUserTaskAssignment(userId,taskId);
     }
     @FXML
     public void setChosenUser(MouseEvent mouseEvent){
@@ -159,27 +163,24 @@ public class MainAppUI {
         if(selected(userToProject) == null){
             return;
         }
-
         int userId = getId(userToProject);
         int projectId = getId(project);
-
-
 
         userToTask.getItems().remove(selected(userToProject));
         removeSelected(userToProject);
         userToTask.refresh();
-        DBSource.removeUserProjectAssignment(userId,projectId);
+        Database.removeUserProjectAssignment(userId,projectId);
     }
     @FXML
     public void saveChange(KeyEvent k){
         if(k.getCode().getName().equals("Enter")){
             if(txtAreaProjectDesc.isFocused()){
                 selected(project).setDesc(txtAreaProjectDesc.getText());
-                DBSource.runQuery("update", selected(project));
+                Database.runQuery("update", selected(project));
                 txtAreaProjectDesc.setDisable(true);
             }else if (txtAreaTaskDesc.isFocused()){
                 selected(task).setDesc(txtAreaTaskDesc.getText());
-                DBSource.runQuery("update", selected(task));
+                Database.runQuery("update", selected(task));
                 txtAreaTaskDesc.setDisable(true);
             }
 
@@ -189,7 +190,7 @@ public class MainAppUI {
     }
     @FXML
     public void logout(){
-        SynkApp.getInstance().gotoLogin();
+        SynkApp.gotoLogin();
     }
     public int getId(TableView<TableObject> tableView){
         return selected(tableView).getId();

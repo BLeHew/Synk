@@ -1,9 +1,6 @@
 package login.credentials;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import connection.DBSource;
+import connection.Database;
 
 public class CredentialsCheck {
     public static String errorMessage = "SUCCESS";
@@ -24,11 +21,10 @@ public class CredentialsCheck {
     * @return true if credential is correct else return "No Connection to the Database"
     */
     public static boolean hasErrors(String username,String password) {
-        if (!DBSource.con.isRunning()) {
+        if (!Database.con.isRunning()) {
             errorMessage = "No Connection to Database";
             return true;
-        } else if (!DBSource.validateCredentials(username, password)) {
-            errorMessage = DBSource.lastError;
+        } else if (!Database.validateCredentials(username, password)) {
             return true;
         }
         return false;

@@ -1,12 +1,9 @@
 package tableobjects;
 
-import connection.DBSource;
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-import userinterface.Toast;
-
-import java.sql.*;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Task extends TableObject{
     private int projID;

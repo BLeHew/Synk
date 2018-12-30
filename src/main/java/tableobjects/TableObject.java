@@ -1,14 +1,12 @@
 package tableobjects;
 
-import connection.DBSource;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.sql.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class TableObject{
     protected String type;
@@ -46,6 +44,7 @@ public class TableObject{
         return name.get();
     }
     public String toQuery(){return "";}
+
     public PreparedStatement insert(Connection conn) throws SQLException{
         String query = "INSERT INTO " +  type + " VALUES(null," + toQuery() + ")";
         PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);

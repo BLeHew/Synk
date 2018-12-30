@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="TeamSynk:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a69a5fa3-e2d3-4066-8e14-228a1c542f47" name="Default Changelist" comment="">
+    <list default="true" id="916259c3-ba7c-4b1b-9249-05ad1da6c1de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/userinterface/ScreenManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/login/credentials/CredentialCheckerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tableobjects/TableObjectTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tableobjects/TaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/044da852-ac0b-4b0c-b022-430f37eb9247/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/044da852-ac0b-4b0c-b022-430f37eb9247/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21db9c81-0fb6-48cc-9021-6ab11a07e1c6/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21db9c81-0fb6-48cc-9021-6ab11a07e1c6/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0/storage_v2/_staging_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0/storage_v2/_staging_/schema/synk.oxo2AA/routine/getusersattachedtotask.NUnlkA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76d5df84-3c07-4d62-bab5-07a53517dac0/storage_v2/_staging_/schema/synk.oxo2AA/routine/getusersattachedtotask.NUnlkA.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/79436de8-78a6-4450-99c0-700019ce8452/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/79436de8-78a6-4450-99c0-700019ce8452/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7c97dfc4-ae81-4fe5-846b-04d35468ca17/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7c97dfc4-ae81-4fe5-846b-04d35468ca17/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a32a62ec-1793-4b25-91fa-605bba3d4401/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a32a62ec-1793-4b25-91fa-605bba3d4401/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a9a7edde-dcc9-4808-b9ae-2ebf3a76064c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a9a7edde-dcc9-4808-b9ae-2ebf3a76064c/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a9a7edde-dcc9-4808-b9ae-2ebf3a76064c/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bdc0d475-d545-422a-bfec-89817fca4345/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bdc0d475-d545-422a-bfec-89817fca4345/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c54f1479-3557-4db4-a104-1f0c8efc57da/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c54f1479-3557-4db4-a104-1f0c8efc57da/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4b1143d-bc71-4a04-a537-34afbc539c81/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4b1143d-bc71-4a04-a537-34afbc539c81/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fc3ebc51-b024-48e1-966c-2fcbb8e94d52/storage_v2/_src_/schema/synk.oxo2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fc3ebc51-b024-48e1-966c-2fcbb8e94d52/storage_v2/_src_/schema/synk.oxo2AA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamSynk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamSynk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connection/DBSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/credentials/CredentialsCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/CredentialsCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidEmailError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidEmailError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidPasswordError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidPasswordError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/NoConnectionError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/NoConnectionError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/UserAlreadyExistsError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/UserAlreadyExistsError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/SynkServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/SynkServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/Toast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userinterface/Toast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/connection/DBSourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/login/CredentialsCheckTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,208 +83,91 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="project: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="task: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="synk@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="synk: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="user_task_assigned: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="407852862">
+    <session id="-1868791758">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="37" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.5" value="6" />
-          <entry key="project.open.time.6" value="15" />
-          <entry key="project.open.time.7" value="13" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="39" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.create.new" value="3" />
-          <entry key="git.branch.delete.local" value="5" />
-          <entry key="git.branch.rename" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="50" />
-          <entry key="fxml" value="397" />
-          <entry key="java" value="15872" />
-          <entry key="sql" value="25" />
-          <entry key="txt" value="41" />
-          <entry key="xml" value="177" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="15872" />
-          <entry key="PLAIN_TEXT" value="91" />
-          <entry key="SQL" value="25" />
-          <entry key="XML" value="574" />
+          <entry key="project.open.time.6" value="8" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="8" />
-          <entry key="java" value="103" />
-          <entry key="setupqueries" value="2" />
-          <entry key="sql" value="5" />
-          <entry key="tasks" value="1" />
-          <entry key="tld" value="1" />
-          <entry key="xml" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Database Element" value="1" />
-          <entry key="JAVA" value="103" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="SQL" value="4" />
-          <entry key="Scratch" value="1" />
-          <entry key="XML" value="30" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1679297180">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="18" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.20" value="3" />
-          <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.22" value="3" />
-          <entry key="project.open.time.24" value="3" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="@localhost" value="1" />
-          <entry key="css" value="4" />
-          <entry key="fxml" value="16" />
+          <entry key="fxml" value="3" />
           <entry key="java" value="73" />
-          <entry key="setupqueries" value="4" />
-          <entry key="sql" value="6" />
-          <entry key="synk@localhost" value="1" />
-          <entry key="synk@localhost_1" value="1" />
-          <entry key="user_task_assigned" value="1" />
-          <entry key="xml" value="9" />
+          <entry key="setupqueries" value="1" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
-          <entry key="Database Element" value="1" />
           <entry key="JAVA" value="73" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Scratch" value="9" />
-          <entry key="XML" value="25" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="489" />
-          <entry key="dummy" value="15" />
-          <entry key="fxml" value="208" />
-          <entry key="java" value="5671" />
-          <entry key="setupqueries" value="20" />
-          <entry key="sql" value="18" />
-          <entry key="synk@localhost" value="7" />
-          <entry key="txt" value="32" />
-          <entry key="xml" value="60" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="489" />
-          <entry key="JAVA" value="5671" />
-          <entry key="PLAIN_TEXT" value="67" />
-          <entry key="SQL" value="18" />
-          <entry key="Scratch" value="7" />
-          <entry key="XML" value="268" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.checkout.local" value="1" />
-          <entry key="git.branch.checkout.remote" value="1" />
-          <entry key="git.branch.create.new" value="2" />
-          <entry key="git.branch.delete.local" value="2" />
+          <entry key="git.branch.create.new" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="3477" />
+          <entry key="txt" value="8" />
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3477" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2091">
-              <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+            <state relative-caret-position="276">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="-46">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/ScreenManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -243,19 +175,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1972">
-              <caret line="148" column="57" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="368">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#6015#6016#0" expanded="true" />
+                <element signature="e#6050#6051#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -264,61 +188,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="805">
+              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
+        <entry file="file://$PROJECT_DIR$/src/test/tableobjects/TaskTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="759">
+              <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#159#160#0" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+            <state relative-caret-position="23">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#195#196#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -326,84 +225,59 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Tag Library Descriptor" />
         <option value="hibernate-configuration-5.2" />
-        <option value="hibernate-main-5.2" />
+        <option value="Arquillian JUnit Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>anchorPaneTasks</find>
-      <find>tableView</find>
-      <find>project</find>
-      <find>getUser</find>
-      <find>tableViewProj</find>
-      <find>allU</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactoring" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" root0="FORCE_HIGHLIGHTING" />
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../voyage-api-java" value="PREVIEW" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/utils/TableAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Adapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/ListFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUIController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/connection/Connection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/connection/SynkConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/connection/DB.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/tableobjects/UsersEntity.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/tableobjects/Projects.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/login/LoginScreenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/login/CredentialsCheck.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/tableobjects/Project.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate/hibernate.cfg.xml" />
-        <option value="/392dea51/76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/routine/getusersattachedtoproject@(int(11)).sql" />
-        <option value="/392dea51/76d5df84-3c07-4d62-bab5-07a53517dac0/schema/synk/routine/getusersattachedtotask@(int(11)).sql" />
-        <option value="$PROJECT_DIR$/src/main/java/connection/Query.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Transactionable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainUIFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userinterface/Toast.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/synk@localhost" />
-        <option value="$PROJECT_DIR$/src/main/resources/sql/synk.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/SynkServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Project.kt" />
+        <option value="$PROJECT_DIR$/src/test/login/CredentialsCheckTest.java" />
+        <option value="$PROJECT_DIR$/src/test/TestMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/connection/DBSourceTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/RowFactorySetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/TableViewHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/sql/setupqueries" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Model.java" />
-        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/User.java" />
+        <option value="$PROJECT_DIR$/src/main/test/connection/DBSourceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/connection/DBSourceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/connection/DBSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/connection/DB.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/connection/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/login/credentials/CredentialsCheck.java" />
         <option value="$PROJECT_DIR$/src/main/java/tableobjects/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tableobjects/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mainapp/AppData.java" />
+        <option value="$PROJECT_DIR$/src/test/tableobjects/TableObjectTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userinterface/Toast.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userinterface/ScreenManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java" />
+        <option value="$PROJECT_DIR$/src/test/userinterface/SynkAppTest.java" />
+        <option value="$PROJECT_DIR$/src/test/login/LoginScreenUITest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidEmailError.java" />
+        <option value="$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidPasswordError.java" />
+        <option value="$PROJECT_DIR$/src/test/login/credentials/CredentialCheckerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/tableobjects/TaskTest.java" />
       </list>
     </option>
   </component>
@@ -420,45 +294,14 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="TeamSynk" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>JavaFX</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>JavaFX</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -512,7 +355,34 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+              <item name="credentialserrors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mainapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
@@ -549,14 +419,6 @@
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
               <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -564,14 +426,14 @@
               <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamSynk" type="b2602c69:ProjectViewProjectNode" />
               <item name="TeamSynk" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="tableobjects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -583,30 +445,40 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="76d5df84-3c07-4d62-bab5-07a53517dac0" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="c3b35699-728a-4fa8-8fd1-055b1f0c8335" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544495610713" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/resources/tableobjects" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/JavaFX Scene Builder 2.0.exe" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.1632184" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="tableobjects" />
+      <recent name="login.credentials" />
+      <recent name="login" />
+      <recent name="userinterface" />
+      <recent name="connection" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="tableobjects" />
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Brice LeHew\IdeaProjects\TeamSynk\lib" />
-      <recent name="C:\Users\Brice\IdeaProjects\TeamSynk\src\main\resources\hibernate" />
+      <recent name="C:\Users\Brice\IdeaProjects\TeamSynk\TeamSynk\src" />
+      <recent name="C:\Users\Brice\IdeaProjects\TeamSynk\TeamSynk\src\main" />
+      <recent name="C:\Users\Brice\IdeaProjects\TeamSynk\TeamSynk\src\test\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -622,81 +494,85 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TeamSynk" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SynkApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="userinterface.SynkApp" />
+    <configuration name="CredentialCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TeamSynk" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="login.credentials.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="login.credentials" />
+      <option name="MAIN_CLASS_NAME" value="login.credentials.CredentialCheckerTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="CredentialCheckerTest.checkIfAllCredentialsAreValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TeamSynk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="login.credentials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="login.credentials" />
+      <option name="MAIN_CLASS_NAME" value="login.credentials.CredentialCheckerTest" />
+      <option name="METHOD_NAME" value="checkIfAllCredentialsAreValid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    <configuration name="LoginScreenUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TeamSynk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="login" />
+      <option name="MAIN_CLASS_NAME" value="login.LoginScreenUITest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeamSynk.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/TeamSynk_jar/TeamSynk.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+    <configuration name="TaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TeamSynk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tableobjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tableobjects" />
+      <option name="MAIN_CLASS_NAME" value="tableobjects.TaskTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.SynkApp" />
-      <item itemvalue="JAR Application.TeamSynk.jar" />
+      <item itemvalue="JUnit.LoginScreenUITest" />
+      <item itemvalue="JUnit.CredentialCheckerTest" />
+      <item itemvalue="JUnit.CredentialCheckerTest.checkIfAllCredentialsAreValid" />
+      <item itemvalue="JUnit.TaskTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SynkApp" />
-        <item itemvalue="JAR Application.TeamSynk.jar" />
-        <item itemvalue="Application.SynkApp" />
-        <item itemvalue="JAR Application.TeamSynk.jar" />
-        <item itemvalue="Application.SynkApp" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TaskTest" />
+        <item itemvalue="JUnit.CredentialCheckerTest.checkIfAllCredentialsAreValid" />
+        <item itemvalue="JUnit.CredentialCheckerTest" />
+        <item itemvalue="JUnit.LoginScreenUITest" />
       </list>
     </recent_temporary>
   </component>
@@ -705,516 +581,359 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a69a5fa3-e2d3-4066-8e14-228a1c542f47" name="Default Changelist" comment="" />
-      <created>1540931659767</created>
+      <changelist id="916259c3-ba7c-4b1b-9249-05ad1da6c1de" name="Default Changelist" comment="" />
+      <created>1544501993215</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540931659767</updated>
-      <workItem from="1540931661656" duration="89000" />
-      <workItem from="1540931790508" duration="7844000" />
-      <workItem from="1540940512382" duration="9852000" />
-      <workItem from="1540955264501" duration="15000" />
-      <workItem from="1540955536856" duration="6365000" />
-      <workItem from="1541010317420" duration="2005000" />
-      <workItem from="1541024775177" duration="1420000" />
-      <workItem from="1541039995875" duration="4976000" />
-      <workItem from="1541080790635" duration="380000" />
-      <workItem from="1541081830717" duration="1108000" />
-      <workItem from="1541093059446" duration="4228000" />
-      <workItem from="1541097352765" duration="3879000" />
-      <workItem from="1541103178260" duration="12262000" />
-      <workItem from="1541116585282" duration="8694000" />
-      <workItem from="1541128480856" duration="3789000" />
-      <workItem from="1541208448447" duration="1858000" />
-      <workItem from="1541280096572" duration="1562000" />
-      <workItem from="1541357003054" duration="91000" />
-      <workItem from="1541365446029" duration="9523000" />
-      <workItem from="1541383043004" duration="1107000" />
-      <workItem from="1541391211862" duration="328000" />
-      <workItem from="1541392297266" duration="3318000" />
-      <workItem from="1541429596866" duration="109000" />
-      <workItem from="1541429994405" duration="44000" />
-      <workItem from="1541431454405" duration="1358000" />
-      <workItem from="1541433378919" duration="1720000" />
-      <workItem from="1541438607273" duration="143000" />
-      <workItem from="1541439877676" duration="5257000" />
-      <workItem from="1541445431370" duration="1326000" />
-      <workItem from="1541452051791" duration="9632000" />
-      <workItem from="1541462417330" duration="7990000" />
-      <workItem from="1541516176601" duration="773000" />
-      <workItem from="1541524352982" duration="409000" />
-      <workItem from="1541530491748" duration="7255000" />
-      <workItem from="1541538053407" duration="79000" />
-      <workItem from="1541539310538" duration="9022000" />
-      <workItem from="1541550523463" duration="1811000" />
-      <workItem from="1541552404023" duration="2064000" />
-      <workItem from="1541566107720" duration="2029000" />
-      <workItem from="1541568211866" duration="940000" />
-      <workItem from="1541689604420" duration="434000" />
-      <workItem from="1541708750264" duration="2037000" />
-      <workItem from="1541718458207" duration="5422000" />
-      <workItem from="1541882607786" duration="88000" />
-      <workItem from="1541887690894" duration="1160000" />
-      <workItem from="1541891684289" duration="597000" />
-      <workItem from="1541964197197" duration="1656000" />
-      <workItem from="1542049238705" duration="181000" />
-      <workItem from="1542049480195" duration="3665000" />
-      <workItem from="1542136291563" duration="212000" />
-      <workItem from="1543289864865" duration="89000" />
-      <workItem from="1543290502898" duration="187000" />
-      <workItem from="1543354024720" duration="1725000" />
-      <workItem from="1543356375301" duration="6020000" />
-      <workItem from="1543363034410" duration="669000" />
-      <workItem from="1543365638233" duration="2454000" />
-      <workItem from="1543369299511" duration="84000" />
-      <workItem from="1543866467571" duration="229000" />
-      <workItem from="1543880880367" duration="418000" />
-      <workItem from="1543882246171" duration="1213000" />
-      <workItem from="1543952510869" duration="7628000" />
-      <workItem from="1543967265464" duration="706000" />
-      <workItem from="1544134447154" duration="8159000" />
-      <workItem from="1544389917230" duration="1053000" />
-      <workItem from="1544463200541" duration="8000" />
-      <workItem from="1544490443282" duration="3112000" />
+      <updated>1544501993215</updated>
+      <workItem from="1544501994324" duration="958000" />
+      <workItem from="1544559931203" duration="5000" />
+      <workItem from="1544840773718" duration="1068000" />
+      <workItem from="1545144992391" duration="1071000" />
+      <workItem from="1545161021237" duration="1062000" />
+      <workItem from="1545162105292" duration="1960000" />
+      <workItem from="1545164089074" duration="501000" />
+      <workItem from="1545164605620" duration="6497000" />
+      <workItem from="1545171336704" duration="8059000" />
+      <workItem from="1545257155657" duration="607000" />
+      <workItem from="1545353005353" duration="2028000" />
+      <workItem from="1546115893963" duration="4720000" />
+      <workItem from="1546123917632" duration="480000" />
     </task>
-    <task id="LOCAL-00001" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541103286131</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1541103286131</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541112952418</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1541112952418</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541113106114</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1541113106114</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541208529738</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1541208529738</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541357029112</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1541357029112</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541445057149</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1541445057149</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java">
-      <created>1541461619307</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1541461619307</updated>
-    </task>
-    <task id="LOCAL-00008" summary="refactoring mainAppUi">
-      <created>1541537549759</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1541537549766</updated>
-    </task>
-    <task id="LOCAL-00009" summary="refactoring mainAppUi">
-      <created>1541548348594</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1541548348594</updated>
-    </task>
-    <task id="LOCAL-00010" summary="refactoring mainAppUi">
-      <created>1541708906415</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1541708906415</updated>
-    </task>
-    <task id="LOCAL-00011" summary="refactoring mainAppUi">
-      <created>1541882672022</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1541882672024</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1543289932621</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1543289932621</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/resources/css/style.css&#10;#&#9;src/main/resources/fxml/loginScreen.fxml&#10;#&#9;src/main/resources/fxml/mainAppUI.fxml">
-      <created>1543355825683</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1543355825683</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/resources/css/style.css&#10;#&#9;src/main/resources/fxml/loginScreen.fxml&#10;#&#9;src/main/resources/fxml/mainAppUI.fxml">
-      <created>1543363201356</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1543363201356</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/resources/css/style.css&#10;#&#9;src/main/resources/fxml/loginScreen.fxml&#10;#&#9;src/main/resources/fxml/mainAppUI.fxml">
-      <created>1543369337699</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1543369337699</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1543868656013</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1543868656013</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1543877530982</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1543877530982</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1543882767964</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1543882767964</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1543955761034</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1543955761034</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fixing assigning to task bug">
-      <created>1544118932188</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1544118932188</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215475000" />
+  <component name="TestHistory">
+    <history-entry file="TaskTest - 2018.12.29 at 15h 33m 52s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 34m 17s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 35m 56s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 36m 23s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 37m 09s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 38m 06s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 40m 05s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 42m 07s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 43m 21s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskTest - 2018.12.29 at 15h 44m 03s.xml">
+      <configuration name="TaskTest" configurationId="JUnit" />
+    </history-entry>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="29016000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1912" y="-7" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Capture Tool" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Persistence" order="3" sideWeight="0.1119403" side_tool="true" weight="0.35325265" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.89689034" visible="true" weight="0.28290468" />
-      <window_info id="Structure" order="6" weight="0.25" />
-      <window_info id="Image Layers" order="7" />
-      <window_info id="Learn" order="8" />
-      <window_info anchor="bottom" id="Database Console" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32925472" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.23240589" />
-      <window_info anchor="bottom" id="Java Enterprise" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.14238952" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32925472" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.24805339" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.43207857" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32925472" />
-      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32814237" />
-      <window_info anchor="right" id="Maven Projects" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.07261725" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Commander" order="6" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.821718" visible="true" weight="0.23134328" />
+      <window_info id="Structure" order="1" sideWeight="0.5005562" side_tool="true" weight="0.2553305" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Learn" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Persistence" order="6" sideWeight="0.17828201" side_tool="true" weight="0.22228146" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31368187" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32925472" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.821718" visible="true" weight="0.22228146" />
+      <window_info id="Structure" order="1" sideWeight="0.5005562" side_tool="true" weight="0.2553305" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Learn" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Persistence" order="6" sideWeight="0.17828201" side_tool="true" visible="true" weight="0.22228146" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31368187" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32925472" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge branch 'trying_without_appdata' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/inspectionProfiles/Project_Default.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;TeamSynk.iml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/connection/Query.java&#10;#&#9;src/main/java/connection/SynkConnection.java&#10;#&#9;src/main/java/login/LoginScreenController.java&#10;#&#9;src/main/java/login/LoginScreenUI.java&#10;#&#9;src/main/java/mainapp/AppData.java&#10;#&#9;src/main/java/mainapp/MainAppUI.java&#10;#&#9;src/main/java/mainapp/MainAppUIController.java&#10;#&#9;src/main/java/tableobjects/Project.java&#10;#&#9;src/main/java/tableobjects/TableObject.java&#10;#&#9;src/main/java/tableobjects/User.java&#10;#&#9;src/main/java/userinterface/SynkApp.java" />
-    <MESSAGE value="refactoring mainAppUi" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/resources/css/style.css&#10;#&#9;src/main/resources/fxml/loginScreen.fxml&#10;#&#9;src/main/resources/fxml/mainAppUI.fxml" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/BLeHew/TeamSynk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="fixing assigning to task bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing assigning to task bug" />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/@localhost" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0b502d2a-c06e-4239-906e-76208bb24265/console.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/synk@localhost" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/82f8cd2a-828e-42b7-853d-49ba8fce5095/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/synk.xml" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/net/ServerSocket.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/DataOutputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/Toast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Objects.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7c97dfc4-ae81-4fe5-846b-04d35468ca17/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate/Project.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate/Task.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate/hibernate.cfg.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/login/CredentialsCheck.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/List.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/RowFactorySetter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/044da852-ac0b-4b0c-b022-430f37eb9247/console.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/synk@localhost_1" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b1143d-bc71-4a04-a537-34afbc539c81/console.sql" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/Node.java" />
-    <entry file="das://a9a7edde-dcc9-4808-b9ae-2ebf3a76064c/schema/synk/table/user_task_assigned">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a9a7edde-dcc9-4808-b9ae-2ebf3a76064c/console.sql" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TextArea.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/UserAlreadyExistsError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/SynkServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/login/CredentialsCheckTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/connection/DBSourceTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Model.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableView.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/CredentialChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/TableViewMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/setupqueries">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="91" column="60" lean-forward="true" selection-start-line="91" selection-start-column="60" selection-end-line="91" selection-end-column="60" />
+        <state relative-caret-position="207">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" />
+    <entry file="file://$PROJECT_DIR$/src/test/TestMain.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/login/CredentialsCheckTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSourceTest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/3.1.0/HikariCP-3.1.0-sources.jar!/com/zaxxer/hikari/util/PropertyElf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-470">
+          <caret line="93" column="57" lean-forward="true" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/3.1.0/HikariCP-3.1.0-sources.jar!/com/zaxxer/hikari/HikariConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="133" column="13" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/connection/DatabaseSourceTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/loginScreen.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-465">
+          <caret line="21" column="136" selection-start-line="21" selection-start-column="136" selection-end-line="21" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="1014" column="16" selection-start-line="1014" selection-start-column="16" selection-end-line="1014" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainAppUI.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/connection/DBSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="148" column="57" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="57" />
-        </state>
+        <state relative-caret-position="-276" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="92">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1439">
+          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/userinterface/SynkAppTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/connection/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2547">
+          <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/login/LoginScreenUITest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/LoginScreenUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-943">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidEmailError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/CredentialsCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/CredentialsError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/InvalidPasswordError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="12" column="80" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/credentialserrors/PassDoesntMatchError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/login/credentials/CredentialChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/login/credentials/CredentialCheckerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="322">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tableobjects/TableObjectTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/TableObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tableobjects/TaskTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/AppData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainapp/MainAppUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#6015#6016#0" expanded="true" />
+            <element signature="e#6050#6051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/SynkApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/userinterface/ScreenManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tableobjects/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="184">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="276">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1225,12 +944,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>TeamSynk:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.1632184" />
-                <option value="0.5" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1250,6 +967,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>groovy-2.5.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1277,7 +995,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.1632184" />
                 <option value="0.6" />
               </list>
             </option>

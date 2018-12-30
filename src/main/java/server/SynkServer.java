@@ -1,10 +1,9 @@
 package server;
 
-import javax.xml.crypto.Data;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class SynkServer {
     public static final int PORT = 5555;

@@ -1,7 +1,5 @@
 package login.credentials.credentialserrors;
 
-import login.credentials.CredentialChecker;
-
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,7 +8,7 @@ public class InvalidEmailError extends CredentialsError {
 
     /**
      * A method that validate an email address.
-     * @param emailStr - input email to be validate
+     * @param userItems the items to be checked, should contain an email key,value pair
      * @return - true if the email is in the correct format else false
      *
      * Correct Format - john.doe@hotmail.com

@@ -4,20 +4,22 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import tableobjects.*;
+import tableobjects.TableObject;
+import tableobjects.TableObjectFactory;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
-public class DBSource {
+public class Database {
     public static String url = "jdbc:mysql://localhost:3306/synk?allowPublicKeyRetrieval=true&useSSL=false";
     private static String userName = "root";
-    private static String password = "root";
-    public static String lastError = "";
+    private static String password = "1234";
     public static HikariDataSource con;
 
-    public static void establish(){
+    public static void createConnection(){
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
         config.setUsername(userName);
@@ -35,14 +37,14 @@ public class DBSource {
     }
     public static void removeUserTaskAssignment(int userId, int taskId){
         String query = "DELETE FROM user_task_assigned WHERE user_id = " + userId + " AND task_id = " + taskId;
-        removeAssignment(query);
+        run(query);
     }
     public static void removeUserProjectAssignment(int userId, int projId){
         String query = "DELETE FROM user_proj_assigned WHERE user_id = " + userId + " AND proj_id = " + projId;
-        removeAssignment(query);
+        run(query);
 
     }
-    private static void removeAssignment(String query){
+    public static void run(String query){
         Connection conn = null;
         try {
             conn = con.getConnection();
@@ -119,15 +121,12 @@ public class DBSource {
             stmt.setString(1,userName);
             rs = stmt.executeQuery();
             if(!rs.first()){
-                lastError = "Username does not exist";
                 return false;
             }
             if(password.hashCode() != rs.getInt("pass_hash")){
-                lastError = "Password Incorrect";
                 return false;
             }
         }catch(SQLException e){
-            lastError = "Error in SQL Connection";
             e.printStackTrace();
             return false;
         }finally {close(conn); }

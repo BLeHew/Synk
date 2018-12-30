@@ -1,14 +1,7 @@
 package tableobjects;
 
-import connection.DBSource;
-
-import javax.swing.plaf.nimbus.State;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
 
 public class TableObjectFactory {
     public static TableObject getTableObject(String type){

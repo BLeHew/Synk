@@ -1,11 +1,7 @@
 package tableobjects;
 
-import connection.DBSource;
-
-import java.sql.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Project extends TableObject {
 

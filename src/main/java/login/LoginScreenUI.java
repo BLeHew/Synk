@@ -23,10 +23,10 @@ public class LoginScreenUI {
     private void login(){
         System.out.println("Logging in");
 
-        if(CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
+        if(!CredentialsCheck.hasErrors(txtFieldUsername.getText(),passwordFieldPassword.getText())){
             txtFieldError.setText(CredentialsCheck.errorMessage);
         }else {
-            SynkApp.getInstance().gotoMainUI();
+            SynkApp.gotoMainUI();
         }
     }
     @FXML
@@ -35,14 +35,14 @@ public class LoginScreenUI {
         //keeping track of if the register button has been clicked yet, and change our logic depending on that.
         if(!clicked) {
             System.out.println("Registering");
-            SynkApp.getInstance().getStage().setTitle("Register");
+            SynkApp.stage.setTitle("Register");
             changeUseability();
             clicked = true;
         }else {
             if(fieldsAreEmpty()){
                 txtFieldError.setText("Please fill in all fields.");
             }else if(CredentialsCheck.success(txtFieldUsername.getText(),passwordFieldPassword.getText(),passwordFieldReType.getText(),txtFieldEmail.getText())){
-                SynkApp.getInstance().getStage().setTitle("Synk Login");
+                SynkApp.stage.setTitle("Synk Login");
                 changeUseability();
                 clicked = false;
             }else {
@@ -75,7 +75,7 @@ public class LoginScreenUI {
     private void cancelRegistration(){
         txtFieldError.clear();
         changeUseability();
-        SynkApp.getInstance().getStage().setTitle("Synk Login");
+        SynkApp.stage.setTitle("Synk Login");
         clicked = false;
     }
 }
